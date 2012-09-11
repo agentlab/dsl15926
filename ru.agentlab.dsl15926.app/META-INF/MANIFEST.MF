@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: App
+Bundle-SymbolicName: ru.agentlab.dsl15926.app; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ru.agentlab.dsl15926.app.Activator
+Bundle-Vendor: AgentLab
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension-point id="splashExtension" name="Splash Extensions" schema="schema/splashExtension.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="ru.agentlab.dsl15926.app.splashHandlers.ExtensibleSplashHandler"
+            id="ru.agentlab.dsl15926.app.splashHandlers.extensible">
+      </splashHandler>
+      <splashHandlerProductBinding
+            splashId="ru.agentlab.dsl15926.app.splashHandlers.extensible"
+            productId="org.eclipse.sdk.ide">
+      </splashHandlerProductBinding>
+   </extension>
+   <extension
+         point="ru.agentlab.dsl15926.app.splashExtension">
+      <splashExtension
+            icon="icons/af.png"
+            tooltip="Application Framework"
+            id="af">
+      </splashExtension>
+      <splashExtension
+            icon="icons/embedded.png"
+            tooltip="Embedded"
+            id="embedded">
+      </splashExtension>
+      <splashExtension
+            icon="icons/enterprise.png"
+            tooltip="Enterprise"
+            id="enterprise">
+      </splashExtension>
+      <splashExtension
+            icon="icons/languages.png"
+            tooltip="Languages"
+            id="languages">
+      </splashExtension>
+      <splashExtension
+            icon="icons/rcp.png"
+            tooltip="RCP"
+            id="rcp">
+      </splashExtension>
+   </extension>
+
+</plugin>
