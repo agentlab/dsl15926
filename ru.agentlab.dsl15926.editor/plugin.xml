@@ -27,7 +27,7 @@
             name="%_UI_Dsl15926Editor_label"
             icon="icons/full/obj16/Dsl15926ModelFile.gif"
             extensions="dsl15926"
-            class="ru.agentlab.dsl15926.presentation.Dsl15926Editor"
+            class="ru.agentlab.dsl15926.presentation.Dsl15926EditorCustom"
             contributorClass="ru.agentlab.dsl15926.presentation.Dsl15926ActionBarContributor">
       </editor>
    </extension>
