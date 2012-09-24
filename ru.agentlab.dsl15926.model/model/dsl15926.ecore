@@ -17,7 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
         eType="#//TemplateRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//TemplateInstance" eOpposite="#//TemplateInstance/templates"/>
+        eType="#//TemplateInstance" eOpposite="#//TemplateInstance/template"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateRole" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
@@ -107,7 +107,7 @@
         eType="#//Individual" eOpposite="#//Individual/classes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="templates" eType="#//Template"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" eType="#//Template"
         eOpposite="#//Template/instances"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
         eType="#//TemplateRoleInstance" containment="true"/>

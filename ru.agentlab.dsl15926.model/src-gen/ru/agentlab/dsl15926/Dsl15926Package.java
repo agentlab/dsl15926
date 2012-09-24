@@ -948,13 +948,13 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE_INSTANCE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Templates</b></em>' reference.
+	 * The feature id for the '<em><b>Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_INSTANCE__TEMPLATES = 0;
+	int TEMPLATE_INSTANCE__TEMPLATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -1698,15 +1698,15 @@ public interface Dsl15926Package extends EPackage {
 	EClass getTemplateInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplates <em>Templates</em>}'.
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplate <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Templates</em>'.
-	 * @see ru.agentlab.dsl15926.TemplateInstance#getTemplates()
+	 * @return the meta object for the reference '<em>Template</em>'.
+	 * @see ru.agentlab.dsl15926.TemplateInstance#getTemplate()
 	 * @see #getTemplateInstance()
 	 * @generated
 	 */
-	EReference getTemplateInstance_Templates();
+	EReference getTemplateInstance_Template();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.TemplateInstance#getRoles <em>Roles</em>}'.
@@ -2313,12 +2313,12 @@ public interface Dsl15926Package extends EPackage {
 		EClass TEMPLATE_INSTANCE = eINSTANCE.getTemplateInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Templates</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_INSTANCE__TEMPLATES = eINSTANCE.getTemplateInstance_Templates();
+		EReference TEMPLATE_INSTANCE__TEMPLATE = eINSTANCE.getTemplateInstance_Template();
 
 		/**
 		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.

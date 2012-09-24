@@ -34,7 +34,7 @@ import ru.agentlab.dsl15926.TemplateRoleInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl#getTemplates <em>Templates</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl#getTemplate <em>Template</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
@@ -43,14 +43,14 @@ import ru.agentlab.dsl15926.TemplateRoleInstance;
  */
 public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstance {
 	/**
-	 * The cached value of the '{@link #getTemplates() <em>Templates</em>}' reference.
+	 * The cached value of the '{@link #getTemplate() <em>Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplates()
+	 * @see #getTemplate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Template templates;
+	protected Template template;
 
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
@@ -86,16 +86,16 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Template getTemplates() {
-		if (templates != null && templates.eIsProxy()) {
-			InternalEObject oldTemplates = (InternalEObject)templates;
-			templates = (Template)eResolveProxy(oldTemplates);
-			if (templates != oldTemplates) {
+	public Template getTemplate() {
+		if (template != null && template.eIsProxy()) {
+			InternalEObject oldTemplate = (InternalEObject)template;
+			template = (Template)eResolveProxy(oldTemplate);
+			if (template != oldTemplate) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES, oldTemplates, templates));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE, oldTemplate, template));
 			}
 		}
-		return templates;
+		return template;
 	}
 
 	/**
@@ -103,8 +103,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Template basicGetTemplates() {
-		return templates;
+	public Template basicGetTemplate() {
+		return template;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTemplates(Template newTemplates, NotificationChain msgs) {
-		Template oldTemplates = templates;
-		templates = newTemplates;
+	public NotificationChain basicSetTemplate(Template newTemplate, NotificationChain msgs) {
+		Template oldTemplate = template;
+		template = newTemplate;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES, oldTemplates, newTemplates);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE, oldTemplate, newTemplate);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -127,18 +127,18 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTemplates(Template newTemplates) {
-		if (newTemplates != templates) {
+	public void setTemplate(Template newTemplate) {
+		if (newTemplate != template) {
 			NotificationChain msgs = null;
-			if (templates != null)
-				msgs = ((InternalEObject)templates).eInverseRemove(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
-			if (newTemplates != null)
-				msgs = ((InternalEObject)newTemplates).eInverseAdd(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
-			msgs = basicSetTemplates(newTemplates, msgs);
+			if (template != null)
+				msgs = ((InternalEObject)template).eInverseRemove(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
+			if (newTemplate != null)
+				msgs = ((InternalEObject)newTemplate).eInverseAdd(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
+			msgs = basicSetTemplate(newTemplate, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES, newTemplates, newTemplates));
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE, newTemplate, newTemplate));
 	}
 
 	/**
@@ -161,10 +161,10 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				if (templates != null)
-					msgs = ((InternalEObject)templates).eInverseRemove(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
-				return basicSetTemplates((Template)otherEnd, msgs);
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				if (template != null)
+					msgs = ((InternalEObject)template).eInverseRemove(this, Dsl15926Package.TEMPLATE__INSTANCES, Template.class, msgs);
+				return basicSetTemplate((Template)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -177,8 +177,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				return basicSetTemplates(null, msgs);
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				return basicSetTemplate(null, msgs);
 			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 		}
@@ -193,9 +193,9 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				if (resolve) return getTemplates();
-				return basicGetTemplates();
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				if (resolve) return getTemplate();
+				return basicGetTemplate();
 			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
 				return getRoles();
 		}
@@ -211,8 +211,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				setTemplates((Template)newValue);
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				setTemplate((Template)newValue);
 				return;
 			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
 				getRoles().clear();
@@ -230,8 +230,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				setTemplates((Template)null);
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				setTemplate((Template)null);
 				return;
 			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
 				getRoles().clear();
@@ -248,8 +248,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
-				return templates != null;
+			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE:
+				return template != null;
 			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
 				return roles != null && !roles.isEmpty();
 		}

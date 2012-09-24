@@ -736,7 +736,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTemplateInstance_Templates() {
+	public EReference getTemplateInstance_Template() {
 		return (EReference)templateInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -927,7 +927,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		createEReference(classEClass, CLASS__INDIVIDUALS);
 
 		templateInstanceEClass = createEClass(TEMPLATE_INSTANCE);
-		createEReference(templateInstanceEClass, TEMPLATE_INSTANCE__TEMPLATES);
+		createEReference(templateInstanceEClass, TEMPLATE_INSTANCE__TEMPLATE);
 		createEReference(templateInstanceEClass, TEMPLATE_INSTANCE__ROLES);
 
 		patternEClass = createEClass(PATTERN);
@@ -993,7 +993,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 
 		initEClass(templateEClass, Template.class, "Template", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTemplate_Roles(), this.getTemplateRole(), null, "roles", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTemplate_Instances(), this.getTemplateInstance(), this.getTemplateInstance_Templates(), "instances", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemplate_Instances(), this.getTemplateInstance(), this.getTemplateInstance_Template(), "instances", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(templateRoleEClass, TemplateRole.class, "TemplateRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTemplateRole_Property(), this.getClassProperty(), null, "property", null, 1, 1, TemplateRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1054,7 +1054,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		initEReference(getClass_Individuals(), this.getIndividual(), this.getIndividual_Classes(), "individuals", null, 0, -1, ru.agentlab.dsl15926.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(templateInstanceEClass, TemplateInstance.class, "TemplateInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemplateInstance_Templates(), this.getTemplate(), this.getTemplate_Instances(), "templates", null, 0, 1, TemplateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemplateInstance_Template(), this.getTemplate(), this.getTemplate_Instances(), "template", null, 0, 1, TemplateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTemplateInstance_Roles(), this.getTemplateRoleInstance(), null, "roles", null, 0, -1, TemplateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(patternEClass, Pattern.class, "Pattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

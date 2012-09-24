@@ -97,7 +97,7 @@ public class TemplateImpl extends ClassExpressionImpl implements Template {
 	 */
 	public EList<TemplateInstance> getInstances() {
 		if (instances == null) {
-			instances = new EObjectWithInverseResolvingEList<TemplateInstance>(TemplateInstance.class, this, Dsl15926Package.TEMPLATE__INSTANCES, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES);
+			instances = new EObjectWithInverseResolvingEList<TemplateInstance>(TemplateInstance.class, this, Dsl15926Package.TEMPLATE__INSTANCES, Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATE);
 		}
 		return instances;
 	}

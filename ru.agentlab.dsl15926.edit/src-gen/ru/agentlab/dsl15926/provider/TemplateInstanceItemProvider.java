@@ -66,25 +66,25 @@ public class TemplateInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTemplatesPropertyDescriptor(object);
+			addTemplatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Templates feature.
+	 * This adds a property descriptor for the Template feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTemplatesPropertyDescriptor(Object object) {
+	protected void addTemplatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TemplateInstance_templates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateInstance_templates_feature", "_UI_TemplateInstance_type"),
-				 Dsl15926Package.Literals.TEMPLATE_INSTANCE__TEMPLATES,
+				 getString("_UI_TemplateInstance_template_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateInstance_template_feature", "_UI_TemplateInstance_type"),
+				 Dsl15926Package.Literals.TEMPLATE_INSTANCE__TEMPLATE,
 				 true,
 				 false,
 				 true,

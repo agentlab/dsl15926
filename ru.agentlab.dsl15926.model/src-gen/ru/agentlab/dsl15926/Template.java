@@ -45,7 +45,7 @@ public interface Template extends ClassExpression {
 	/**
 	 * Returns the value of the '<em><b>Instances</b></em>' reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.TemplateInstance}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplates <em>Templates</em>}'.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplate <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Instances</em>' reference list isn't clear,
@@ -54,8 +54,8 @@ public interface Template extends ClassExpression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Instances</em>' reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplate_Instances()
-	 * @see ru.agentlab.dsl15926.TemplateInstance#getTemplates
-	 * @model opposite="templates"
+	 * @see ru.agentlab.dsl15926.TemplateInstance#getTemplate
+	 * @model opposite="template"
 	 * @generated
 	 */
 	EList<TemplateInstance> getInstances();

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getTemplates <em>Templates</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getTemplate <em>Template</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
@@ -29,32 +29,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TemplateInstance extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Templates</b></em>' reference.
+	 * Returns the value of the '<em><b>Template</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Template#getInstances <em>Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Templates</em>' reference isn't clear,
+	 * If the meaning of the '<em>Template</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Templates</em>' reference.
-	 * @see #setTemplates(Template)
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateInstance_Templates()
+	 * @return the value of the '<em>Template</em>' reference.
+	 * @see #setTemplate(Template)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateInstance_Template()
 	 * @see ru.agentlab.dsl15926.Template#getInstances
 	 * @model opposite="instances"
 	 * @generated
 	 */
-	Template getTemplates();
+	Template getTemplate();
 
 	/**
-	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplates <em>Templates</em>}' reference.
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateInstance#getTemplate <em>Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Templates</em>' reference.
-	 * @see #getTemplates()
+	 * @param value the new value of the '<em>Template</em>' reference.
+	 * @see #getTemplate()
 	 * @generated
 	 */
-	void setTemplates(Template value);
+	void setTemplate(Template value);
 
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
