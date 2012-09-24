@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.tests;
 
@@ -7,23 +11,23 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import ru.agentlab.dsl15926.Dsl15926Factory;
-import ru.agentlab.dsl15926.PropertyValue;
+import ru.agentlab.dsl15926.TemplateRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Property Value</b></em>'.
+ * A test case for the model object '<em><b>Template Role Instance</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyValueTest extends TestCase {
+public class TemplateRoleInstanceTest extends TestCase {
 
 	/**
-	 * The fixture for this Property Value test case.
+	 * The fixture for this Template Role Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyValue fixture = null;
+	protected TemplateRoleInstance fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +35,36 @@ public class PropertyValueTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PropertyValueTest.class);
+		TestRunner.run(TemplateRoleInstanceTest.class);
 	}
 
 	/**
-	 * Constructs a new Property Value test case with the given name.
+	 * Constructs a new Template Role Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyValueTest(String name) {
+	public TemplateRoleInstanceTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Property Value test case.
+	 * Sets the fixture for this Template Role Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(PropertyValue fixture) {
+	protected void setFixture(TemplateRoleInstance fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Property Value test case.
+	 * Returns the fixture for this Template Role Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyValue getFixture() {
+	protected TemplateRoleInstance getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +76,7 @@ public class PropertyValueTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Dsl15926Factory.eINSTANCE.createPropertyValue());
+		setFixture(Dsl15926Factory.eINSTANCE.createTemplateRoleInstance());
 	}
 
 	/**
@@ -86,4 +90,4 @@ public class PropertyValueTest extends TestCase {
 		setFixture(null);
 	}
 
-} //PropertyValueTest
+} //TemplateRoleInstanceTest

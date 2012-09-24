@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -15,10 +19,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
-import ru.agentlab.dsl15926.PropertyValue;
+import ru.agentlab.dsl15926.Pattern;
+import ru.agentlab.dsl15926.PropertyInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +33,7 @@ import ru.agentlab.dsl15926.PropertyValue;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getClasses <em>Classes</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getPropertyValues <em>Property Values</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getPatterns <em>Patterns</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,7 +58,17 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertyValue> propertyValues;
+	protected EList<PropertyInstance> propertyValues;
+
+	/**
+	 * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatterns()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Pattern> patterns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +106,23 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PropertyValue> getPropertyValues() {
+	public EList<PropertyInstance> getPropertyValues() {
 		if (propertyValues == null) {
-			propertyValues = new EObjectContainmentEList.Resolving<PropertyValue>(PropertyValue.class, this, Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES);
+			propertyValues = new EObjectContainmentEList.Resolving<PropertyInstance>(PropertyInstance.class, this, Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES);
 		}
 		return propertyValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Pattern> getPatterns() {
+		if (patterns == null) {
+			patterns = new EObjectWithInverseResolvingEList.ManyInverse<Pattern>(Pattern.class, this, Dsl15926Package.INDIVIDUAL__PATTERNS, Dsl15926Package.PATTERN__INDIVIDUALS);
+		}
+		return patterns;
 	}
 
 	/**
@@ -109,6 +136,8 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 		switch (featureID) {
 			case Dsl15926Package.INDIVIDUAL__CLASSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPatterns()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -125,6 +154,8 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return ((InternalEList<?>)getPropertyValues()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				return ((InternalEList<?>)getPatterns()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,6 +172,8 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 				return getClasses();
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return getPropertyValues();
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				return getPatterns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,7 +193,11 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 				return;
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				getPropertyValues().clear();
-				getPropertyValues().addAll((Collection<? extends PropertyValue>)newValue);
+				getPropertyValues().addAll((Collection<? extends PropertyInstance>)newValue);
+				return;
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				getPatterns().clear();
+				getPatterns().addAll((Collection<? extends Pattern>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,6 +217,9 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				getPropertyValues().clear();
 				return;
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				getPatterns().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,6 +236,8 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 				return classes != null && !classes.isEmpty();
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return propertyValues != null && !propertyValues.isEmpty();
+			case Dsl15926Package.INDIVIDUAL__PATTERNS:
+				return patterns != null && !patterns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

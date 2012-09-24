@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -9,8 +13,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,20 +21,19 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import ru.agentlab.dsl15926.DataPropertyInstance;
 import ru.agentlab.dsl15926.Dsl15926Package;
-import ru.agentlab.dsl15926.PropertyValue;
 
 /**
- * This is the item provider adapter for a {@link ru.agentlab.dsl15926.PropertyValue} object.
+ * This is the item provider adapter for a {@link ru.agentlab.dsl15926.DataPropertyInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyValueItemProvider
-	extends ItemProviderAdapter
+public class DataPropertyInstanceItemProvider
+	extends PropertyInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +46,7 @@ public class PropertyValueItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyValueItemProvider(AdapterFactory adapterFactory) {
+	public DataPropertyInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,9 +78,9 @@ public class PropertyValueItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PropertyValue_property_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyValue_property_feature", "_UI_PropertyValue_type"),
-				 Dsl15926Package.Literals.PROPERTY_VALUE__PROPERTY,
+				 getString("_UI_DataPropertyInstance_property_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataPropertyInstance_property_feature", "_UI_DataPropertyInstance_type"),
+				 Dsl15926Package.Literals.DATA_PROPERTY_INSTANCE__PROPERTY,
 				 true,
 				 false,
 				 true,
@@ -99,9 +100,9 @@ public class PropertyValueItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PropertyValue_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyValue_value_feature", "_UI_PropertyValue_type"),
-				 Dsl15926Package.Literals.PROPERTY_VALUE__VALUE,
+				 getString("_UI_DataPropertyInstance_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataPropertyInstance_value_feature", "_UI_DataPropertyInstance_type"),
+				 Dsl15926Package.Literals.DATA_PROPERTY_INSTANCE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -111,14 +112,14 @@ public class PropertyValueItemProvider
 	}
 
 	/**
-	 * This returns PropertyValue.gif.
+	 * This returns DataPropertyInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PropertyValue"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataPropertyInstance"));
 	}
 
 	/**
@@ -129,10 +130,10 @@ public class PropertyValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyValue)object).getValue();
+		String label = ((DataPropertyInstance)object).getValue();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyValue_type") :
-			getString("_UI_PropertyValue_type") + " " + label;
+			getString("_UI_DataPropertyInstance_type") :
+			getString("_UI_DataPropertyInstance_type") + " " + label;
 	}
 
 	/**
@@ -146,8 +147,8 @@ public class PropertyValueItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PropertyValue.class)) {
-			case Dsl15926Package.PROPERTY_VALUE__VALUE:
+		switch (notification.getFeatureID(DataPropertyInstance.class)) {
+			case Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -164,17 +165,6 @@ public class PropertyValueItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return Dsl15926EditPlugin.INSTANCE;
 	}
 
 }

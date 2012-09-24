@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -17,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ru.agentlab.dsl15926.ObjectProperty#getSubPropertyOf <em>Sub Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.ObjectProperty#getDisjointProperties <em>Disjoint Properties</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.ObjectProperty#getEquivalentProperties <em>Equivalent Properties</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.ObjectProperty#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,5 +113,23 @@ public interface ObjectProperty extends ClassProperty {
 	 * @generated
 	 */
 	EList<ObjectProperty> getEquivalentProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Instances</b></em>' reference list.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.ObjectPropertyInstance}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.ObjectPropertyInstance#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Instances</em>' reference list.
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getObjectProperty_Instances()
+	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance#getProperty
+	 * @model opposite="property"
+	 * @generated
+	 */
+	EList<ObjectPropertyInstance> getInstances();
 
 } // ObjectProperty

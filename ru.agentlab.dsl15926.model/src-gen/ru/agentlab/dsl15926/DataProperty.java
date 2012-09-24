@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -17,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ru.agentlab.dsl15926.DataProperty#getSubPropertyOf <em>Sub Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.DataProperty#getSuperPropertyOf <em>Super Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.DataProperty#getDisjointProperties <em>Disjoint Properties</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.DataProperty#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,5 +113,33 @@ public interface DataProperty extends ClassProperty {
 	 * @generated
 	 */
 	EList<DataProperty> getDisjointProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Instances</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.DataPropertyInstance#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Instances</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Instances</em>' reference.
+	 * @see #setInstances(DataPropertyInstance)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getDataProperty_Instances()
+	 * @see ru.agentlab.dsl15926.DataPropertyInstance#getProperty
+	 * @model opposite="property"
+	 * @generated
+	 */
+	DataPropertyInstance getInstances();
+
+	/**
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.DataProperty#getInstances <em>Instances</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Instances</em>' reference.
+	 * @see #getInstances()
+	 * @generated
+	 */
+	void setInstances(DataPropertyInstance value);
 
 } // DataProperty

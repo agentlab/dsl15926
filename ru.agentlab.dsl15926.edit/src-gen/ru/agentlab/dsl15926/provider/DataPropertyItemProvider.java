@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -60,6 +64,7 @@ public class DataPropertyItemProvider
 			addSubPropertyOfPropertyDescriptor(object);
 			addSuperPropertyOfPropertyDescriptor(object);
 			addDisjointPropertiesPropertyDescriptor(object);
+			addInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -166,6 +171,28 @@ public class DataPropertyItemProvider
 				 getString("_UI_DataProperty_disjointProperties_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataProperty_disjointProperties_feature", "_UI_DataProperty_type"),
 				 Dsl15926Package.Literals.DATA_PROPERTY__DISJOINT_PROPERTIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataProperty_instances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataProperty_instances_feature", "_UI_DataProperty_type"),
+				 Dsl15926Package.Literals.DATA_PROPERTY__INSTANCES,
 				 true,
 				 false,
 				 true,

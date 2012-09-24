@@ -1,9 +1,14 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,11 +16,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.DataProperty;
+import ru.agentlab.dsl15926.DataPropertyInstance;
 import ru.agentlab.dsl15926.DataRange;
 import ru.agentlab.dsl15926.Dsl15926Package;
 
@@ -31,6 +39,7 @@ import ru.agentlab.dsl15926.Dsl15926Package;
  *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyImpl#getSubPropertyOf <em>Sub Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyImpl#getSuperPropertyOf <em>Super Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyImpl#getDisjointProperties <em>Disjoint Properties</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyImpl#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,6 +95,16 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 	 * @ordered
 	 */
 	protected EList<DataProperty> disjointProperties;
+
+	/**
+	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataPropertyInstance instances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,6 +190,66 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataPropertyInstance getInstances() {
+		if (instances != null && instances.eIsProxy()) {
+			InternalEObject oldInstances = (InternalEObject)instances;
+			instances = (DataPropertyInstance)eResolveProxy(oldInstances);
+			if (instances != oldInstances) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.DATA_PROPERTY__INSTANCES, oldInstances, instances));
+			}
+		}
+		return instances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataPropertyInstance basicGetInstances() {
+		return instances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInstances(DataPropertyInstance newInstances, NotificationChain msgs) {
+		DataPropertyInstance oldInstances = instances;
+		instances = newInstances;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA_PROPERTY__INSTANCES, oldInstances, newInstances);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInstances(DataPropertyInstance newInstances) {
+		if (newInstances != instances) {
+			NotificationChain msgs = null;
+			if (instances != null)
+				msgs = ((InternalEObject)instances).eInverseRemove(this, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, DataPropertyInstance.class, msgs);
+			if (newInstances != null)
+				msgs = ((InternalEObject)newInstances).eInverseAdd(this, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, DataPropertyInstance.class, msgs);
+			msgs = basicSetInstances(newInstances, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA_PROPERTY__INSTANCES, newInstances, newInstances));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -179,6 +258,10 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubPropertyOf()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.DATA_PROPERTY__SUPER_PROPERTY_OF:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSuperPropertyOf()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				if (instances != null)
+					msgs = ((InternalEObject)instances).eInverseRemove(this, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, DataPropertyInstance.class, msgs);
+				return basicSetInstances((DataPropertyInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -195,6 +278,8 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 				return ((InternalEList<?>)getSubPropertyOf()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.DATA_PROPERTY__SUPER_PROPERTY_OF:
 				return ((InternalEList<?>)getSuperPropertyOf()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				return basicSetInstances(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,6 +302,9 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 				return getSuperPropertyOf();
 			case Dsl15926Package.DATA_PROPERTY__DISJOINT_PROPERTIES:
 				return getDisjointProperties();
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				if (resolve) return getInstances();
+				return basicGetInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +338,9 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 				getDisjointProperties().clear();
 				getDisjointProperties().addAll((Collection<? extends DataProperty>)newValue);
 				return;
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				setInstances((DataPropertyInstance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -277,6 +368,9 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 			case Dsl15926Package.DATA_PROPERTY__DISJOINT_PROPERTIES:
 				getDisjointProperties().clear();
 				return;
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				setInstances((DataPropertyInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,6 +393,8 @@ public class DataPropertyImpl extends ClassPropertyImpl implements DataProperty 
 				return superPropertyOf != null && !superPropertyOf.isEmpty();
 			case Dsl15926Package.DATA_PROPERTY__DISJOINT_PROPERTIES:
 				return disjointProperties != null && !disjointProperties.isEmpty();
+			case Dsl15926Package.DATA_PROPERTY__INSTANCES:
+				return instances != null;
 		}
 		return super.eIsSet(featureID);
 	}

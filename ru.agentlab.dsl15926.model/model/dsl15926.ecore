@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsl15926" nsURI="http://agentlab.ru/models/dsl15926/2012/08"
-    nsPrefix="ru.agentlab">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsl15926"
+    nsURI="http://agentlab.ru/models/dsl15926/2012/08" nsPrefix="ru.agentlab">
   <eClassifiers xsi:type="ecore:EClass" name="ClassExpression" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subClassOf" upperBound="-1"
         eType="#//ClassExpression" eOpposite="#//ClassExpression/superClassOf"/>
@@ -22,6 +23,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
         eType="#//ClassProperty"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedCardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//TemplateRoleInstance" eOpposite="#//TemplateRoleInstance/templateRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repository">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
@@ -40,7 +43,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="individuals" upperBound="-1"
         eType="#//Individual" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="templateInstances" upperBound="-1"
-        eType="#//TemplateInstance"/>
+        eType="#//TemplateInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//Pattern" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -58,6 +63,8 @@
         eType="#//ObjectProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentProperties" upperBound="-1"
         eType="#//ObjectProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//ObjectPropertyInstance" eOpposite="#//ObjectPropertyInstance/property"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataProperty" eSuperTypes="#//ClassProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="range" upperBound="-1"
@@ -70,6 +77,8 @@
         eType="#//DataProperty" eOpposite="#//DataProperty/subPropertyOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="disjointProperties" upperBound="-1"
         eType="#//DataProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" eType="#//DataPropertyInstance"
+        eOpposite="#//DataPropertyInstance/property"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassProperty" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="domain" upperBound="-1"
@@ -84,10 +93,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//Class" eOpposite="#//Class/individuals"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValues" upperBound="-1"
-        eType="#//PropertyValue" containment="true"/>
+        eType="#//PropertyInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//Pattern" eOpposite="#//Pattern/individuals"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//ClassProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataPropertyInstance" eSuperTypes="#//PropertyInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//DataProperty"
+        eOpposite="#//DataProperty/instances"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//ClassExpression">
@@ -95,7 +107,25 @@
         eType="#//Individual" eOpposite="#//Individual/classes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="templates" lowerBound="1"
-        eType="#//Template" eOpposite="#//Template/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templates" eType="#//Template"
+        eOpposite="#//Template/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//TemplateRoleInstance" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="individuals" upperBound="-1"
+        eType="#//Individual" eOpposite="#//Individual/patterns"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateRoleInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateRole" eType="#//TemplateRole"
+        eOpposite="#//TemplateRole/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyInstance" lowerBound="1"
+        eType="#//PropertyInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyInstance" eSuperTypes="#//PropertyInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//ObjectProperty"
+        eOpposite="#//ObjectProperty/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Individual"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyInstance" abstract="true"/>
 </ecore:EPackage>

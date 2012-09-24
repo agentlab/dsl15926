@@ -1,8 +1,10 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.tests;
-
-import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 

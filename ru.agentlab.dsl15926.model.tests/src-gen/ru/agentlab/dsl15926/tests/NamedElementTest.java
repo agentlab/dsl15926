@@ -1,12 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.tests;
 
 import junit.framework.TestCase;
 
-import junit.textui.TestRunner;
-
-import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.NamedElement;
 
 /**

@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -21,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Class extends ClassExpression {
-
 	/**
 	 * Returns the value of the '<em><b>Individuals</b></em>' reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Individual}.

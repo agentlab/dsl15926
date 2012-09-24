@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -20,24 +24,6 @@ public interface Dsl15926Factory extends EFactory {
 	 * @generated
 	 */
 	Dsl15926Factory eINSTANCE = ru.agentlab.dsl15926.impl.Dsl15926FactoryImpl.init();
-
-	/**
-	 * Returns a new object of class '<em>Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Class</em>'.
-	 * @generated
-	 */
-	Class createClass();
-
-	/**
-	 * Returns a new object of class '<em>Template Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Template Instance</em>'.
-	 * @generated
-	 */
-	TemplateInstance createTemplateInstance();
 
 	/**
 	 * Returns a new object of class '<em>Template</em>'.
@@ -112,13 +98,58 @@ public interface Dsl15926Factory extends EFactory {
 	Individual createIndividual();
 
 	/**
-	 * Returns a new object of class '<em>Property Value</em>'.
+	 * Returns a new object of class '<em>Data Property Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property Value</em>'.
+	 * @return a new object of class '<em>Data Property Instance</em>'.
 	 * @generated
 	 */
-	PropertyValue createPropertyValue();
+	DataPropertyInstance createDataPropertyInstance();
+
+	/**
+	 * Returns a new object of class '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Class</em>'.
+	 * @generated
+	 */
+	Class createClass();
+
+	/**
+	 * Returns a new object of class '<em>Template Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Template Instance</em>'.
+	 * @generated
+	 */
+	TemplateInstance createTemplateInstance();
+
+	/**
+	 * Returns a new object of class '<em>Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern</em>'.
+	 * @generated
+	 */
+	Pattern createPattern();
+
+	/**
+	 * Returns a new object of class '<em>Template Role Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Template Role Instance</em>'.
+	 * @generated
+	 */
+	TemplateRoleInstance createTemplateRoleInstance();
+
+	/**
+	 * Returns a new object of class '<em>Object Property Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Object Property Instance</em>'.
+	 * @generated
+	 */
+	ObjectPropertyInstance createObjectPropertyInstance();
 
 	/**
 	 * Returns the package supported by this factory.

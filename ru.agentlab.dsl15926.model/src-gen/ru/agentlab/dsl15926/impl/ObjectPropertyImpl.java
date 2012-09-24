@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -18,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.ObjectProperty;
+import ru.agentlab.dsl15926.ObjectPropertyInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +36,7 @@ import ru.agentlab.dsl15926.ObjectProperty;
  *   <li>{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl#getSubPropertyOf <em>Sub Property Of</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl#getDisjointProperties <em>Disjoint Properties</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl#getEquivalentProperties <em>Equivalent Properties</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,6 +92,16 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 	 * @ordered
 	 */
 	protected EList<ObjectProperty> equivalentProperties;
+
+	/**
+	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ObjectPropertyInstance> instances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,6 +187,18 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ObjectPropertyInstance> getInstances() {
+		if (instances == null) {
+			instances = new EObjectWithInverseResolvingEList<ObjectPropertyInstance>(ObjectPropertyInstance.class, this, Dsl15926Package.OBJECT_PROPERTY__INSTANCES, Dsl15926Package.OBJECT_PROPERTY_INSTANCE__PROPERTY);
+		}
+		return instances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -179,6 +207,8 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSuperPropertyOf()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.OBJECT_PROPERTY__SUB_PROPERTY_OF:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubPropertyOf()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -195,6 +225,8 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 				return ((InternalEList<?>)getSuperPropertyOf()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.OBJECT_PROPERTY__SUB_PROPERTY_OF:
 				return ((InternalEList<?>)getSubPropertyOf()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,6 +249,8 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 				return getDisjointProperties();
 			case Dsl15926Package.OBJECT_PROPERTY__EQUIVALENT_PROPERTIES:
 				return getEquivalentProperties();
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				return getInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +284,10 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 				getEquivalentProperties().clear();
 				getEquivalentProperties().addAll((Collection<? extends ObjectProperty>)newValue);
 				return;
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				getInstances().clear();
+				getInstances().addAll((Collection<? extends ObjectPropertyInstance>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -277,6 +315,9 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 			case Dsl15926Package.OBJECT_PROPERTY__EQUIVALENT_PROPERTIES:
 				getEquivalentProperties().clear();
 				return;
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				getInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,6 +340,8 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 				return disjointProperties != null && !disjointProperties.isEmpty();
 			case Dsl15926Package.OBJECT_PROPERTY__EQUIVALENT_PROPERTIES:
 				return equivalentProperties != null && !equivalentProperties.isEmpty();
+			case Dsl15926Package.OBJECT_PROPERTY__INSTANCES:
+				return instances != null && !instances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

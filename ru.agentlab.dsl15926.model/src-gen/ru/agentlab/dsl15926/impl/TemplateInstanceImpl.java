@@ -1,9 +1,17 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,9 +19,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
+import ru.agentlab.dsl15926.TemplateRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +35,7 @@ import ru.agentlab.dsl15926.TemplateInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl#getTemplates <em>Templates</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +51,16 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * @ordered
 	 */
 	protected Template templates;
+
+	/**
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TemplateRoleInstance> roles;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +146,18 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TemplateRoleInstance> getRoles() {
+		if (roles == null) {
+			roles = new EObjectContainmentEList.Resolving<TemplateRoleInstance>(TemplateRoleInstance.class, this, Dsl15926Package.TEMPLATE_INSTANCE__ROLES);
+		}
+		return roles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -144,6 +179,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 		switch (featureID) {
 			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
 				return basicSetTemplates(null, msgs);
+			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
+				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,6 +196,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
 				if (resolve) return getTemplates();
 				return basicGetTemplates();
+			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,11 +207,16 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
 				setTemplates((Template)newValue);
+				return;
+			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
+				getRoles().clear();
+				getRoles().addAll((Collection<? extends TemplateRoleInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,6 +233,9 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
 				setTemplates((Template)null);
 				return;
+			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
+				getRoles().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +250,8 @@ public class TemplateInstanceImpl extends EObjectImpl implements TemplateInstanc
 		switch (featureID) {
 			case Dsl15926Package.TEMPLATE_INSTANCE__TEMPLATES:
 				return templates != null;
+			case Dsl15926Package.TEMPLATE_INSTANCE__ROLES:
+				return roles != null && !roles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -23,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ru.agentlab.dsl15926.Repository#getImports <em>Imports</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getIndividuals <em>Individuals</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getTemplateInstances <em>Template Instances</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.Repository#getPatterns <em>Patterns</em>}</li>
  * </ul>
  * </p>
  *
@@ -170,19 +175,35 @@ public interface Repository extends EObject {
 	EList<Individual> getIndividuals();
 
 	/**
-	 * Returns the value of the '<em><b>Template Instances</b></em>' reference list.
+	 * Returns the value of the '<em><b>Template Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.TemplateInstance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Template Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Template Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Template Instances</em>' reference list.
+	 * @return the value of the '<em>Template Instances</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_TemplateInstances()
-	 * @model
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<TemplateInstance> getTemplateInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Patterns</b></em>' containment reference list.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.Pattern}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Patterns</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Patterns</em>' containment reference list.
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Patterns()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<Pattern> getPatterns();
 
 } // Repository

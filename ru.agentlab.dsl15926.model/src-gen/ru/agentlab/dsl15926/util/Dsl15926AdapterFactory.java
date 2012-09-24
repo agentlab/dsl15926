@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.util;
 
@@ -13,16 +17,20 @@ import ru.agentlab.dsl15926.Annotation;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.ClassProperty;
 import ru.agentlab.dsl15926.DataProperty;
+import ru.agentlab.dsl15926.DataPropertyInstance;
 import ru.agentlab.dsl15926.DataRange;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
 import ru.agentlab.dsl15926.ObjectProperty;
-import ru.agentlab.dsl15926.PropertyValue;
+import ru.agentlab.dsl15926.ObjectPropertyInstance;
+import ru.agentlab.dsl15926.Pattern;
+import ru.agentlab.dsl15926.PropertyInstance;
 import ru.agentlab.dsl15926.Repository;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
+import ru.agentlab.dsl15926.TemplateRoleInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,8 +133,8 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createIndividualAdapter();
 			}
 			@Override
-			public Adapter casePropertyValue(PropertyValue object) {
-				return createPropertyValueAdapter();
+			public Adapter caseDataPropertyInstance(DataPropertyInstance object) {
+				return createDataPropertyInstanceAdapter();
 			}
 			@Override
 			public Adapter caseClass(ru.agentlab.dsl15926.Class object) {
@@ -135,6 +143,22 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTemplateInstance(TemplateInstance object) {
 				return createTemplateInstanceAdapter();
+			}
+			@Override
+			public Adapter casePattern(Pattern object) {
+				return createPatternAdapter();
+			}
+			@Override
+			public Adapter caseTemplateRoleInstance(TemplateRoleInstance object) {
+				return createTemplateRoleInstanceAdapter();
+			}
+			@Override
+			public Adapter caseObjectPropertyInstance(ObjectPropertyInstance object) {
+				return createObjectPropertyInstanceAdapter();
+			}
+			@Override
+			public Adapter casePropertyInstance(PropertyInstance object) {
+				return createPropertyInstanceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -167,34 +191,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClassExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Class <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.Class
-	 * @generated
-	 */
-	public Adapter createClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.TemplateInstance <em>Template Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.TemplateInstance
-	 * @generated
-	 */
-	public Adapter createTemplateInstanceAdapter() {
 		return null;
 	}
 
@@ -339,16 +335,100 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.PropertyValue <em>Property Value</em>}'.
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataPropertyInstance <em>Data Property Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.PropertyValue
+	 * @see ru.agentlab.dsl15926.DataPropertyInstance
 	 * @generated
 	 */
-	public Adapter createPropertyValueAdapter() {
+	public Adapter createDataPropertyInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Class <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.Class
+	 * @generated
+	 */
+	public Adapter createClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.TemplateInstance <em>Template Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.TemplateInstance
+	 * @generated
+	 */
+	public Adapter createTemplateInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Pattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.Pattern
+	 * @generated
+	 */
+	public Adapter createPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.TemplateRoleInstance <em>Template Role Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.TemplateRoleInstance
+	 * @generated
+	 */
+	public Adapter createTemplateRoleInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.ObjectPropertyInstance <em>Object Property Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance
+	 * @generated
+	 */
+	public Adapter createObjectPropertyInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.PropertyInstance <em>Property Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.PropertyInstance
+	 * @generated
+	 */
+	public Adapter createPropertyInstanceAdapter() {
 		return null;
 	}
 

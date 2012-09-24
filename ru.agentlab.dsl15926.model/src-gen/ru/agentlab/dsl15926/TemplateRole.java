@@ -1,8 +1,12 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getProperty <em>Property</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getQualifiedCardinality <em>Qualified Cardinality</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +78,23 @@ public interface TemplateRole extends NamedElement {
 	 * @generated
 	 */
 	void setQualifiedCardinality(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Instances</b></em>' reference list.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.TemplateRoleInstance}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.TemplateRoleInstance#getTemplateRole <em>Template Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Instances</em>' reference list.
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateRole_Instances()
+	 * @see ru.agentlab.dsl15926.TemplateRoleInstance#getTemplateRole
+	 * @model opposite="templateRole"
+	 * @generated
+	 */
+	EList<TemplateRoleInstance> getInstances();
 
 } // TemplateRole

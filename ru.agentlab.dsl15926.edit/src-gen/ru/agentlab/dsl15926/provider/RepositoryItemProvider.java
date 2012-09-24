@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -65,7 +69,6 @@ public class RepositoryItemProvider
 
 			addUrlPropertyDescriptor(object);
 			addImportsPropertyDescriptor(object);
-			addTemplateInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,28 +118,6 @@ public class RepositoryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Template Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTemplateInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Repository_templateInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Repository_templateInstances_feature", "_UI_Repository_type"),
-				 Dsl15926Package.Literals.REPOSITORY__TEMPLATE_INSTANCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -154,6 +135,8 @@ public class RepositoryItemProvider
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATES);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__DATA_RANGES);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATE_INSTANCES);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__PATTERNS);
 		}
 		return childrenFeatures;
 	}
@@ -218,6 +201,8 @@ public class RepositoryItemProvider
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 			case Dsl15926Package.REPOSITORY__DATA_RANGES:
 			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
+			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
+			case Dsl15926Package.REPOSITORY__PATTERNS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -264,6 +249,16 @@ public class RepositoryItemProvider
 			(createChildParameter
 				(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS,
 				 Dsl15926Factory.eINSTANCE.createIndividual()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Dsl15926Package.Literals.REPOSITORY__TEMPLATE_INSTANCES,
+				 Dsl15926Factory.eINSTANCE.createTemplateInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Dsl15926Package.Literals.REPOSITORY__PATTERNS,
+				 Dsl15926Factory.eINSTANCE.createPattern()));
 	}
 
 	/**
