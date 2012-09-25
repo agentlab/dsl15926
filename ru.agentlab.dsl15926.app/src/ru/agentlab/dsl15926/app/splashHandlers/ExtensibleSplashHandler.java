@@ -24,9 +24,9 @@ import org.eclipse.ui.splash.AbstractSplashHandler;
  */
 public class ExtensibleSplashHandler extends AbstractSplashHandler {
 	
-	private ArrayList fImageList;
+	private ArrayList<Image> fImageList;
 	
-	private ArrayList fTooltipList;
+	private ArrayList<String> fTooltipList;
 
 	private final static String F_SPLASH_EXTENSION_ID = "ru.agentlab.dsl15926.app.splashExtension"; //NON-NLS-1
 	
@@ -48,8 +48,8 @@ public class ExtensibleSplashHandler extends AbstractSplashHandler {
 	 * 
 	 */
 	public ExtensibleSplashHandler() {
-		fImageList = new ArrayList();
-		fTooltipList = new ArrayList();
+		fImageList = new ArrayList<Image>();
+		fTooltipList = new ArrayList<String>();
 		fIconPanel = null;
 	}
 	
@@ -101,8 +101,8 @@ public class ExtensibleSplashHandler extends AbstractSplashHandler {
 	 * 
 	 */
 	private void createUIImages() {
-		Iterator imageIterator = fImageList.iterator();
-		Iterator tooltipIterator = fTooltipList.iterator();
+		Iterator<Image> imageIterator = fImageList.iterator();
+		Iterator<String> tooltipIterator = fTooltipList.iterator();
 		int i = 1;
 		int columnCount = ((GridLayout)fIconPanel.getLayout()).numColumns;
 		// Create all the images 
@@ -110,8 +110,8 @@ public class ExtensibleSplashHandler extends AbstractSplashHandler {
 		// the usable splash screen width)
 		while (imageIterator.hasNext() && 
 				(i <= columnCount)) {
-			Image image = (Image)imageIterator.next();
-			String tooltip = (String)tooltipIterator.next();
+			Image image = imageIterator.next();
+			String tooltip = tooltipIterator.next();
 			// Create the image using a label widget
 			createUILabel(image, tooltip);
 			i++;
@@ -299,9 +299,9 @@ public class ExtensibleSplashHandler extends AbstractSplashHandler {
 			return;
 		}
 		// Dispose of all the images
-		Iterator iterator = fImageList.iterator();
+		Iterator<Image> iterator = fImageList.iterator();
 		while (iterator.hasNext()) {
-			Image image = (Image) iterator.next();
+			Image image = iterator.next();
 			image.dispose();
 		}
 	}

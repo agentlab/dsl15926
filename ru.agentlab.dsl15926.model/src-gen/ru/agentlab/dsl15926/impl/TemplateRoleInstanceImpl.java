@@ -53,7 +53,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * @generated
 	 * @ordered
 	 */
-	protected PropertyInstance propertyInstance;
+	protected ru.agentlab.dsl15926.Class propertyInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,10 +139,10 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyInstance getPropertyInstance() {
+	public ru.agentlab.dsl15926.Class getPropertyInstance() {
 		if (propertyInstance != null && propertyInstance.eIsProxy()) {
 			InternalEObject oldPropertyInstance = (InternalEObject)propertyInstance;
-			propertyInstance = (PropertyInstance)eResolveProxy(oldPropertyInstance);
+			propertyInstance = (ru.agentlab.dsl15926.Class)eResolveProxy(oldPropertyInstance);
 			if (propertyInstance != oldPropertyInstance) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE, oldPropertyInstance, propertyInstance));
@@ -156,7 +156,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyInstance basicGetPropertyInstance() {
+	public ru.agentlab.dsl15926.Class basicGetPropertyInstance() {
 		return propertyInstance;
 	}
 
@@ -165,8 +165,8 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPropertyInstance(PropertyInstance newPropertyInstance) {
-		PropertyInstance oldPropertyInstance = propertyInstance;
+	public void setPropertyInstance(ru.agentlab.dsl15926.Class newPropertyInstance) {
+		ru.agentlab.dsl15926.Class oldPropertyInstance = propertyInstance;
 		propertyInstance = newPropertyInstance;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE, oldPropertyInstance, propertyInstance));
@@ -232,7 +232,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 				setTemplateRole((TemplateRole)newValue);
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE:
-				setPropertyInstance((PropertyInstance)newValue);
+				setPropertyInstance((ru.agentlab.dsl15926.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,7 +250,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 				setTemplateRole((TemplateRole)null);
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE:
-				setPropertyInstance((PropertyInstance)null);
+				setPropertyInstance((ru.agentlab.dsl15926.Class)null);
 				return;
 		}
 		super.eUnset(featureID);

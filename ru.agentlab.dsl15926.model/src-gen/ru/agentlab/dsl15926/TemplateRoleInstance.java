@@ -63,12 +63,12 @@ public interface TemplateRoleInstance extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property Instance</em>' reference.
-	 * @see #setPropertyInstance(PropertyInstance)
+	 * @see #setPropertyInstance(ru.agentlab.dsl15926.Class)
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateRoleInstance_PropertyInstance()
 	 * @model required="true"
 	 * @generated
 	 */
-	PropertyInstance getPropertyInstance();
+	ru.agentlab.dsl15926.Class getPropertyInstance();
 
 	/**
 	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateRoleInstance#getPropertyInstance <em>Property Instance</em>}' reference.
@@ -78,6 +78,6 @@ public interface TemplateRoleInstance extends EObject {
 	 * @see #getPropertyInstance()
 	 * @generated
 	 */
-	void setPropertyInstance(PropertyInstance value);
+	void setPropertyInstance(ru.agentlab.dsl15926.Class value);
 
 } // TemplateRoleInstance

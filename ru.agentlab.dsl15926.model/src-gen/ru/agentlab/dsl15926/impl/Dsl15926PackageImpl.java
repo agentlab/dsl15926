@@ -1062,7 +1062,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 
 		initEClass(templateRoleInstanceEClass, TemplateRoleInstance.class, "TemplateRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTemplateRoleInstance_TemplateRole(), this.getTemplateRole(), this.getTemplateRole_Instances(), "templateRole", null, 0, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTemplateRoleInstance_PropertyInstance(), this.getPropertyInstance(), null, "propertyInstance", null, 1, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemplateRoleInstance_PropertyInstance(), this.getClass_(), null, "propertyInstance", null, 1, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objectPropertyInstanceEClass, ObjectPropertyInstance.class, "ObjectPropertyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObjectPropertyInstance_Property(), this.getObjectProperty(), this.getObjectProperty_Instances(), "property", null, 0, 1, ObjectPropertyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
