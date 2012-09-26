@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
 public interface ClassProperty extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.ClassExpression}.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.AbstractObject}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Domain</em>' reference list isn't clear,
@@ -39,6 +39,6 @@ public interface ClassProperty extends NamedElement {
 	 * @model
 	 * @generated
 	 */
-	EList<ClassExpression> getDomain();
+	EList<AbstractObject> getDomain();
 
 } // ClassProperty

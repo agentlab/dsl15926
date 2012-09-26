@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.Individual#getClasses <em>Classes</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Individual#getPropertyValues <em>Property Values</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Individual#getPatterns <em>Patterns</em>}</li>
  * </ul>
@@ -26,25 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Individual extends NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Classes</b></em>' reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.Class}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Class#getIndividuals <em>Individuals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Classes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classes</em>' reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getIndividual_Classes()
-	 * @see ru.agentlab.dsl15926.Class#getIndividuals
-	 * @model opposite="individuals"
-	 * @generated
-	 */
-	EList<ru.agentlab.dsl15926.Class> getClasses();
-
+public interface Individual extends Thing {
 	/**
 	 * Returns the value of the '<em><b>Property Values</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.PropertyInstance}.

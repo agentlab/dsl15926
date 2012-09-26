@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getProperty <em>Property</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getQualifiedCardinality <em>Qualified Cardinality</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getInstances <em>Instances</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.TemplateRole#getEntityType <em>Entity Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -96,5 +97,31 @@ public interface TemplateRole extends NamedElement {
 	 * @generated
 	 */
 	EList<TemplateRoleInstance> getInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Entity Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Type</em>' reference.
+	 * @see #setEntityType(Thing)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateRole_EntityType()
+	 * @model
+	 * @generated
+	 */
+	Thing getEntityType();
+
+	/**
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateRole#getEntityType <em>Entity Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entity Type</em>' reference.
+	 * @see #getEntityType()
+	 * @generated
+	 */
+	void setEntityType(Thing value);
 
 } // TemplateRole

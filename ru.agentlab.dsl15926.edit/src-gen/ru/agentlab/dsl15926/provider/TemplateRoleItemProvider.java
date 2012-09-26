@@ -64,6 +64,7 @@ public class TemplateRoleItemProvider
 			addPropertyPropertyDescriptor(object);
 			addQualifiedCardinalityPropertyDescriptor(object);
 			addInstancesPropertyDescriptor(object);
+			addEntityTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,6 +127,28 @@ public class TemplateRoleItemProvider
 				 getString("_UI_TemplateRole_instances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateRole_instances_feature", "_UI_TemplateRole_type"),
 				 Dsl15926Package.Literals.TEMPLATE_ROLE__INSTANCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TemplateRole_entityType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateRole_entityType_feature", "_UI_TemplateRole_type"),
+				 Dsl15926Package.Literals.TEMPLATE_ROLE__ENTITY_TYPE,
 				 true,
 				 false,
 				 true,

@@ -17,7 +17,7 @@ import ru.agentlab.dsl15926.Individual;
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndividualTest extends NamedElementTest {
+public class IndividualTest extends ThingTest {
 
 	/**
 	 * <!-- begin-user-doc -->

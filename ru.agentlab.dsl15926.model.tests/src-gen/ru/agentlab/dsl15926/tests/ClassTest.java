@@ -16,7 +16,7 @@ import ru.agentlab.dsl15926.Dsl15926Factory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClassTest extends ClassExpressionTest {
+public class ClassTest extends AbstractObjectTest {
 
 	/**
 	 * <!-- begin-user-doc -->

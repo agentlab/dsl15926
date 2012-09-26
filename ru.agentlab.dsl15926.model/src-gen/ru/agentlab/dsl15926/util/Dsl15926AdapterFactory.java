@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.ClassProperty;
@@ -31,6 +32,7 @@ import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,8 +91,8 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	protected Dsl15926Switch<Adapter> modelSwitch =
 		new Dsl15926Switch<Adapter>() {
 			@Override
-			public Adapter caseClassExpression(ClassExpression object) {
-				return createClassExpressionAdapter();
+			public Adapter caseAbstractObject(AbstractObject object) {
+				return createAbstractObjectAdapter();
 			}
 			@Override
 			public Adapter caseTemplate(Template object) {
@@ -161,6 +163,10 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createPropertyInstanceAdapter();
 			}
 			@Override
+			public Adapter caseThing(Thing object) {
+				return createThingAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -181,16 +187,16 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.ClassExpression <em>Class Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.AbstractObject <em>Abstract Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.ClassExpression
+	 * @see ru.agentlab.dsl15926.AbstractObject
 	 * @generated
 	 */
-	public Adapter createClassExpressionAdapter() {
+	public Adapter createAbstractObjectAdapter() {
 		return null;
 	}
 
@@ -429,6 +435,20 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Thing <em>Thing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.Thing
+	 * @generated
+	 */
+	public Adapter createThingAdapter() {
 		return null;
 	}
 

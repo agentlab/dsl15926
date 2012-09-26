@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
 public interface ObjectProperty extends ClassProperty {
 	/**
 	 * Returns the value of the '<em><b>Range</b></em>' reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.ClassExpression}.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.AbstractObject}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Range</em>' reference list isn't clear,
@@ -44,7 +44,7 @@ public interface ObjectProperty extends ClassProperty {
 	 * @model
 	 * @generated
 	 */
-	EList<ClassExpression> getRange();
+	EList<AbstractObject> getRange();
 
 	/**
 	 * Returns the value of the '<em><b>Super Property Of</b></em>' reference list.

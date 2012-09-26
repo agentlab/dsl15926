@@ -17,7 +17,7 @@ import ru.agentlab.dsl15926.Template;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateTest extends ClassExpressionTest {
+public class TemplateTest extends AbstractObjectTest {
 
 	/**
 	 * <!-- begin-user-doc -->
