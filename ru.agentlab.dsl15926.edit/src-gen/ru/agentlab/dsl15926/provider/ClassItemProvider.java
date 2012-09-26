@@ -30,7 +30,7 @@ import ru.agentlab.dsl15926.Dsl15926Package;
  * @generated
  */
 public class ClassItemProvider
-	extends ClassExpressionItemProvider
+	extends AbstractObjectItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

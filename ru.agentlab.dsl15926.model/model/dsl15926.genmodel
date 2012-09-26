@@ -8,19 +8,21 @@
   <foreignModel>dsl15926.ecore</foreignModel>
   <genPackages prefix="Dsl15926" basePackage="ru.agentlab" disposableProviderFactory="true"
       ecorePackage="dsl15926.ecore#/">
-    <genClasses ecoreClass="dsl15926.ecore#//Class">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/subClassOf"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/superClassOf"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/disjointClasses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/equivalentClasses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/individuals"/>
+    <genClasses image="false" ecoreClass="dsl15926.ecore#//AbstractObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//AbstractObject/subClassOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//AbstractObject/superClassOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//AbstractObject/disjointClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//AbstractObject/equivalentClasses"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//Template">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Template/roles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Template/instances"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//TemplateRole">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateRole/property"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//TemplateRole/qualifiedCardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateRole/instances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateRole/entityType"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//Repository">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Repository/classes"/>
@@ -30,6 +32,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Repository/dataRanges"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//Repository/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//Repository/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Repository/individuals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Repository/templateInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Repository/patterns"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//NamedElement/label"/>
@@ -41,6 +46,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectProperty/subPropertyOf"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectProperty/disjointProperties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectProperty/equivalentProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectProperty/instances"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//DataProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataProperty/range"/>
@@ -48,6 +54,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataProperty/subPropertyOf"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataProperty/superPropertyOf"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataProperty/disjointProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataProperty/instances"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dsl15926.ecore#//ClassProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ClassProperty/domain"/>
@@ -58,12 +65,34 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//Annotation/value"/>
     </genClasses>
     <genClasses ecoreClass="dsl15926.ecore#//Individual">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Individual/classes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Individual/propertyValues"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Individual/patterns"/>
     </genClasses>
-    <genClasses ecoreClass="dsl15926.ecore#//PropertyValue">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//PropertyValue/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//PropertyValue/value"/>
+    <genClasses ecoreClass="dsl15926.ecore#//DataPropertyInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//DataPropertyInstance/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsl15926.ecore#//DataPropertyInstance/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dsl15926.ecore#//Class">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Class/individuals"/>
+    </genClasses>
+    <genClasses ecoreClass="dsl15926.ecore#//TemplateInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateInstance/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateInstance/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="dsl15926.ecore#//Pattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Pattern/individuals"/>
+    </genClasses>
+    <genClasses ecoreClass="dsl15926.ecore#//TemplateRoleInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateRoleInstance/templateRole"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//TemplateRoleInstance/propertyInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="dsl15926.ecore#//ObjectPropertyInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectPropertyInstance/property"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//ObjectPropertyInstance/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsl15926.ecore#//PropertyInstance"/>
+    <genClasses image="false" ecoreClass="dsl15926.ecore#//Thing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsl15926.ecore#//Thing/classes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

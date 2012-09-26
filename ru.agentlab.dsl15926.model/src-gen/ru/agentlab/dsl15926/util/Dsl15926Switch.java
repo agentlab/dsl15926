@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.ClassProperty;
@@ -29,6 +30,7 @@ import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,17 +89,19 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case Dsl15926Package.CLASS_EXPRESSION: {
-				ClassExpression classExpression = (ClassExpression)theEObject;
-				T result = caseClassExpression(classExpression);
-				if (result == null) result = caseNamedElement(classExpression);
+			case Dsl15926Package.ABSTRACT_OBJECT: {
+				AbstractObject abstractObject = (AbstractObject)theEObject;
+				T result = caseAbstractObject(abstractObject);
+				if (result == null) result = caseThing(abstractObject);
+				if (result == null) result = caseNamedElement(abstractObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case Dsl15926Package.TEMPLATE: {
 				Template template = (Template)theEObject;
 				T result = caseTemplate(template);
-				if (result == null) result = caseClassExpression(template);
+				if (result == null) result = caseAbstractObject(template);
+				if (result == null) result = caseThing(template);
 				if (result == null) result = caseNamedElement(template);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -159,6 +163,7 @@ public class Dsl15926Switch<T> extends Switch<T> {
 			case Dsl15926Package.INDIVIDUAL: {
 				Individual individual = (Individual)theEObject;
 				T result = caseIndividual(individual);
+				if (result == null) result = caseThing(individual);
 				if (result == null) result = caseNamedElement(individual);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -173,7 +178,8 @@ public class Dsl15926Switch<T> extends Switch<T> {
 			case Dsl15926Package.CLASS: {
 				ru.agentlab.dsl15926.Class class_ = (ru.agentlab.dsl15926.Class)theEObject;
 				T result = caseClass(class_);
-				if (result == null) result = caseClassExpression(class_);
+				if (result == null) result = caseAbstractObject(class_);
+				if (result == null) result = caseThing(class_);
 				if (result == null) result = caseNamedElement(class_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -210,22 +216,29 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Dsl15926Package.THING: {
+				Thing thing = (Thing)theEObject;
+				T result = caseThing(thing);
+				if (result == null) result = caseNamedElement(thing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Object</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Object</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClassExpression(ClassExpression object) {
+	public T caseAbstractObject(AbstractObject object) {
 		return null;
 	}
 
@@ -481,6 +494,21 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePropertyInstance(PropertyInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThing(Thing object) {
 		return null;
 	}
 

@@ -35,7 +35,7 @@ import ru.agentlab.dsl15926.Template;
  * @generated
  */
 public class TemplateItemProvider
-	extends ClassExpressionItemProvider
+	extends AbstractObjectItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

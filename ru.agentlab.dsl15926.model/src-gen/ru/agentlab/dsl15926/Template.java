@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Template extends ClassExpression {
+public interface Template extends AbstractObject {
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.TemplateRole}.

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.Dsl15926Package;
+import ru.agentlab.dsl15926.Thing;
 import ru.agentlab.dsl15926.Individual;
 
 /**
@@ -34,7 +35,7 @@ import ru.agentlab.dsl15926.Individual;
  *
  * @generated
  */
-public class ClassImpl extends ClassExpressionImpl implements ru.agentlab.dsl15926.Class {
+public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl15926.Class {
 	/**
 	 * The cached value of the '{@link #getIndividuals() <em>Individuals</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -43,7 +44,7 @@ public class ClassImpl extends ClassExpressionImpl implements ru.agentlab.dsl159
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Individual> individuals;
+	protected EList<Thing> individuals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,9 +70,9 @@ public class ClassImpl extends ClassExpressionImpl implements ru.agentlab.dsl159
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Individual> getIndividuals() {
+	public EList<Thing> getIndividuals() {
 		if (individuals == null) {
-			individuals = new EObjectWithInverseResolvingEList.ManyInverse<Individual>(Individual.class, this, Dsl15926Package.CLASS__INDIVIDUALS, Dsl15926Package.INDIVIDUAL__CLASSES);
+			individuals = new EObjectWithInverseResolvingEList.ManyInverse<Thing>(Thing.class, this, Dsl15926Package.CLASS__INDIVIDUALS, Dsl15926Package.THING__CLASSES);
 		}
 		return individuals;
 	}
@@ -130,7 +131,7 @@ public class ClassImpl extends ClassExpressionImpl implements ru.agentlab.dsl159
 		switch (featureID) {
 			case Dsl15926Package.CLASS__INDIVIDUALS:
 				getIndividuals().clear();
-				getIndividuals().addAll((Collection<? extends Individual>)newValue);
+				getIndividuals().addAll((Collection<? extends Thing>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

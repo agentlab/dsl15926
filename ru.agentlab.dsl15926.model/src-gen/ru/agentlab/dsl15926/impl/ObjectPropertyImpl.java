@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.ObjectProperty;
@@ -51,7 +52,7 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ClassExpression> range;
+	protected EList<AbstractObject> range;
 
 	/**
 	 * The cached value of the '{@link #getSuperPropertyOf() <em>Super Property Of</em>}' reference list.
@@ -127,9 +128,9 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ClassExpression> getRange() {
+	public EList<AbstractObject> getRange() {
 		if (range == null) {
-			range = new EObjectResolvingEList<ClassExpression>(ClassExpression.class, this, Dsl15926Package.OBJECT_PROPERTY__RANGE);
+			range = new EObjectResolvingEList<AbstractObject>(AbstractObject.class, this, Dsl15926Package.OBJECT_PROPERTY__RANGE);
 		}
 		return range;
 	}
@@ -266,7 +267,7 @@ public class ObjectPropertyImpl extends ClassPropertyImpl implements ObjectPrope
 		switch (featureID) {
 			case Dsl15926Package.OBJECT_PROPERTY__RANGE:
 				getRange().clear();
-				getRange().addAll((Collection<? extends ClassExpression>)newValue);
+				getRange().addAll((Collection<? extends AbstractObject>)newValue);
 				return;
 			case Dsl15926Package.OBJECT_PROPERTY__SUPER_PROPERTY_OF:
 				getSuperPropertyOf().clear();

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.ClassExpression;
 import ru.agentlab.dsl15926.ClassProperty;
 import ru.agentlab.dsl15926.Dsl15926Package;
@@ -40,7 +41,7 @@ public abstract class ClassPropertyImpl extends NamedElementImpl implements Clas
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ClassExpression> domain;
+	protected EList<AbstractObject> domain;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,9 +67,9 @@ public abstract class ClassPropertyImpl extends NamedElementImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ClassExpression> getDomain() {
+	public EList<AbstractObject> getDomain() {
 		if (domain == null) {
-			domain = new EObjectResolvingEList<ClassExpression>(ClassExpression.class, this, Dsl15926Package.CLASS_PROPERTY__DOMAIN);
+			domain = new EObjectResolvingEList<AbstractObject>(AbstractObject.class, this, Dsl15926Package.CLASS_PROPERTY__DOMAIN);
 		}
 		return domain;
 	}
@@ -98,7 +99,7 @@ public abstract class ClassPropertyImpl extends NamedElementImpl implements Clas
 		switch (featureID) {
 			case Dsl15926Package.CLASS_PROPERTY__DOMAIN:
 				getDomain().clear();
-				getDomain().addAll((Collection<? extends ClassExpression>)newValue);
+				getDomain().addAll((Collection<? extends AbstractObject>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

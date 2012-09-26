@@ -31,7 +31,6 @@ import ru.agentlab.dsl15926.PropertyInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getClasses <em>Classes</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getPropertyValues <em>Property Values</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.IndividualImpl#getPatterns <em>Patterns</em>}</li>
  * </ul>
@@ -39,17 +38,7 @@ import ru.agentlab.dsl15926.PropertyInstance;
  *
  * @generated
  */
-public class IndividualImpl extends NamedElementImpl implements Individual {
-	/**
-	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClasses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ru.agentlab.dsl15926.Class> classes;
-
+public class IndividualImpl extends ThingImpl implements Individual {
 	/**
 	 * The cached value of the '{@link #getPropertyValues() <em>Property Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -94,18 +83,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ru.agentlab.dsl15926.Class> getClasses() {
-		if (classes == null) {
-			classes = new EObjectWithInverseResolvingEList.ManyInverse<ru.agentlab.dsl15926.Class>(ru.agentlab.dsl15926.Class.class, this, Dsl15926Package.INDIVIDUAL__CLASSES, Dsl15926Package.CLASS__INDIVIDUALS);
-		}
-		return classes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<PropertyInstance> getPropertyValues() {
 		if (propertyValues == null) {
 			propertyValues = new EObjectContainmentEList.Resolving<PropertyInstance>(PropertyInstance.class, this, Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES);
@@ -134,8 +111,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.INDIVIDUAL__PATTERNS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPatterns()).basicAdd(otherEnd, msgs);
 		}
@@ -150,8 +125,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return ((InternalEList<?>)getPropertyValues()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.INDIVIDUAL__PATTERNS:
@@ -168,8 +141,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				return getClasses();
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return getPropertyValues();
 			case Dsl15926Package.INDIVIDUAL__PATTERNS:
@@ -187,10 +158,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				getClasses().clear();
-				getClasses().addAll((Collection<? extends ru.agentlab.dsl15926.Class>)newValue);
-				return;
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				getPropertyValues().clear();
 				getPropertyValues().addAll((Collection<? extends PropertyInstance>)newValue);
@@ -211,9 +178,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				getClasses().clear();
-				return;
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				getPropertyValues().clear();
 				return;
@@ -232,8 +196,6 @@ public class IndividualImpl extends NamedElementImpl implements Individual {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.INDIVIDUAL__CLASSES:
-				return classes != null && !classes.isEmpty();
 			case Dsl15926Package.INDIVIDUAL__PROPERTY_VALUES:
 				return propertyValues != null && !propertyValues.isEmpty();
 			case Dsl15926Package.INDIVIDUAL__PATTERNS:

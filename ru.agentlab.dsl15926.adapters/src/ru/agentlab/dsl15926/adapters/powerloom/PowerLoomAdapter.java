@@ -1,8 +1,12 @@
 package ru.agentlab.dsl15926.adapters.powerloom;
 
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 
+import ru.agentlab.dsl15926.AbstractObject;
+import ru.agentlab.dsl15926.Dsl15926Package;
 import edu.isi.powerloom.PLI;
 import edu.isi.powerloom.PlIterator;
 
@@ -22,24 +26,42 @@ public class PowerLoomAdapter extends EContentAdapter{
 	@Override
 	public void notifyChanged(Notification notification) {
 		super.notifyChanged(notification);
-		//TODO: work in progress, it's need to
-		// check Notifier
-		// check feature
-		// check eventType
+		
 		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.Class){
-			ru.agentlab.dsl15926.Class clazz = (ru.agentlab.dsl15926.Class) notification.getNotifier();
-			if (clazz.getLabel() != null && clazz.getLabel().length() > 0){
-				PLI.sCreateConcept(clazz.getLabel(), null, null, null);
-				// further is for example and testing
-				PLI.sAssertProposition("(" + clazz.getLabel() + " TEST1)", null, null);
-				PLI.sAssertProposition("(" + clazz.getLabel() + " TEST2)", null, null);
-				PlIterator iter = PLI.sRetrieve("all (?x " + clazz.getLabel() + ")", null, null);
-				while (iter.nextP()) {
-					System.out.println(PLI.getNthString(iter, 0, null, null) + " is "
-							+ " " + clazz.getLabel());
+			switch (notification.getFeatureID(ru.agentlab.dsl15926.Class.class)) {
+			case Dsl15926Package.CLASS__LABEL: {
+				switch (notification.getEventType()) {
+				case Notification.SET: {
+					String oldName = notification.getOldStringValue();
+					String newName = notification.getNewStringValue();
+					if (oldName != null && oldName.length() > 0){
+						PLI.sDestroyObject(oldName, null, null);
+						System.out.println("(destroy " + oldName + ")");
+					}
+					if (newName != null && newName.length() > 0){
+						PLI.sCreateConcept(newName, null, null, null);
+						System.out.println("(defconcept " + newName + ")");
+					}
+					break;
 				}
+				}
+				break;
 			}
-			
+			case Dsl15926Package.CLASS__SUB_CLASS_OF: {
+				switch (notification.getEventType()) {
+				case Notification.SET: {
+					break;
+				}
+				case Notification.ADD: {
+					break;
+				}
+				case Notification.ADD_MANY: {
+					break;
+				}
+				}
+				break;
+			}
+			}
 			
 		}
 	}

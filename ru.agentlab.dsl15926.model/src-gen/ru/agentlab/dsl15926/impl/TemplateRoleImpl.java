@@ -25,6 +25,7 @@ import ru.agentlab.dsl15926.ClassProperty;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +37,7 @@ import ru.agentlab.dsl15926.TemplateRoleInstance;
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getQualifiedCardinality <em>Qualified Cardinality</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getInstances <em>Instances</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getEntityType <em>Entity Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +83,16 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * @ordered
 	 */
 	protected EList<TemplateRoleInstance> instances;
+
+	/**
+	 * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Thing entityType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +189,44 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Thing getEntityType() {
+		if (entityType != null && entityType.eIsProxy()) {
+			InternalEObject oldEntityType = (InternalEObject)entityType;
+			entityType = (Thing)eResolveProxy(oldEntityType);
+			if (entityType != oldEntityType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE, oldEntityType, entityType));
+			}
+		}
+		return entityType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Thing basicGetEntityType() {
+		return entityType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEntityType(Thing newEntityType) {
+		Thing oldEntityType = entityType;
+		entityType = newEntityType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE, oldEntityType, entityType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -216,6 +266,9 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 				return getQualifiedCardinality();
 			case Dsl15926Package.TEMPLATE_ROLE__INSTANCES:
 				return getInstances();
+			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
+				if (resolve) return getEntityType();
+				return basicGetEntityType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +292,9 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 				getInstances().clear();
 				getInstances().addAll((Collection<? extends TemplateRoleInstance>)newValue);
 				return;
+			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
+				setEntityType((Thing)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -260,6 +316,9 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 			case Dsl15926Package.TEMPLATE_ROLE__INSTANCES:
 				getInstances().clear();
 				return;
+			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
+				setEntityType((Thing)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -278,6 +337,8 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 				return QUALIFIED_CARDINALITY_EDEFAULT == null ? qualifiedCardinality != null : !QUALIFIED_CARDINALITY_EDEFAULT.equals(qualifiedCardinality);
 			case Dsl15926Package.TEMPLATE_ROLE__INSTANCES:
 				return instances != null && !instances.isEmpty();
+			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
+				return entityType != null;
 		}
 		return super.eIsSet(featureID);
 	}

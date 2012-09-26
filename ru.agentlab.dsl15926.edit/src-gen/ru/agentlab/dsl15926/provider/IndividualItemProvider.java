@@ -35,7 +35,7 @@ import ru.agentlab.dsl15926.Individual;
  * @generated
  */
 public class IndividualItemProvider
-	extends NamedElementItemProvider
+	extends ThingItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -63,32 +63,9 @@ public class IndividualItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addClassesPropertyDescriptor(object);
 			addPatternsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Classes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClassesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Individual_classes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Individual_classes_feature", "_UI_Individual_type"),
-				 Dsl15926Package.Literals.INDIVIDUAL__CLASSES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

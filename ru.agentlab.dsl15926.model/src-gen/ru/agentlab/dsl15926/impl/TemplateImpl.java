@@ -38,7 +38,7 @@ import ru.agentlab.dsl15926.TemplateRole;
  *
  * @generated
  */
-public class TemplateImpl extends ClassExpressionImpl implements Template {
+public class TemplateImpl extends AbstractObjectImpl implements Template {
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

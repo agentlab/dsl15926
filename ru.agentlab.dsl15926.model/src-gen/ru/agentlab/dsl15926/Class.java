@@ -24,11 +24,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Class extends ClassExpression {
+public interface Class extends AbstractObject {
 	/**
 	 * Returns the value of the '<em><b>Individuals</b></em>' reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.Individual}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Individual#getClasses <em>Classes</em>}'.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.Thing}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Thing#getClasses <em>Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Individuals</em>' reference list isn't clear,
@@ -37,10 +37,10 @@ public interface Class extends ClassExpression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Individuals</em>' reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getClass_Individuals()
-	 * @see ru.agentlab.dsl15926.Individual#getClasses
+	 * @see ru.agentlab.dsl15926.Thing#getClasses
 	 * @model opposite="classes"
 	 * @generated
 	 */
-	EList<Individual> getIndividuals();
+	EList<Thing> getIndividuals();
 
 } // Class
