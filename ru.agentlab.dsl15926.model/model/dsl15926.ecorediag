@@ -986,7 +986,7 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" id="(0.8235294117647058,0.5348837209302325)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" id="(0.7747747747747747,0.3333333333333333)"/>
   </edges>
-  <edges xmi:type="notation:Edge" type="3002" source="//@children.2" target="//@children.18">
+  <edges xmi:type="notation:Edge" type="3002" source="//@children.2" target="//@children.0">
     <children xmi:type="notation:Node" type="4011">
       <layoutConstraint xmi:type="notation:Location" x="-10" y="-10"/>
     </children>
@@ -998,6 +998,5 @@
     <element xmi:type="ecore:EReference" href="dsl15926.ecore#//TemplateRole/entityType"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" points="[-5, -2, 396, 246]$[-399, -257, 2, -9]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" id="(0.3865979381443299,0.058823529411764705)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" id="(0.8333333333333334,0.23255813953488372)"/>
   </edges>
 </notation:Diagram>

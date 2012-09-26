@@ -24,7 +24,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedCardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
         eType="#//TemplateRoleInstance" eOpposite="#//TemplateRoleInstance/templateRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityType" eType="#//Thing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityType" eType="#//AbstractObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repository">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"

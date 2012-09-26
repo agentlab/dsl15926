@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.ClassProperty;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.TemplateRole;
@@ -92,7 +93,7 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * @generated
 	 * @ordered
 	 */
-	protected Thing entityType;
+	protected AbstractObject entityType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,10 +190,10 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Thing getEntityType() {
+	public AbstractObject getEntityType() {
 		if (entityType != null && entityType.eIsProxy()) {
 			InternalEObject oldEntityType = (InternalEObject)entityType;
-			entityType = (Thing)eResolveProxy(oldEntityType);
+			entityType = (AbstractObject)eResolveProxy(oldEntityType);
 			if (entityType != oldEntityType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE, oldEntityType, entityType));
@@ -206,7 +207,7 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Thing basicGetEntityType() {
+	public AbstractObject basicGetEntityType() {
 		return entityType;
 	}
 
@@ -215,8 +216,8 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntityType(Thing newEntityType) {
-		Thing oldEntityType = entityType;
+	public void setEntityType(AbstractObject newEntityType) {
+		AbstractObject oldEntityType = entityType;
 		entityType = newEntityType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE, oldEntityType, entityType));
@@ -293,7 +294,7 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 				getInstances().addAll((Collection<? extends TemplateRoleInstance>)newValue);
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
-				setEntityType((Thing)newValue);
+				setEntityType((AbstractObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,7 +318,7 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 				getInstances().clear();
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE__ENTITY_TYPE:
-				setEntityType((Thing)null);
+				setEntityType((AbstractObject)null);
 				return;
 		}
 		super.eUnset(featureID);
