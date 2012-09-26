@@ -107,12 +107,12 @@ public interface TemplateRole extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Type</em>' reference.
-	 * @see #setEntityType(Thing)
+	 * @see #setEntityType(AbstractObject)
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateRole_EntityType()
 	 * @model
 	 * @generated
 	 */
-	Thing getEntityType();
+	AbstractObject getEntityType();
 
 	/**
 	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateRole#getEntityType <em>Entity Type</em>}' reference.
@@ -122,6 +122,6 @@ public interface TemplateRole extends NamedElement {
 	 * @see #getEntityType()
 	 * @generated
 	 */
-	void setEntityType(Thing value);
+	void setEntityType(AbstractObject value);
 
 } // TemplateRole

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -20,38 +16,37 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Thing;
-import ru.agentlab.dsl15926.Individual;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class</b></em>'.
+ * An implementation of the model object '<em><b>Thing</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.impl.ClassImpl#getIndividuals <em>Individuals</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.ThingImpl#getClasses <em>Classes</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl15926.Class {
+public abstract class ThingImpl extends NamedElementImpl implements Thing {
 	/**
-	 * The cached value of the '{@link #getIndividuals() <em>Individuals</em>}' reference list.
+	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIndividuals()
+	 * @see #getClasses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Thing> individuals;
+	protected EList<ru.agentlab.dsl15926.Class> classes;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClassImpl() {
+	protected ThingImpl() {
 		super();
 	}
 
@@ -62,7 +57,7 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Dsl15926Package.Literals.CLASS;
+		return Dsl15926Package.Literals.THING;
 	}
 
 	/**
@@ -70,11 +65,11 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Thing> getIndividuals() {
-		if (individuals == null) {
-			individuals = new EObjectWithInverseResolvingEList.ManyInverse<Thing>(Thing.class, this, Dsl15926Package.CLASS__INDIVIDUALS, Dsl15926Package.THING__CLASSES);
+	public EList<ru.agentlab.dsl15926.Class> getClasses() {
+		if (classes == null) {
+			classes = new EObjectWithInverseResolvingEList.ManyInverse<ru.agentlab.dsl15926.Class>(ru.agentlab.dsl15926.Class.class, this, Dsl15926Package.THING__CLASSES, Dsl15926Package.CLASS__INDIVIDUALS);
 		}
-		return individuals;
+		return classes;
 	}
 
 	/**
@@ -86,8 +81,8 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIndividuals()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.THING__CLASSES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -100,8 +95,8 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				return ((InternalEList<?>)getIndividuals()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.THING__CLASSES:
+				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,8 +109,8 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				return getIndividuals();
+			case Dsl15926Package.THING__CLASSES:
+				return getClasses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,9 +124,9 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				getIndividuals().clear();
-				getIndividuals().addAll((Collection<? extends Thing>)newValue);
+			case Dsl15926Package.THING__CLASSES:
+				getClasses().clear();
+				getClasses().addAll((Collection<? extends ru.agentlab.dsl15926.Class>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -145,8 +140,8 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				getIndividuals().clear();
+			case Dsl15926Package.THING__CLASSES:
+				getClasses().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,10 +155,10 @@ public class ClassImpl extends AbstractObjectImpl implements ru.agentlab.dsl1592
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.CLASS__INDIVIDUALS:
-				return individuals != null && !individuals.isEmpty();
+			case Dsl15926Package.THING__CLASSES:
+				return classes != null && !classes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ClassImpl
+} //ThingImpl

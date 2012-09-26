@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -13,8 +9,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,20 +16,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ru.agentlab.dsl15926.Dsl15926Factory;
+import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Dsl15926Package;
-import ru.agentlab.dsl15926.Template;
 
 /**
- * This is the item provider adapter for a {@link ru.agentlab.dsl15926.Template} object.
+ * This is the item provider adapter for a {@link ru.agentlab.dsl15926.AbstractObject} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateItemProvider
-	extends AbstractObjectItemProvider
+public class AbstractObjectItemProvider
+	extends ThingItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -48,7 +40,7 @@ public class TemplateItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplateItemProvider(AdapterFactory adapterFactory) {
+	public AbstractObjectItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,25 +55,28 @@ public class TemplateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInstancesPropertyDescriptor(object);
+			addSubClassOfPropertyDescriptor(object);
+			addSuperClassOfPropertyDescriptor(object);
+			addDisjointClassesPropertyDescriptor(object);
+			addEquivalentClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Instances feature.
+	 * This adds a property descriptor for the Sub Class Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstancesPropertyDescriptor(Object object) {
+	protected void addSubClassOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Template_instances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Template_instances_feature", "_UI_Template_type"),
-				 Dsl15926Package.Literals.TEMPLATE__INSTANCES,
+				 getString("_UI_AbstractObject_subClassOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractObject_subClassOf_feature", "_UI_AbstractObject_type"),
+				 Dsl15926Package.Literals.ABSTRACT_OBJECT__SUB_CLASS_OF,
 				 true,
 				 false,
 				 true,
@@ -91,44 +86,69 @@ public class TemplateItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Super Class Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(Dsl15926Package.Literals.TEMPLATE__ROLES);
-		}
-		return childrenFeatures;
+	protected void addSuperClassOfPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractObject_superClassOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractObject_superClassOf_feature", "_UI_AbstractObject_type"),
+				 Dsl15926Package.Literals.ABSTRACT_OBJECT__SUPER_CLASS_OF,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Disjoint Classes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addDisjointClassesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractObject_disjointClasses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractObject_disjointClasses_feature", "_UI_AbstractObject_type"),
+				 Dsl15926Package.Literals.ABSTRACT_OBJECT__DISJOINT_CLASSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns Template.gif.
+	 * This adds a property descriptor for the Equivalent Classes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Template"));
+	protected void addEquivalentClassesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractObject_equivalentClasses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractObject_equivalentClasses_feature", "_UI_AbstractObject_type"),
+				 Dsl15926Package.Literals.ABSTRACT_OBJECT__EQUIVALENT_CLASSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -139,10 +159,10 @@ public class TemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Template)object).getLabel();
+		String label = ((AbstractObject)object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Template_type") :
-			getString("_UI_Template_type") + " " + label;
+			getString("_UI_AbstractObject_type") :
+			getString("_UI_AbstractObject_type") + " " + label;
 	}
 
 	/**
@@ -155,12 +175,6 @@ public class TemplateItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Template.class)) {
-			case Dsl15926Package.TEMPLATE__ROLES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -174,11 +188,6 @@ public class TemplateItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Dsl15926Package.Literals.TEMPLATE__ROLES,
-				 Dsl15926Factory.eINSTANCE.createTemplateRole()));
 	}
 
 }
