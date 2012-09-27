@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="dsl15926">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ClassSubClassOfTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="TemplateInstanceTemplateTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="qwe" lineKind="LINE_DOT"/>
+    <descriptors name="TemplateFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="TemplateFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="TemplateLabelFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="TemplateRoleFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TemplateRoleFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.2">
+        <children xsi:type="gmfgraph:Label" name="TemplateRoleLabelFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="IndividualFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="IndividualFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="IndividualLabelFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ClassFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <minimumSize dx="123" dy="44"/>
+        <border xsi:type="gmfgraph:LineBorder" width="2">
+          <color xsi:type="gmfgraph:RGBColor"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassLabelFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassSubClassOfFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ClassSubClassOfFigure" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="TemplateInstanceFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="TemplateInstanceFigure"/>
+    </descriptors>
+    <descriptors name="TemplateInstanceTemplateFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TemplateInstanceTemplateFigure" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors name="TemplateRoleInstanceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TemplateRoleInstanceFigure"/>
+    </descriptors>
+  </figures>
+  <nodes name="Template" figure="TemplateFigure"/>
+  <nodes name="Individual" figure="IndividualFigure"/>
+  <nodes name="Class" figure="ClassFigure"/>
+  <nodes name="TemplateInstance" figure="TemplateInstanceFigure"/>
+  <connections name="TemplateRole" figure="TemplateRoleFigure"/>
+  <connections name="ClassSubClassOf" figure="ClassSubClassOfFigure"/>
+  <connections name="TemplateInstanceTemplate" figure="TemplateInstanceTemplateFigure"/>
+  <connections name="TemplateRoleInstance" figure="TemplateRoleInstanceFigure"/>
+  <labels name="TemplateLabel" figure="TemplateFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="TemplateRoleLabel" figure="TemplateRoleFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="IndividualLabel" figure="IndividualFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="ClassLabel" figure="ClassFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+</gmfgraph:Canvas>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/ru.agentlab.dsl15926.model/model/dsl15926.genmodel
+gmf_dashboard/domainModel=platform\:/resource/ru.agentlab.dsl15926.model/model/dsl15926.ecore
+gmf_dashboard/generationModel=platform\:/resource/ru.agentlab.dsl15926.diagram/model/dsl15926.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/ru.agentlab.dsl15926.diagram/model/dsl15926.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/ru.agentlab.dsl15926.diagram/model/dsl15926.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/ru.agentlab.dsl15926.diagram/model/dsl15926.gmftool

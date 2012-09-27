@@ -1,0 +1,7 @@
+# Tracing options for the ru.agentlab.dsl15926.diagram plug-in
+
+# Common issues
+ru.agentlab.dsl15926.diagram/debug=false
+
+# Visual IDs
+ru.agentlab.dsl15926.diagram/debug/visualID=false
