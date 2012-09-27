@@ -31,6 +31,7 @@ public class PowerLoomAdapter extends EContentAdapter{
 	}
 	
 	public void startup(EObject root){
+		System.out.println();
 		long beginTime = System.currentTimeMillis();
 		if (root instanceof ru.agentlab.dsl15926.Repository){
 			ru.agentlab.dsl15926.Repository repository = (ru.agentlab.dsl15926.Repository) root;
@@ -68,19 +69,21 @@ public class PowerLoomAdapter extends EContentAdapter{
 		System.out.println();
 		System.out.println("Time of loading model to Knowledge Base: " + (endTime - beginTime) + " ms");
 		System.out.println();
-		System.out.println();
 	}
 	
 	@Override
 	public void notifyChanged(Notification notification) {
 		super.notifyChanged(notification);
-		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.Repository){
+		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.Repository) {
 			repositorySwitch(notification);
-		}  if (notification.getNotifier() instanceof ru.agentlab.dsl15926.NamedElement){
+		}
+		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.NamedElement) {
 			namedSwitch(notification);
-		}  if (notification.getNotifier() instanceof ru.agentlab.dsl15926.AbstractObject){
+		}
+		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.AbstractObject) {
 			abstractObjectSwitch(notification);
-		}  if (notification.getNotifier() instanceof ru.agentlab.dsl15926.Template){
+		}
+		if (notification.getNotifier() instanceof ru.agentlab.dsl15926.Template) {
 			templateSwitch(notification);
 		}
 	}
@@ -114,7 +117,7 @@ public class PowerLoomAdapter extends EContentAdapter{
 			System.out.println(cmd);
 		}
 	}
-
+	
 	private void handleIndividualCreation(String id) {
 		String cmd = "(defobject " + id + ")";
 		PLI.sCreateObject(id, null, MODULE_NAME, null);
@@ -214,16 +217,17 @@ public class PowerLoomAdapter extends EContentAdapter{
 	private void templateSwitch(Notification notification) {
 		switch (notification.getFeatureID(ru.agentlab.dsl15926.Template.class)) {
 			case Dsl15926Package.TEMPLATE__ROLES: {
-				ru.agentlab.dsl15926.TemplateRole role = (ru.agentlab.dsl15926.TemplateRole) notification.getNewValue();
-				ru.agentlab.dsl15926.Template template = (ru.agentlab.dsl15926.Template) notification.getNotifier();
-				ru.agentlab.dsl15926.AbstractObject type = role.getEntityType();
 				switch (notification.getEventType()) {
 					case Notification.ADD: {
+							ru.agentlab.dsl15926.TemplateRole role = (ru.agentlab.dsl15926.TemplateRole) notification.getNewValue();
+							ru.agentlab.dsl15926.Template template = (ru.agentlab.dsl15926.Template) notification.getNotifier();
+							ru.agentlab.dsl15926.AbstractObject type = role.getEntityType();
 							handleRelationCreation(getInstanceID(role), getInstanceID(template), getInstanceID(type));
 						break;
 					}
 					case Notification.REMOVE: {
-//							handleSpecialisationDeletion(getInstanceID(notification.getNotifier()), getInstanceID(notification.getOldValue()));
+							ru.agentlab.dsl15926.TemplateRole role = (ru.agentlab.dsl15926.TemplateRole) notification.getOldValue();
+							handleObjectDeletion(getInstanceID(role));
 						break;
 					}
 				}
