@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -20,7 +16,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Thing;
-import ru.agentlab.dsl15926.Individual;
 
 /**
  * <!-- begin-user-doc -->

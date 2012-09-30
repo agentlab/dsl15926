@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -16,9 +12,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import ru.agentlab.dsl15926.Dsl15926Package;
-import ru.agentlab.dsl15926.PropertyInstance;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +49,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * @generated
 	 * @ordered
 	 */
-	protected ru.agentlab.dsl15926.Class propertyInstance;
+	protected Thing propertyInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,10 +135,10 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ru.agentlab.dsl15926.Class getPropertyInstance() {
+	public Thing getPropertyInstance() {
 		if (propertyInstance != null && propertyInstance.eIsProxy()) {
 			InternalEObject oldPropertyInstance = (InternalEObject)propertyInstance;
-			propertyInstance = (ru.agentlab.dsl15926.Class)eResolveProxy(oldPropertyInstance);
+			propertyInstance = (Thing)eResolveProxy(oldPropertyInstance);
 			if (propertyInstance != oldPropertyInstance) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE, oldPropertyInstance, propertyInstance));
@@ -156,7 +152,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ru.agentlab.dsl15926.Class basicGetPropertyInstance() {
+	public Thing basicGetPropertyInstance() {
 		return propertyInstance;
 	}
 
@@ -165,8 +161,8 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPropertyInstance(ru.agentlab.dsl15926.Class newPropertyInstance) {
-		ru.agentlab.dsl15926.Class oldPropertyInstance = propertyInstance;
+	public void setPropertyInstance(Thing newPropertyInstance) {
+		Thing oldPropertyInstance = propertyInstance;
 		propertyInstance = newPropertyInstance;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE, oldPropertyInstance, propertyInstance));
@@ -232,7 +228,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 				setTemplateRole((TemplateRole)newValue);
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE:
-				setPropertyInstance((ru.agentlab.dsl15926.Class)newValue);
+				setPropertyInstance((Thing)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,7 +246,7 @@ public class TemplateRoleInstanceImpl extends EObjectImpl implements TemplateRol
 				setTemplateRole((TemplateRole)null);
 				return;
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE:
-				setPropertyInstance((ru.agentlab.dsl15926.Class)null);
+				setPropertyInstance((Thing)null);
 				return;
 		}
 		super.eUnset(featureID);

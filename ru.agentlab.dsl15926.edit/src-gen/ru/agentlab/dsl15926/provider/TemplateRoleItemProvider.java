@@ -61,34 +61,11 @@ public class TemplateRoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPropertyPropertyDescriptor(object);
 			addQualifiedCardinalityPropertyDescriptor(object);
 			addInstancesPropertyDescriptor(object);
 			addEntityTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Property feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPropertyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TemplateRole_property_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateRole_property_feature", "_UI_TemplateRole_type"),
-				 Dsl15926Package.Literals.TEMPLATE_ROLE__PROPERTY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

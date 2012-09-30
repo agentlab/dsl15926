@@ -130,10 +130,9 @@ public class RepositoryItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__CLASSES);
-			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__OBJECT_PROPERTIES);
-			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__DATA_PROPERETIES);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__DATA_TYPES);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATES);
-			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__DATA_RANGES);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__DATAS);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATE_INSTANCES);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__PATTERNS);
@@ -196,10 +195,9 @@ public class RepositoryItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Dsl15926Package.REPOSITORY__CLASSES:
-			case Dsl15926Package.REPOSITORY__OBJECT_PROPERTIES:
-			case Dsl15926Package.REPOSITORY__DATA_PROPERETIES:
+			case Dsl15926Package.REPOSITORY__DATA_TYPES:
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
-			case Dsl15926Package.REPOSITORY__DATA_RANGES:
+			case Dsl15926Package.REPOSITORY__DATAS:
 			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 			case Dsl15926Package.REPOSITORY__PATTERNS:
@@ -227,13 +225,8 @@ public class RepositoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Dsl15926Package.Literals.REPOSITORY__OBJECT_PROPERTIES,
-				 Dsl15926Factory.eINSTANCE.createObjectProperty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Dsl15926Package.Literals.REPOSITORY__DATA_PROPERETIES,
-				 Dsl15926Factory.eINSTANCE.createDataProperty()));
+				(Dsl15926Package.Literals.REPOSITORY__DATA_TYPES,
+				 Dsl15926Factory.eINSTANCE.createDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -242,13 +235,18 @@ public class RepositoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Dsl15926Package.Literals.REPOSITORY__DATA_RANGES,
-				 Dsl15926Factory.eINSTANCE.createDataRange()));
+				(Dsl15926Package.Literals.REPOSITORY__DATAS,
+				 Dsl15926Factory.eINSTANCE.createData()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS,
 				 Dsl15926Factory.eINSTANCE.createIndividual()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS,
+				 Dsl15926Factory.eINSTANCE.createData()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -259,6 +257,29 @@ public class RepositoryItemProvider
 			(createChildParameter
 				(Dsl15926Package.Literals.REPOSITORY__PATTERNS,
 				 Dsl15926Factory.eINSTANCE.createPattern()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == Dsl15926Package.Literals.REPOSITORY__DATAS ||
+			childFeature == Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

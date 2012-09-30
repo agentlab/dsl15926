@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -15,19 +11,14 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.ClassExpression;
-import ru.agentlab.dsl15926.ClassProperty;
-import ru.agentlab.dsl15926.DataProperty;
-import ru.agentlab.dsl15926.DataPropertyInstance;
+import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.DataRange;
+import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
-import ru.agentlab.dsl15926.ObjectProperty;
-import ru.agentlab.dsl15926.ObjectPropertyInstance;
 import ru.agentlab.dsl15926.Pattern;
-import ru.agentlab.dsl15926.PropertyInstance;
 import ru.agentlab.dsl15926.Repository;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
@@ -82,21 +73,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass objectPropertyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataPropertyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass classPropertyEClass = null;
+	private EClass dataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +101,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataPropertyInstanceEClass = null;
+	private EClass dataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,20 +130,6 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	private EClass templateRoleInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass objectPropertyInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass propertyInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,17 +285,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTemplateRole_Property() {
-		return (EReference)templateRoleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTemplateRole_QualifiedCardinality() {
-		return (EAttribute)templateRoleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)templateRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -341,7 +295,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EReference getTemplateRole_Instances() {
-		return (EReference)templateRoleEClass.getEStructuralFeatures().get(2);
+		return (EReference)templateRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -350,7 +304,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EReference getTemplateRole_EntityType() {
-		return (EReference)templateRoleEClass.getEStructuralFeatures().get(3);
+		return (EReference)templateRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -376,7 +330,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepository_ObjectProperties() {
+	public EReference getRepository_DataTypes() {
 		return (EReference)repositoryEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -385,7 +339,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepository_DataPropereties() {
+	public EReference getRepository_Templates() {
 		return (EReference)repositoryEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -394,7 +348,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepository_Templates() {
+	public EReference getRepository_Datas() {
 		return (EReference)repositoryEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -403,17 +357,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepository_DataRanges() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRepository_Url() {
-		return (EAttribute)repositoryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)repositoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -422,7 +367,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EAttribute getRepository_Imports() {
-		return (EAttribute)repositoryEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)repositoryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -431,7 +376,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EReference getRepository_Individuals() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(7);
+		return (EReference)repositoryEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -440,7 +385,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EReference getRepository_TemplateInstances() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(8);
+		return (EReference)repositoryEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -449,7 +394,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * @generated
 	 */
 	public EReference getRepository_Patterns() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(9);
+		return (EReference)repositoryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -484,8 +429,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getObjectProperty() {
-		return objectPropertyEClass;
+	public EClass getDataType() {
+		return dataTypeEClass;
 	}
 
 	/**
@@ -493,8 +438,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_Range() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(0);
+	public EReference getDataType_Range() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -502,8 +447,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_SuperPropertyOf() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(1);
+	public EReference getDataType_EquivalentProperties() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -511,8 +456,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_SubPropertyOf() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(2);
+	public EReference getDataType_SubPropertyOf() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -520,8 +465,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_DisjointProperties() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(3);
+	public EReference getDataType_SuperPropertyOf() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -529,8 +474,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_EquivalentProperties() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(4);
+	public EReference getDataType_DisjointProperties() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -538,89 +483,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectProperty_Instances() {
-		return (EReference)objectPropertyEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDataProperty() {
-		return dataPropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_Range() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_EquivalentProperties() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_SubPropertyOf() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_SuperPropertyOf() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_DisjointProperties() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataProperty_Instances() {
-		return (EReference)dataPropertyEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getClassProperty() {
-		return classPropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClassProperty_Domain() {
-		return (EReference)classPropertyEClass.getEStructuralFeatures().get(0);
+	public EReference getDataType_Data() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -673,7 +537,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIndividual_PropertyValues() {
+	public EReference getIndividual_Patterns() {
 		return (EReference)individualEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -682,8 +546,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIndividual_Patterns() {
-		return (EReference)individualEClass.getEStructuralFeatures().get(1);
+	public EClass getData() {
+		return dataEClass;
 	}
 
 	/**
@@ -691,8 +555,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDataPropertyInstance() {
-		return dataPropertyInstanceEClass;
+	public EReference getData_DataType() {
+		return (EReference)dataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -700,17 +564,8 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataPropertyInstance_Property() {
-		return (EReference)dataPropertyInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataPropertyInstance_Value() {
-		return (EAttribute)dataPropertyInstanceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getData_Value() {
+		return (EAttribute)dataEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -808,42 +663,6 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getObjectPropertyInstance() {
-		return objectPropertyInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getObjectPropertyInstance_Property() {
-		return (EReference)objectPropertyInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getObjectPropertyInstance_Value() {
-		return (EReference)objectPropertyInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPropertyInstance() {
-		return propertyInstanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getThing() {
 		return thingEClass;
 	}
@@ -896,17 +715,15 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		createEReference(templateEClass, TEMPLATE__INSTANCES);
 
 		templateRoleEClass = createEClass(TEMPLATE_ROLE);
-		createEReference(templateRoleEClass, TEMPLATE_ROLE__PROPERTY);
 		createEAttribute(templateRoleEClass, TEMPLATE_ROLE__QUALIFIED_CARDINALITY);
 		createEReference(templateRoleEClass, TEMPLATE_ROLE__INSTANCES);
 		createEReference(templateRoleEClass, TEMPLATE_ROLE__ENTITY_TYPE);
 
 		repositoryEClass = createEClass(REPOSITORY);
 		createEReference(repositoryEClass, REPOSITORY__CLASSES);
-		createEReference(repositoryEClass, REPOSITORY__OBJECT_PROPERTIES);
-		createEReference(repositoryEClass, REPOSITORY__DATA_PROPERETIES);
+		createEReference(repositoryEClass, REPOSITORY__DATA_TYPES);
 		createEReference(repositoryEClass, REPOSITORY__TEMPLATES);
-		createEReference(repositoryEClass, REPOSITORY__DATA_RANGES);
+		createEReference(repositoryEClass, REPOSITORY__DATAS);
 		createEAttribute(repositoryEClass, REPOSITORY__URL);
 		createEAttribute(repositoryEClass, REPOSITORY__IMPORTS);
 		createEReference(repositoryEClass, REPOSITORY__INDIVIDUALS);
@@ -917,24 +734,13 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__LABEL);
 		createEReference(namedElementEClass, NAMED_ELEMENT__ANNOTATIONS);
 
-		objectPropertyEClass = createEClass(OBJECT_PROPERTY);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__RANGE);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__SUPER_PROPERTY_OF);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__SUB_PROPERTY_OF);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__DISJOINT_PROPERTIES);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__EQUIVALENT_PROPERTIES);
-		createEReference(objectPropertyEClass, OBJECT_PROPERTY__INSTANCES);
-
-		dataPropertyEClass = createEClass(DATA_PROPERTY);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__RANGE);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__EQUIVALENT_PROPERTIES);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__SUB_PROPERTY_OF);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__SUPER_PROPERTY_OF);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__DISJOINT_PROPERTIES);
-		createEReference(dataPropertyEClass, DATA_PROPERTY__INSTANCES);
-
-		classPropertyEClass = createEClass(CLASS_PROPERTY);
-		createEReference(classPropertyEClass, CLASS_PROPERTY__DOMAIN);
+		dataTypeEClass = createEClass(DATA_TYPE);
+		createEReference(dataTypeEClass, DATA_TYPE__RANGE);
+		createEReference(dataTypeEClass, DATA_TYPE__EQUIVALENT_PROPERTIES);
+		createEReference(dataTypeEClass, DATA_TYPE__SUB_PROPERTY_OF);
+		createEReference(dataTypeEClass, DATA_TYPE__SUPER_PROPERTY_OF);
+		createEReference(dataTypeEClass, DATA_TYPE__DISJOINT_PROPERTIES);
+		createEReference(dataTypeEClass, DATA_TYPE__DATA);
 
 		dataRangeEClass = createEClass(DATA_RANGE);
 
@@ -943,12 +749,11 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		createEAttribute(annotationEClass, ANNOTATION__VALUE);
 
 		individualEClass = createEClass(INDIVIDUAL);
-		createEReference(individualEClass, INDIVIDUAL__PROPERTY_VALUES);
 		createEReference(individualEClass, INDIVIDUAL__PATTERNS);
 
-		dataPropertyInstanceEClass = createEClass(DATA_PROPERTY_INSTANCE);
-		createEReference(dataPropertyInstanceEClass, DATA_PROPERTY_INSTANCE__PROPERTY);
-		createEAttribute(dataPropertyInstanceEClass, DATA_PROPERTY_INSTANCE__VALUE);
+		dataEClass = createEClass(DATA);
+		createEReference(dataEClass, DATA__DATA_TYPE);
+		createEAttribute(dataEClass, DATA__VALUE);
 
 		classEClass = createEClass(CLASS);
 		createEReference(classEClass, CLASS__INDIVIDUALS);
@@ -963,12 +768,6 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		templateRoleInstanceEClass = createEClass(TEMPLATE_ROLE_INSTANCE);
 		createEReference(templateRoleInstanceEClass, TEMPLATE_ROLE_INSTANCE__TEMPLATE_ROLE);
 		createEReference(templateRoleInstanceEClass, TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE);
-
-		objectPropertyInstanceEClass = createEClass(OBJECT_PROPERTY_INSTANCE);
-		createEReference(objectPropertyInstanceEClass, OBJECT_PROPERTY_INSTANCE__PROPERTY);
-		createEReference(objectPropertyInstanceEClass, OBJECT_PROPERTY_INSTANCE__VALUE);
-
-		propertyInstanceEClass = createEClass(PROPERTY_INSTANCE);
 
 		thingEClass = createEClass(THING);
 		createEReference(thingEClass, THING__CLASSES);
@@ -1005,14 +804,11 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		abstractObjectEClass.getESuperTypes().add(this.getThing());
 		templateEClass.getESuperTypes().add(this.getAbstractObject());
 		templateRoleEClass.getESuperTypes().add(this.getNamedElement());
-		objectPropertyEClass.getESuperTypes().add(this.getClassProperty());
-		dataPropertyEClass.getESuperTypes().add(this.getClassProperty());
-		classPropertyEClass.getESuperTypes().add(this.getNamedElement());
+		dataTypeEClass.getESuperTypes().add(this.getAbstractObject());
 		individualEClass.getESuperTypes().add(this.getThing());
-		dataPropertyInstanceEClass.getESuperTypes().add(this.getPropertyInstance());
+		dataEClass.getESuperTypes().add(this.getIndividual());
 		classEClass.getESuperTypes().add(this.getAbstractObject());
 		patternEClass.getESuperTypes().add(this.getNamedElement());
-		objectPropertyInstanceEClass.getESuperTypes().add(this.getPropertyInstance());
 		thingEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
@@ -1027,17 +823,15 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		initEReference(getTemplate_Instances(), this.getTemplateInstance(), this.getTemplateInstance_Template(), "instances", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(templateRoleEClass, TemplateRole.class, "TemplateRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemplateRole_Property(), this.getClassProperty(), null, "property", null, 1, 1, TemplateRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemplateRole_QualifiedCardinality(), ecorePackage.getEString(), "qualifiedCardinality", null, 0, 1, TemplateRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTemplateRole_Instances(), this.getTemplateRoleInstance(), this.getTemplateRoleInstance_TemplateRole(), "instances", null, 0, -1, TemplateRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTemplateRole_EntityType(), this.getAbstractObject(), null, "entityType", null, 0, 1, TemplateRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRepository_Classes(), this.getClass_(), null, "classes", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRepository_ObjectProperties(), this.getObjectProperty(), null, "objectProperties", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRepository_DataPropereties(), this.getDataProperty(), null, "dataPropereties", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRepository_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_Templates(), this.getTemplate(), null, "templates", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRepository_DataRanges(), this.getDataRange(), null, "dataRanges", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRepository_Datas(), this.getData(), null, "datas", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRepository_Url(), ecorePackage.getEString(), "url", null, 0, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRepository_Imports(), ecorePackage.getEString(), "imports", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_Individuals(), this.getIndividual(), null, "individuals", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1048,24 +842,13 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		initEAttribute(getNamedElement_Label(), ecorePackage.getEString(), "label", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNamedElement_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(objectPropertyEClass, ObjectProperty.class, "ObjectProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjectProperty_Range(), this.getAbstractObject(), null, "range", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectProperty_SuperPropertyOf(), this.getObjectProperty(), this.getObjectProperty_SubPropertyOf(), "superPropertyOf", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectProperty_SubPropertyOf(), this.getObjectProperty(), this.getObjectProperty_SuperPropertyOf(), "subPropertyOf", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectProperty_DisjointProperties(), this.getObjectProperty(), null, "disjointProperties", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectProperty_EquivalentProperties(), this.getObjectProperty(), null, "equivalentProperties", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectProperty_Instances(), this.getObjectPropertyInstance(), this.getObjectPropertyInstance_Property(), "instances", null, 0, -1, ObjectProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataPropertyEClass, DataProperty.class, "DataProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataProperty_Range(), this.getDataRange(), null, "range", null, 0, -1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataProperty_EquivalentProperties(), this.getDataProperty(), null, "equivalentProperties", null, 0, -1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataProperty_SubPropertyOf(), this.getDataProperty(), this.getDataProperty_SuperPropertyOf(), "subPropertyOf", null, 0, -1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataProperty_SuperPropertyOf(), this.getDataProperty(), this.getDataProperty_SubPropertyOf(), "superPropertyOf", null, 0, -1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataProperty_DisjointProperties(), this.getDataProperty(), null, "disjointProperties", null, 0, -1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataProperty_Instances(), this.getDataPropertyInstance(), this.getDataPropertyInstance_Property(), "instances", null, 0, 1, DataProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(classPropertyEClass, ClassProperty.class, "ClassProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClassProperty_Domain(), this.getAbstractObject(), null, "domain", null, 0, -1, ClassProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataType_Range(), this.getDataRange(), null, "range", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_EquivalentProperties(), this.getDataType(), null, "equivalentProperties", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_SubPropertyOf(), this.getDataType(), this.getDataType_SuperPropertyOf(), "subPropertyOf", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_SuperPropertyOf(), this.getDataType(), this.getDataType_SubPropertyOf(), "superPropertyOf", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_DisjointProperties(), this.getDataType(), null, "disjointProperties", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_Data(), this.getData(), this.getData_DataType(), "data", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataRangeEClass, DataRange.class, "DataRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1074,12 +857,11 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(individualEClass, Individual.class, "Individual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIndividual_PropertyValues(), this.getPropertyInstance(), null, "propertyValues", null, 0, -1, Individual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIndividual_Patterns(), this.getPattern(), this.getPattern_Individuals(), "patterns", null, 0, -1, Individual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataPropertyInstanceEClass, DataPropertyInstance.class, "DataPropertyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataPropertyInstance_Property(), this.getDataProperty(), this.getDataProperty_Instances(), "property", null, 0, 1, DataPropertyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataPropertyInstance_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataPropertyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getData_DataType(), this.getDataType(), this.getDataType_Data(), "dataType", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getData_Value(), ecorePackage.getEString(), "value", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classEClass, ru.agentlab.dsl15926.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClass_Individuals(), this.getThing(), this.getThing_Classes(), "individuals", null, 0, -1, ru.agentlab.dsl15926.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1093,13 +875,7 @@ public class Dsl15926PackageImpl extends EPackageImpl implements Dsl15926Package
 
 		initEClass(templateRoleInstanceEClass, TemplateRoleInstance.class, "TemplateRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTemplateRoleInstance_TemplateRole(), this.getTemplateRole(), this.getTemplateRole_Instances(), "templateRole", null, 0, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTemplateRoleInstance_PropertyInstance(), this.getClass_(), null, "propertyInstance", null, 1, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(objectPropertyInstanceEClass, ObjectPropertyInstance.class, "ObjectPropertyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjectPropertyInstance_Property(), this.getObjectProperty(), this.getObjectProperty_Instances(), "property", null, 0, 1, ObjectPropertyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectPropertyInstance_Value(), this.getIndividual(), null, "value", null, 0, 1, ObjectPropertyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(propertyInstanceEClass, PropertyInstance.class, "PropertyInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTemplateRoleInstance_PropertyInstance(), this.getThing(), null, "propertyInstance", null, 1, 1, TemplateRoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(thingEClass, Thing.class, "Thing", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThing_Classes(), this.getClass_(), this.getClass_Individuals(), "classes", null, 0, -1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

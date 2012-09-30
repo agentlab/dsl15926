@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.util;
 
@@ -15,18 +11,13 @@ import org.eclipse.emf.ecore.EObject;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.ClassExpression;
-import ru.agentlab.dsl15926.ClassProperty;
-import ru.agentlab.dsl15926.DataProperty;
-import ru.agentlab.dsl15926.DataPropertyInstance;
+import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.DataRange;
+import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
-import ru.agentlab.dsl15926.ObjectProperty;
-import ru.agentlab.dsl15926.ObjectPropertyInstance;
 import ru.agentlab.dsl15926.Pattern;
-import ru.agentlab.dsl15926.PropertyInstance;
 import ru.agentlab.dsl15926.Repository;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
@@ -111,16 +102,8 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseObjectProperty(ObjectProperty object) {
-				return createObjectPropertyAdapter();
-			}
-			@Override
-			public Adapter caseDataProperty(DataProperty object) {
-				return createDataPropertyAdapter();
-			}
-			@Override
-			public Adapter caseClassProperty(ClassProperty object) {
-				return createClassPropertyAdapter();
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseDataRange(DataRange object) {
@@ -135,8 +118,8 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createIndividualAdapter();
 			}
 			@Override
-			public Adapter caseDataPropertyInstance(DataPropertyInstance object) {
-				return createDataPropertyInstanceAdapter();
+			public Adapter caseData(Data object) {
+				return createDataAdapter();
 			}
 			@Override
 			public Adapter caseClass(ru.agentlab.dsl15926.Class object) {
@@ -153,14 +136,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTemplateRoleInstance(TemplateRoleInstance object) {
 				return createTemplateRoleInstanceAdapter();
-			}
-			@Override
-			public Adapter caseObjectPropertyInstance(ObjectPropertyInstance object) {
-				return createObjectPropertyInstanceAdapter();
-			}
-			@Override
-			public Adapter casePropertyInstance(PropertyInstance object) {
-				return createPropertyInstanceAdapter();
 			}
 			@Override
 			public Adapter caseThing(Thing object) {
@@ -257,44 +232,16 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.ObjectProperty <em>Object Property</em>}'.
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.ObjectProperty
+	 * @see ru.agentlab.dsl15926.DataType
 	 * @generated
 	 */
-	public Adapter createObjectPropertyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataProperty <em>Data Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.DataProperty
-	 * @generated
-	 */
-	public Adapter createDataPropertyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.ClassProperty <em>Class Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.ClassProperty
-	 * @generated
-	 */
-	public Adapter createClassPropertyAdapter() {
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 
@@ -341,16 +288,16 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataPropertyInstance <em>Data Property Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.DataPropertyInstance
+	 * @see ru.agentlab.dsl15926.Data
 	 * @generated
 	 */
-	public Adapter createDataPropertyInstanceAdapter() {
+	public Adapter createDataAdapter() {
 		return null;
 	}
 
@@ -407,34 +354,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTemplateRoleInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.ObjectPropertyInstance <em>Object Property Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance
-	 * @generated
-	 */
-	public Adapter createObjectPropertyInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.PropertyInstance <em>Property Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.PropertyInstance
-	 * @generated
-	 */
-	public Adapter createPropertyInstanceAdapter() {
 		return null;
 	}
 

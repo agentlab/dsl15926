@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.util;
 
@@ -13,18 +9,13 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.ClassExpression;
-import ru.agentlab.dsl15926.ClassProperty;
-import ru.agentlab.dsl15926.DataProperty;
-import ru.agentlab.dsl15926.DataPropertyInstance;
+import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.DataRange;
+import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
-import ru.agentlab.dsl15926.ObjectProperty;
-import ru.agentlab.dsl15926.ObjectPropertyInstance;
 import ru.agentlab.dsl15926.Pattern;
-import ru.agentlab.dsl15926.PropertyInstance;
 import ru.agentlab.dsl15926.Repository;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
@@ -125,26 +116,12 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Dsl15926Package.OBJECT_PROPERTY: {
-				ObjectProperty objectProperty = (ObjectProperty)theEObject;
-				T result = caseObjectProperty(objectProperty);
-				if (result == null) result = caseClassProperty(objectProperty);
-				if (result == null) result = caseNamedElement(objectProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.DATA_PROPERTY: {
-				DataProperty dataProperty = (DataProperty)theEObject;
-				T result = caseDataProperty(dataProperty);
-				if (result == null) result = caseClassProperty(dataProperty);
-				if (result == null) result = caseNamedElement(dataProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.CLASS_PROPERTY: {
-				ClassProperty classProperty = (ClassProperty)theEObject;
-				T result = caseClassProperty(classProperty);
-				if (result == null) result = caseNamedElement(classProperty);
+			case Dsl15926Package.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = caseAbstractObject(dataType);
+				if (result == null) result = caseThing(dataType);
+				if (result == null) result = caseNamedElement(dataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -168,10 +145,12 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE: {
-				DataPropertyInstance dataPropertyInstance = (DataPropertyInstance)theEObject;
-				T result = caseDataPropertyInstance(dataPropertyInstance);
-				if (result == null) result = casePropertyInstance(dataPropertyInstance);
+			case Dsl15926Package.DATA: {
+				Data data = (Data)theEObject;
+				T result = caseData(data);
+				if (result == null) result = caseIndividual(data);
+				if (result == null) result = caseThing(data);
+				if (result == null) result = caseNamedElement(data);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,19 +179,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE: {
 				TemplateRoleInstance templateRoleInstance = (TemplateRoleInstance)theEObject;
 				T result = caseTemplateRoleInstance(templateRoleInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.OBJECT_PROPERTY_INSTANCE: {
-				ObjectPropertyInstance objectPropertyInstance = (ObjectPropertyInstance)theEObject;
-				T result = caseObjectPropertyInstance(objectPropertyInstance);
-				if (result == null) result = casePropertyInstance(objectPropertyInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.PROPERTY_INSTANCE: {
-				PropertyInstance propertyInstance = (PropertyInstance)theEObject;
-				T result = casePropertyInstance(propertyInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -303,47 +269,17 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Property</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Property</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseObjectProperty(ObjectProperty object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataProperty(DataProperty object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseClassProperty(ClassProperty object) {
+	public T caseDataType(DataType object) {
 		return null;
 	}
 
@@ -393,17 +329,17 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Property Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Property Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataPropertyInstance(DataPropertyInstance object) {
+	public T caseData(Data object) {
 		return null;
 	}
 
@@ -464,36 +400,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTemplateRoleInstance(TemplateRoleInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Property Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Property Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseObjectPropertyInstance(ObjectPropertyInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePropertyInstance(PropertyInstance object) {
 		return null;
 	}
 

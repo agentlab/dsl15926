@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -14,34 +10,34 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import ru.agentlab.dsl15926.DataProperty;
-import ru.agentlab.dsl15926.DataPropertyInstance;
+import ru.agentlab.dsl15926.Data;
+import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Property Instance</b></em>'.
+ * An implementation of the model object '<em><b>Data</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl#getProperty <em>Property</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.DataImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.DataImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements DataPropertyInstance {
+public class DataImpl extends IndividualImpl implements Data {
 	/**
-	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProperty()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataProperty property;
+	protected DataType dataType;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -68,7 +64,7 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataPropertyInstanceImpl() {
+	protected DataImpl() {
 		super();
 	}
 
@@ -79,7 +75,7 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Dsl15926Package.Literals.DATA_PROPERTY_INSTANCE;
+		return Dsl15926Package.Literals.DATA;
 	}
 
 	/**
@@ -87,16 +83,16 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataProperty getProperty() {
-		if (property != null && property.eIsProxy()) {
-			InternalEObject oldProperty = (InternalEObject)property;
-			property = (DataProperty)eResolveProxy(oldProperty);
-			if (property != oldProperty) {
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, oldProperty, property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.DATA__DATA_TYPE, oldDataType, dataType));
 			}
 		}
-		return property;
+		return dataType;
 	}
 
 	/**
@@ -104,8 +100,8 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataProperty basicGetProperty() {
-		return property;
+	public DataType basicGetDataType() {
+		return dataType;
 	}
 
 	/**
@@ -113,11 +109,11 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetProperty(DataProperty newProperty, NotificationChain msgs) {
-		DataProperty oldProperty = property;
-		property = newProperty;
+	public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, oldProperty, newProperty);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA__DATA_TYPE, oldDataType, newDataType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -128,18 +124,18 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProperty(DataProperty newProperty) {
-		if (newProperty != property) {
+	public void setDataType(DataType newDataType) {
+		if (newDataType != dataType) {
 			NotificationChain msgs = null;
-			if (property != null)
-				msgs = ((InternalEObject)property).eInverseRemove(this, Dsl15926Package.DATA_PROPERTY__INSTANCES, DataProperty.class, msgs);
-			if (newProperty != null)
-				msgs = ((InternalEObject)newProperty).eInverseAdd(this, Dsl15926Package.DATA_PROPERTY__INSTANCES, DataProperty.class, msgs);
-			msgs = basicSetProperty(newProperty, msgs);
+			if (dataType != null)
+				msgs = ((InternalEObject)dataType).eInverseRemove(this, Dsl15926Package.DATA_TYPE__DATA, DataType.class, msgs);
+			if (newDataType != null)
+				msgs = ((InternalEObject)newDataType).eInverseAdd(this, Dsl15926Package.DATA_TYPE__DATA, DataType.class, msgs);
+			msgs = basicSetDataType(newDataType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY, newProperty, newProperty));
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA__DATA_TYPE, newDataType, newDataType));
 	}
 
 	/**
@@ -160,7 +156,7 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA__VALUE, oldValue, value));
 	}
 
 	/**
@@ -171,10 +167,10 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				if (property != null)
-					msgs = ((InternalEObject)property).eInverseRemove(this, Dsl15926Package.DATA_PROPERTY__INSTANCES, DataProperty.class, msgs);
-				return basicSetProperty((DataProperty)otherEnd, msgs);
+			case Dsl15926Package.DATA__DATA_TYPE:
+				if (dataType != null)
+					msgs = ((InternalEObject)dataType).eInverseRemove(this, Dsl15926Package.DATA_TYPE__DATA, DataType.class, msgs);
+				return basicSetDataType((DataType)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -187,8 +183,8 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				return basicSetProperty(null, msgs);
+			case Dsl15926Package.DATA__DATA_TYPE:
+				return basicSetDataType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,10 +197,10 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				if (resolve) return getProperty();
-				return basicGetProperty();
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE:
+			case Dsl15926Package.DATA__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
+			case Dsl15926Package.DATA__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -218,10 +214,10 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				setProperty((DataProperty)newValue);
+			case Dsl15926Package.DATA__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE:
+			case Dsl15926Package.DATA__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -236,10 +232,10 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				setProperty((DataProperty)null);
+			case Dsl15926Package.DATA__DATA_TYPE:
+				setDataType((DataType)null);
 				return;
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE:
+			case Dsl15926Package.DATA__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -254,9 +250,9 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__PROPERTY:
-				return property != null;
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE__VALUE:
+			case Dsl15926Package.DATA__DATA_TYPE:
+				return dataType != null;
+			case Dsl15926Package.DATA__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -278,4 +274,4 @@ public class DataPropertyInstanceImpl extends PropertyInstanceImpl implements Da
 		return result.toString();
 	}
 
-} //DataPropertyInstanceImpl
+} //DataImpl

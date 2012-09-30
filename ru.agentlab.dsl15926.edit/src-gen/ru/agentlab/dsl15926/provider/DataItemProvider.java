@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -20,18 +16,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ru.agentlab.dsl15926.ClassProperty;
+import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.Dsl15926Package;
 
 /**
- * This is the item provider adapter for a {@link ru.agentlab.dsl15926.ClassProperty} object.
+ * This is the item provider adapter for a {@link ru.agentlab.dsl15926.Data} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClassPropertyItemProvider
-	extends NamedElementItemProvider
+public class DataItemProvider
+	extends IndividualItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +42,7 @@ public class ClassPropertyItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassPropertyItemProvider(AdapterFactory adapterFactory) {
+	public DataItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,31 +57,65 @@ public class ClassPropertyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDomainPropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Domain feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDomainPropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ClassProperty_domain_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ClassProperty_domain_feature", "_UI_ClassProperty_type"),
-				 Dsl15926Package.Literals.CLASS_PROPERTY__DOMAIN,
+				 getString("_UI_Data_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Data_dataType_feature", "_UI_Data_type"),
+				 Dsl15926Package.Literals.DATA__DATA_TYPE,
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Data_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Data_value_feature", "_UI_Data_type"),
+				 Dsl15926Package.Literals.DATA__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Data.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Data"));
 	}
 
 	/**
@@ -94,10 +126,10 @@ public class ClassPropertyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ClassProperty)object).getLabel();
+		String label = ((Data)object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ClassProperty_type") :
-			getString("_UI_ClassProperty_type") + " " + label;
+			getString("_UI_Data_type") :
+			getString("_UI_Data_type") + " " + label;
 	}
 
 	/**
@@ -110,6 +142,12 @@ public class ClassPropertyItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Data.class)) {
+			case Dsl15926Package.DATA__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

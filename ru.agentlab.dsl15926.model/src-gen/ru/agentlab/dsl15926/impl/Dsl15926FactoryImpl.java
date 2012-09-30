@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -15,14 +11,12 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.DataProperty;
-import ru.agentlab.dsl15926.DataPropertyInstance;
+import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.DataRange;
+import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
-import ru.agentlab.dsl15926.ObjectProperty;
-import ru.agentlab.dsl15926.ObjectPropertyInstance;
 import ru.agentlab.dsl15926.Pattern;
 import ru.agentlab.dsl15926.Repository;
 import ru.agentlab.dsl15926.Template;
@@ -77,17 +71,15 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 			case Dsl15926Package.TEMPLATE: return createTemplate();
 			case Dsl15926Package.TEMPLATE_ROLE: return createTemplateRole();
 			case Dsl15926Package.REPOSITORY: return createRepository();
-			case Dsl15926Package.OBJECT_PROPERTY: return createObjectProperty();
-			case Dsl15926Package.DATA_PROPERTY: return createDataProperty();
+			case Dsl15926Package.DATA_TYPE: return createDataType();
 			case Dsl15926Package.DATA_RANGE: return createDataRange();
 			case Dsl15926Package.ANNOTATION: return createAnnotation();
 			case Dsl15926Package.INDIVIDUAL: return createIndividual();
-			case Dsl15926Package.DATA_PROPERTY_INSTANCE: return createDataPropertyInstance();
+			case Dsl15926Package.DATA: return createData();
 			case Dsl15926Package.CLASS: return createClass();
 			case Dsl15926Package.TEMPLATE_INSTANCE: return createTemplateInstance();
 			case Dsl15926Package.PATTERN: return createPattern();
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE: return createTemplateRoleInstance();
-			case Dsl15926Package.OBJECT_PROPERTY_INSTANCE: return createObjectPropertyInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -128,19 +120,9 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectProperty createObjectProperty() {
-		ObjectPropertyImpl objectProperty = new ObjectPropertyImpl();
-		return objectProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataProperty createDataProperty() {
-		DataPropertyImpl dataProperty = new DataPropertyImpl();
-		return dataProperty;
+	public DataType createDataType() {
+		DataTypeImpl dataType = new DataTypeImpl();
+		return dataType;
 	}
 
 	/**
@@ -178,9 +160,9 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataPropertyInstance createDataPropertyInstance() {
-		DataPropertyInstanceImpl dataPropertyInstance = new DataPropertyInstanceImpl();
-		return dataPropertyInstance;
+	public Data createData() {
+		DataImpl data = new DataImpl();
+		return data;
 	}
 
 	/**
@@ -221,16 +203,6 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	public TemplateRoleInstance createTemplateRoleInstance() {
 		TemplateRoleInstanceImpl templateRoleInstance = new TemplateRoleInstanceImpl();
 		return templateRoleInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ObjectPropertyInstance createObjectPropertyInstance() {
-		ObjectPropertyInstanceImpl objectPropertyInstance = new ObjectPropertyInstanceImpl();
-		return objectPropertyInstance;
 	}
 
 	/**

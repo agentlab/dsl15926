@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.impl;
 
@@ -22,11 +18,9 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.AbstractObject;
-import ru.agentlab.dsl15926.ClassProperty;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
-import ru.agentlab.dsl15926.Thing;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +29,6 @@ import ru.agentlab.dsl15926.Thing;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getQualifiedCardinality <em>Qualified Cardinality</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getInstances <em>Instances</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl#getEntityType <em>Entity Type</em>}</li>
@@ -45,16 +38,6 @@ import ru.agentlab.dsl15926.Thing;
  * @generated
  */
 public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
-	/**
-	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProperty()
-	 * @generated
-	 * @ordered
-	 */
-	protected ClassProperty property;
-
 	/**
 	 * The default value of the '{@link #getQualifiedCardinality() <em>Qualified Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,44 +95,6 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	@Override
 	protected EClass eStaticClass() {
 		return Dsl15926Package.Literals.TEMPLATE_ROLE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ClassProperty getProperty() {
-		if (property != null && property.eIsProxy()) {
-			InternalEObject oldProperty = (InternalEObject)property;
-			property = (ClassProperty)eResolveProxy(oldProperty);
-			if (property != oldProperty) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Dsl15926Package.TEMPLATE_ROLE__PROPERTY, oldProperty, property));
-			}
-		}
-		return property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ClassProperty basicGetProperty() {
-		return property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProperty(ClassProperty newProperty) {
-		ClassProperty oldProperty = property;
-		property = newProperty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.TEMPLATE_ROLE__PROPERTY, oldProperty, property));
 	}
 
 	/**
@@ -260,9 +205,6 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_ROLE__PROPERTY:
-				if (resolve) return getProperty();
-				return basicGetProperty();
 			case Dsl15926Package.TEMPLATE_ROLE__QUALIFIED_CARDINALITY:
 				return getQualifiedCardinality();
 			case Dsl15926Package.TEMPLATE_ROLE__INSTANCES:
@@ -283,9 +225,6 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_ROLE__PROPERTY:
-				setProperty((ClassProperty)newValue);
-				return;
 			case Dsl15926Package.TEMPLATE_ROLE__QUALIFIED_CARDINALITY:
 				setQualifiedCardinality((String)newValue);
 				return;
@@ -308,9 +247,6 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_ROLE__PROPERTY:
-				setProperty((ClassProperty)null);
-				return;
 			case Dsl15926Package.TEMPLATE_ROLE__QUALIFIED_CARDINALITY:
 				setQualifiedCardinality(QUALIFIED_CARDINALITY_EDEFAULT);
 				return;
@@ -332,8 +268,6 @@ public class TemplateRoleImpl extends NamedElementImpl implements TemplateRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Dsl15926Package.TEMPLATE_ROLE__PROPERTY:
-				return property != null;
 			case Dsl15926Package.TEMPLATE_ROLE__QUALIFIED_CARDINALITY:
 				return QUALIFIED_CARDINALITY_EDEFAULT == null ? qualifiedCardinality != null : !QUALIFIED_CARDINALITY_EDEFAULT.equals(qualifiedCardinality);
 			case Dsl15926Package.TEMPLATE_ROLE__INSTANCES:

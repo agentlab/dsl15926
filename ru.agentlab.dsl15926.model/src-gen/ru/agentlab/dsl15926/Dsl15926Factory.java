@@ -53,22 +53,13 @@ public interface Dsl15926Factory extends EFactory {
 	Repository createRepository();
 
 	/**
-	 * Returns a new object of class '<em>Object Property</em>'.
+	 * Returns a new object of class '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object Property</em>'.
+	 * @return a new object of class '<em>Data Type</em>'.
 	 * @generated
 	 */
-	ObjectProperty createObjectProperty();
-
-	/**
-	 * Returns a new object of class '<em>Data Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Property</em>'.
-	 * @generated
-	 */
-	DataProperty createDataProperty();
+	DataType createDataType();
 
 	/**
 	 * Returns a new object of class '<em>Data Range</em>'.
@@ -98,13 +89,13 @@ public interface Dsl15926Factory extends EFactory {
 	Individual createIndividual();
 
 	/**
-	 * Returns a new object of class '<em>Data Property Instance</em>'.
+	 * Returns a new object of class '<em>Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Property Instance</em>'.
+	 * @return a new object of class '<em>Data</em>'.
 	 * @generated
 	 */
-	DataPropertyInstance createDataPropertyInstance();
+	Data createData();
 
 	/**
 	 * Returns a new object of class '<em>Class</em>'.
@@ -141,15 +132,6 @@ public interface Dsl15926Factory extends EFactory {
 	 * @generated
 	 */
 	TemplateRoleInstance createTemplateRoleInstance();
-
-	/**
-	 * Returns a new object of class '<em>Object Property Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object Property Instance</em>'.
-	 * @generated
-	 */
-	ObjectPropertyInstance createObjectPropertyInstance();
 
 	/**
 	 * Returns the package supported by this factory.

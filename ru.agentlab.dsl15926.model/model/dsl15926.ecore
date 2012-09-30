@@ -19,8 +19,6 @@
         eType="#//TemplateInstance" eOpposite="#//TemplateInstance/template"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateRole" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
-        eType="#//ClassProperty"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedCardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
         eType="#//TemplateRoleInstance" eOpposite="#//TemplateRoleInstance/templateRole"/>
@@ -29,14 +27,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Repository">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//Class" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objectProperties" upperBound="-1"
-        eType="#//ObjectProperty" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPropereties" upperBound="-1"
-        eType="#//DataProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
+        eType="#//DataType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="templates" upperBound="-1"
         eType="#//Template" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRanges" upperBound="-1"
-        eType="#//DataRange" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datas" upperBound="-1"
+        eType="#//Data" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -52,37 +48,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
         eType="#//Annotation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectProperty" eSuperTypes="#//ClassProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//AbstractObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="range" upperBound="-1"
-        eType="#//AbstractObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superPropertyOf" upperBound="-1"
-        eType="#//ObjectProperty" eOpposite="#//ObjectProperty/subPropertyOf"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subPropertyOf" upperBound="-1"
-        eType="#//ObjectProperty" eOpposite="#//ObjectProperty/superPropertyOf"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="disjointProperties" upperBound="-1"
-        eType="#//ObjectProperty"/>
+        eType="#//DataRange" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentProperties" upperBound="-1"
-        eType="#//ObjectProperty"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//ObjectPropertyInstance" eOpposite="#//ObjectPropertyInstance/property"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataProperty" eSuperTypes="#//ClassProperty">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="range" upperBound="-1"
-        eType="#//DataRange"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentProperties" upperBound="-1"
-        eType="#//DataProperty"/>
+        eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subPropertyOf" upperBound="-1"
-        eType="#//DataProperty" eOpposite="#//DataProperty/superPropertyOf"/>
+        eType="#//DataType" eOpposite="#//DataType/superPropertyOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superPropertyOf" upperBound="-1"
-        eType="#//DataProperty" eOpposite="#//DataProperty/subPropertyOf"/>
+        eType="#//DataType" eOpposite="#//DataType/subPropertyOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="disjointProperties" upperBound="-1"
-        eType="#//DataProperty"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" eType="#//DataPropertyInstance"
-        eOpposite="#//DataPropertyInstance/property"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassProperty" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" upperBound="-1"
-        eType="#//AbstractObject"/>
+        eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        eOpposite="#//Data/dataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="Annotation">
@@ -90,14 +68,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Individual" eSuperTypes="#//Thing">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValues" upperBound="-1"
-        eType="#//PropertyInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
         eType="#//Pattern" eOpposite="#//Pattern/individuals"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataPropertyInstance" eSuperTypes="#//PropertyInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//DataProperty"
-        eOpposite="#//DataProperty/instances"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//Individual">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"
+        eOpposite="#//DataType/data"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//AbstractObject">
@@ -118,14 +94,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="templateRole" eType="#//TemplateRole"
         eOpposite="#//TemplateRole/instances"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyInstance" lowerBound="1"
-        eType="#//Class"/>
+        eType="#//Thing"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyInstance" eSuperTypes="#//PropertyInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//ObjectProperty"
-        eOpposite="#//ObjectProperty/instances"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Individual"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyInstance" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Thing" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//Class" eOpposite="#//Class/individuals"/>

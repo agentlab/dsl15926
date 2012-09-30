@@ -145,49 +145,26 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.ObjectProperty} instances.
+	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.DataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectPropertyItemProvider objectPropertyItemProvider;
+	protected DataTypeItemProvider dataTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.ObjectProperty}.
+	 * This creates an adapter for a {@link ru.agentlab.dsl15926.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectPropertyAdapter() {
-		if (objectPropertyItemProvider == null) {
-			objectPropertyItemProvider = new ObjectPropertyItemProvider(this);
+	public Adapter createDataTypeAdapter() {
+		if (dataTypeItemProvider == null) {
+			dataTypeItemProvider = new DataTypeItemProvider(this);
 		}
 
-		return objectPropertyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.DataProperty} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataPropertyItemProvider dataPropertyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.DataProperty}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataPropertyAdapter() {
-		if (dataPropertyItemProvider == null) {
-			dataPropertyItemProvider = new DataPropertyItemProvider(this);
-		}
-
-		return dataPropertyItemProvider;
+		return dataTypeItemProvider;
 	}
 
 	/**
@@ -260,26 +237,26 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.DataPropertyInstance} instances.
+	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Data} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataPropertyInstanceItemProvider dataPropertyInstanceItemProvider;
+	protected DataItemProvider dataItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.DataPropertyInstance}.
+	 * This creates an adapter for a {@link ru.agentlab.dsl15926.Data}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataPropertyInstanceAdapter() {
-		if (dataPropertyInstanceItemProvider == null) {
-			dataPropertyInstanceItemProvider = new DataPropertyInstanceItemProvider(this);
+	public Adapter createDataAdapter() {
+		if (dataItemProvider == null) {
+			dataItemProvider = new DataItemProvider(this);
 		}
 
-		return dataPropertyInstanceItemProvider;
+		return dataItemProvider;
 	}
 
 	/**
@@ -372,29 +349,6 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		}
 
 		return templateRoleInstanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.ObjectPropertyInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectPropertyInstanceItemProvider objectPropertyInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.ObjectPropertyInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createObjectPropertyInstanceAdapter() {
-		if (objectPropertyInstanceItemProvider == null) {
-			objectPropertyInstanceItemProvider = new ObjectPropertyInstanceItemProvider(this);
-		}
-
-		return objectPropertyInstanceItemProvider;
 	}
 
 	/**
@@ -499,17 +453,15 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		if (templateItemProvider != null) templateItemProvider.dispose();
 		if (templateRoleItemProvider != null) templateRoleItemProvider.dispose();
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
-		if (objectPropertyItemProvider != null) objectPropertyItemProvider.dispose();
-		if (dataPropertyItemProvider != null) dataPropertyItemProvider.dispose();
+		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (dataRangeItemProvider != null) dataRangeItemProvider.dispose();
 		if (annotationItemProvider != null) annotationItemProvider.dispose();
 		if (individualItemProvider != null) individualItemProvider.dispose();
-		if (dataPropertyInstanceItemProvider != null) dataPropertyInstanceItemProvider.dispose();
+		if (dataItemProvider != null) dataItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (templateInstanceItemProvider != null) templateInstanceItemProvider.dispose();
 		if (patternItemProvider != null) patternItemProvider.dispose();
 		if (templateRoleInstanceItemProvider != null) templateRoleInstanceItemProvider.dispose();
-		if (objectPropertyInstanceItemProvider != null) objectPropertyInstanceItemProvider.dispose();
 	}
 
 }

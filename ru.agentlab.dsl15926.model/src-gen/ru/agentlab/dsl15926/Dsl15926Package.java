@@ -104,7 +104,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getThing()
 	 * @generated
 	 */
-	int THING = 18;
+	int THING = 14;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -353,22 +353,13 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE_ROLE__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE_ROLE__PROPERTY = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Qualified Cardinality</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_ROLE__QUALIFIED_CARDINALITY = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int TEMPLATE_ROLE__QUALIFIED_CARDINALITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Instances</b></em>' reference list.
@@ -377,7 +368,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_ROLE__INSTANCES = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TEMPLATE_ROLE__INSTANCES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Entity Type</b></em>' reference.
@@ -386,7 +377,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_ROLE__ENTITY_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TEMPLATE_ROLE__ENTITY_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Template Role</em>' class.
@@ -395,7 +386,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_ROLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TEMPLATE_ROLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -417,22 +408,13 @@ public interface Dsl15926Package extends EPackage {
 	int REPOSITORY__CLASSES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Object Properties</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__OBJECT_PROPERTIES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Data Propereties</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__DATA_PROPERETIES = 2;
+	int REPOSITORY__DATA_TYPES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Templates</b></em>' containment reference list.
@@ -441,16 +423,16 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__TEMPLATES = 3;
+	int REPOSITORY__TEMPLATES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Data Ranges</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Datas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__DATA_RANGES = 4;
+	int REPOSITORY__DATAS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -459,7 +441,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__URL = 5;
+	int REPOSITORY__URL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' attribute list.
@@ -468,7 +450,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__IMPORTS = 6;
+	int REPOSITORY__IMPORTS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Individuals</b></em>' containment reference list.
@@ -477,7 +459,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__INDIVIDUALS = 7;
+	int REPOSITORY__INDIVIDUALS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Template Instances</b></em>' containment reference list.
@@ -486,7 +468,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__TEMPLATE_INSTANCES = 8;
+	int REPOSITORY__TEMPLATE_INSTANCES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Patterns</b></em>' containment reference list.
@@ -495,7 +477,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__PATTERNS = 9;
+	int REPOSITORY__PATTERNS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -504,63 +486,17 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = 10;
+	int REPOSITORY_FEATURE_COUNT = 9;
 
 	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassPropertyImpl <em>Class Property</em>}' class.
+	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataTypeImpl <em>Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.ClassPropertyImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClassProperty()
+	 * @see ru.agentlab.dsl15926.impl.DataTypeImpl
+	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataType()
 	 * @generated
 	 */
-	int CLASS_PROPERTY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_PROPERTY__LABEL = NAMED_ELEMENT__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_PROPERTY__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_PROPERTY__DOMAIN = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Class Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_PROPERTY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl <em>Object Property</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.ObjectPropertyImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getObjectProperty()
-	 * @generated
-	 */
-	int OBJECT_PROPERTY = 5;
+	int DATA_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -569,7 +505,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__LABEL = CLASS_PROPERTY__LABEL;
+	int DATA_TYPE__LABEL = ABSTRACT_OBJECT__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
@@ -578,52 +514,61 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__ANNOTATIONS = CLASS_PROPERTY__ANNOTATIONS;
+	int DATA_TYPE__ANNOTATIONS = ABSTRACT_OBJECT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Domain</b></em>' reference list.
+	 * The feature id for the '<em><b>Classes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__DOMAIN = CLASS_PROPERTY__DOMAIN;
+	int DATA_TYPE__CLASSES = ABSTRACT_OBJECT__CLASSES;
 
 	/**
-	 * The feature id for the '<em><b>Range</b></em>' reference list.
+	 * The feature id for the '<em><b>Sub Class Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__RANGE = CLASS_PROPERTY_FEATURE_COUNT + 0;
+	int DATA_TYPE__SUB_CLASS_OF = ABSTRACT_OBJECT__SUB_CLASS_OF;
 
 	/**
-	 * The feature id for the '<em><b>Super Property Of</b></em>' reference list.
+	 * The feature id for the '<em><b>Super Class Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__SUPER_PROPERTY_OF = CLASS_PROPERTY_FEATURE_COUNT + 1;
+	int DATA_TYPE__SUPER_CLASS_OF = ABSTRACT_OBJECT__SUPER_CLASS_OF;
 
 	/**
-	 * The feature id for the '<em><b>Sub Property Of</b></em>' reference list.
+	 * The feature id for the '<em><b>Disjoint Classes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__SUB_PROPERTY_OF = CLASS_PROPERTY_FEATURE_COUNT + 2;
+	int DATA_TYPE__DISJOINT_CLASSES = ABSTRACT_OBJECT__DISJOINT_CLASSES;
 
 	/**
-	 * The feature id for the '<em><b>Disjoint Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent Classes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__DISJOINT_PROPERTIES = CLASS_PROPERTY_FEATURE_COUNT + 3;
+	int DATA_TYPE__EQUIVALENT_CLASSES = ABSTRACT_OBJECT__EQUIVALENT_CLASSES;
+
+	/**
+	 * The feature id for the '<em><b>Range</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__RANGE = ABSTRACT_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Equivalent Properties</b></em>' reference list.
@@ -632,80 +577,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PROPERTY__EQUIVALENT_PROPERTIES = CLASS_PROPERTY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_PROPERTY__INSTANCES = CLASS_PROPERTY_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Object Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_PROPERTY_FEATURE_COUNT = CLASS_PROPERTY_FEATURE_COUNT + 6;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataPropertyImpl <em>Data Property</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.DataPropertyImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataProperty()
-	 * @generated
-	 */
-	int DATA_PROPERTY = 6;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_PROPERTY__LABEL = CLASS_PROPERTY__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_PROPERTY__ANNOTATIONS = CLASS_PROPERTY__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_PROPERTY__DOMAIN = CLASS_PROPERTY__DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Range</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_PROPERTY__RANGE = CLASS_PROPERTY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Properties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_PROPERTY__EQUIVALENT_PROPERTIES = CLASS_PROPERTY_FEATURE_COUNT + 1;
+	int DATA_TYPE__EQUIVALENT_PROPERTIES = ABSTRACT_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sub Property Of</b></em>' reference list.
@@ -714,7 +586,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY__SUB_PROPERTY_OF = CLASS_PROPERTY_FEATURE_COUNT + 2;
+	int DATA_TYPE__SUB_PROPERTY_OF = ABSTRACT_OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Super Property Of</b></em>' reference list.
@@ -723,7 +595,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY__SUPER_PROPERTY_OF = CLASS_PROPERTY_FEATURE_COUNT + 3;
+	int DATA_TYPE__SUPER_PROPERTY_OF = ABSTRACT_OBJECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Disjoint Properties</b></em>' reference list.
@@ -732,25 +604,25 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY__DISJOINT_PROPERTIES = CLASS_PROPERTY_FEATURE_COUNT + 4;
+	int DATA_TYPE__DISJOINT_PROPERTIES = ABSTRACT_OBJECT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Instances</b></em>' reference.
+	 * The feature id for the '<em><b>Data</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY__INSTANCES = CLASS_PROPERTY_FEATURE_COUNT + 5;
+	int DATA_TYPE__DATA = ABSTRACT_OBJECT_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>Data Property</em>' class.
+	 * The number of structural features of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY_FEATURE_COUNT = CLASS_PROPERTY_FEATURE_COUNT + 6;
+	int DATA_TYPE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
@@ -760,7 +632,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataRange()
 	 * @generated
 	 */
-	int DATA_RANGE = 8;
+	int DATA_RANGE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Data Range</em>' class.
@@ -779,7 +651,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getAnnotation()
 	 * @generated
 	 */
-	int ANNOTATION = 9;
+	int ANNOTATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -816,7 +688,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getIndividual()
 	 * @generated
 	 */
-	int INDIVIDUAL = 10;
+	int INDIVIDUAL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -846,22 +718,13 @@ public interface Dsl15926Package extends EPackage {
 	int INDIVIDUAL__CLASSES = THING__CLASSES;
 
 	/**
-	 * The feature id for the '<em><b>Property Values</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIVIDUAL__PROPERTY_VALUES = THING_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Patterns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL__PATTERNS = THING_FEATURE_COUNT + 1;
+	int INDIVIDUAL__PATTERNS = THING_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Individual</em>' class.
@@ -870,45 +733,62 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 2;
+	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.PropertyInstanceImpl <em>Property Instance</em>}' class.
+	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.PropertyInstanceImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPropertyInstance()
+	 * @see ru.agentlab.dsl15926.impl.DataImpl
+	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getData()
 	 * @generated
 	 */
-	int PROPERTY_INSTANCE = 17;
+	int DATA = 9;
 
 	/**
-	 * The number of structural features of the '<em>Property Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_INSTANCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl <em>Data Property Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataPropertyInstance()
-	 * @generated
-	 */
-	int DATA_PROPERTY_INSTANCE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY_INSTANCE__PROPERTY = PROPERTY_INSTANCE_FEATURE_COUNT + 0;
+	int DATA__LABEL = INDIVIDUAL__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__ANNOTATIONS = INDIVIDUAL__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Classes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__CLASSES = INDIVIDUAL__CLASSES;
+
+	/**
+	 * The feature id for the '<em><b>Patterns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__PATTERNS = INDIVIDUAL__PATTERNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__DATA_TYPE = INDIVIDUAL_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -917,16 +797,16 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY_INSTANCE__VALUE = PROPERTY_INSTANCE_FEATURE_COUNT + 1;
+	int DATA__VALUE = INDIVIDUAL_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Data Property Instance</em>' class.
+	 * The number of structural features of the '<em>Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_PROPERTY_INSTANCE_FEATURE_COUNT = PROPERTY_INSTANCE_FEATURE_COUNT + 2;
+	int DATA_FEATURE_COUNT = INDIVIDUAL_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
@@ -936,7 +816,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 12;
+	int CLASS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1027,7 +907,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getTemplateInstance()
 	 * @generated
 	 */
-	int TEMPLATE_INSTANCE = 13;
+	int TEMPLATE_INSTANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Template</b></em>' reference.
@@ -1064,7 +944,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPattern()
 	 * @generated
 	 */
-	int PATTERN = 14;
+	int PATTERN = 12;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1110,7 +990,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getTemplateRoleInstance()
 	 * @generated
 	 */
-	int TEMPLATE_ROLE_INSTANCE = 15;
+	int TEMPLATE_ROLE_INSTANCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Template Role</b></em>' reference.
@@ -1138,44 +1018,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @ordered
 	 */
 	int TEMPLATE_ROLE_INSTANCE_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ObjectPropertyInstanceImpl <em>Object Property Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.ObjectPropertyInstanceImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getObjectPropertyInstance()
-	 * @generated
-	 */
-	int OBJECT_PROPERTY_INSTANCE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_PROPERTY_INSTANCE__PROPERTY = PROPERTY_INSTANCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_PROPERTY_INSTANCE__VALUE = PROPERTY_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Object Property Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_PROPERTY_INSTANCE_FEATURE_COUNT = PROPERTY_INSTANCE_FEATURE_COUNT + 2;
-
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.AbstractObject <em>Abstract Object</em>}'.
@@ -1274,17 +1116,6 @@ public interface Dsl15926Package extends EPackage {
 	EClass getTemplateRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.TemplateRole#getProperty <em>Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Property</em>'.
-	 * @see ru.agentlab.dsl15926.TemplateRole#getProperty()
-	 * @see #getTemplateRole()
-	 * @generated
-	 */
-	EReference getTemplateRole_Property();
-
-	/**
 	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.TemplateRole#getQualifiedCardinality <em>Qualified Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1339,26 +1170,15 @@ public interface Dsl15926Package extends EPackage {
 	EReference getRepository_Classes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getObjectProperties <em>Object Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDataTypes <em>Data Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Object Properties</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getObjectProperties()
+	 * @return the meta object for the containment reference list '<em>Data Types</em>'.
+	 * @see ru.agentlab.dsl15926.Repository#getDataTypes()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_ObjectProperties();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDataPropereties <em>Data Propereties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data Propereties</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getDataPropereties()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EReference getRepository_DataPropereties();
+	EReference getRepository_DataTypes();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getTemplates <em>Templates</em>}'.
@@ -1372,15 +1192,15 @@ public interface Dsl15926Package extends EPackage {
 	EReference getRepository_Templates();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDataRanges <em>Data Ranges</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDatas <em>Datas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data Ranges</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getDataRanges()
+	 * @return the meta object for the containment reference list '<em>Datas</em>'.
+	 * @see ru.agentlab.dsl15926.Repository#getDatas()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_DataRanges();
+	EReference getRepository_Datas();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.Repository#getUrl <em>Url</em>}'.
@@ -1470,177 +1290,80 @@ public interface Dsl15926Package extends EPackage {
 	EReference getNamedElement_Annotations();
 
 	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.ObjectProperty <em>Object Property</em>}'.
+	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Object Property</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty
+	 * @return the meta object for class '<em>Data Type</em>'.
+	 * @see ru.agentlab.dsl15926.DataType
 	 * @generated
 	 */
-	EClass getObjectProperty();
+	EClass getDataType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getRange <em>Range</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.DataType#getRange <em>Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Range</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getRange()
-	 * @see #getObjectProperty()
+	 * @return the meta object for the containment reference list '<em>Range</em>'.
+	 * @see ru.agentlab.dsl15926.DataType#getRange()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getObjectProperty_Range();
+	EReference getDataType_Range();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getSuperPropertyOf <em>Super Property Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Super Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getSuperPropertyOf()
-	 * @see #getObjectProperty()
-	 * @generated
-	 */
-	EReference getObjectProperty_SuperPropertyOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getSubPropertyOf <em>Sub Property Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getSubPropertyOf()
-	 * @see #getObjectProperty()
-	 * @generated
-	 */
-	EReference getObjectProperty_SubPropertyOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getDisjointProperties <em>Disjoint Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Disjoint Properties</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getDisjointProperties()
-	 * @see #getObjectProperty()
-	 * @generated
-	 */
-	EReference getObjectProperty_DisjointProperties();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getEquivalentProperties <em>Equivalent Properties</em>}'.
+	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getEquivalentProperties <em>Equivalent Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Equivalent Properties</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getEquivalentProperties()
-	 * @see #getObjectProperty()
+	 * @see ru.agentlab.dsl15926.DataType#getEquivalentProperties()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getObjectProperty_EquivalentProperties();
+	EReference getDataType_EquivalentProperties();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ObjectProperty#getInstances <em>Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Instances</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectProperty#getInstances()
-	 * @see #getObjectProperty()
-	 * @generated
-	 */
-	EReference getObjectProperty_Instances();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataProperty <em>Data Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Property</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty
-	 * @generated
-	 */
-	EClass getDataProperty();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataProperty#getRange <em>Range</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Range</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getRange()
-	 * @see #getDataProperty()
-	 * @generated
-	 */
-	EReference getDataProperty_Range();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataProperty#getEquivalentProperties <em>Equivalent Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Equivalent Properties</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getEquivalentProperties()
-	 * @see #getDataProperty()
-	 * @generated
-	 */
-	EReference getDataProperty_EquivalentProperties();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataProperty#getSubPropertyOf <em>Sub Property Of</em>}'.
+	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getSubPropertyOf <em>Sub Property Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Sub Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getSubPropertyOf()
-	 * @see #getDataProperty()
+	 * @see ru.agentlab.dsl15926.DataType#getSubPropertyOf()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getDataProperty_SubPropertyOf();
+	EReference getDataType_SubPropertyOf();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataProperty#getSuperPropertyOf <em>Super Property Of</em>}'.
+	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getSuperPropertyOf <em>Super Property Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Super Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getSuperPropertyOf()
-	 * @see #getDataProperty()
+	 * @see ru.agentlab.dsl15926.DataType#getSuperPropertyOf()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getDataProperty_SuperPropertyOf();
+	EReference getDataType_SuperPropertyOf();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataProperty#getDisjointProperties <em>Disjoint Properties</em>}'.
+	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getDisjointProperties <em>Disjoint Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Disjoint Properties</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getDisjointProperties()
-	 * @see #getDataProperty()
+	 * @see ru.agentlab.dsl15926.DataType#getDisjointProperties()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getDataProperty_DisjointProperties();
+	EReference getDataType_DisjointProperties();
 
 	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.DataProperty#getInstances <em>Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Instances</em>'.
-	 * @see ru.agentlab.dsl15926.DataProperty#getInstances()
-	 * @see #getDataProperty()
+	 * @return the meta object for the reference list '<em>Data</em>'.
+	 * @see ru.agentlab.dsl15926.DataType#getData()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getDataProperty_Instances();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.ClassProperty <em>Class Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Class Property</em>'.
-	 * @see ru.agentlab.dsl15926.ClassProperty
-	 * @generated
-	 */
-	EClass getClassProperty();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.ClassProperty#getDomain <em>Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Domain</em>'.
-	 * @see ru.agentlab.dsl15926.ClassProperty#getDomain()
-	 * @see #getClassProperty()
-	 * @generated
-	 */
-	EReference getClassProperty_Domain();
+	EReference getDataType_Data();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataRange <em>Data Range</em>}'.
@@ -1695,17 +1418,6 @@ public interface Dsl15926Package extends EPackage {
 	EClass getIndividual();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Individual#getPropertyValues <em>Property Values</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Property Values</em>'.
-	 * @see ru.agentlab.dsl15926.Individual#getPropertyValues()
-	 * @see #getIndividual()
-	 * @generated
-	 */
-	EReference getIndividual_PropertyValues();
-
-	/**
 	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.Individual#getPatterns <em>Patterns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1717,36 +1429,36 @@ public interface Dsl15926Package extends EPackage {
 	EReference getIndividual_Patterns();
 
 	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataPropertyInstance <em>Data Property Instance</em>}'.
+	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Property Instance</em>'.
-	 * @see ru.agentlab.dsl15926.DataPropertyInstance
+	 * @return the meta object for class '<em>Data</em>'.
+	 * @see ru.agentlab.dsl15926.Data
 	 * @generated
 	 */
-	EClass getDataPropertyInstance();
+	EClass getData();
 
 	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.DataPropertyInstance#getProperty <em>Property</em>}'.
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Data#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Property</em>'.
-	 * @see ru.agentlab.dsl15926.DataPropertyInstance#getProperty()
-	 * @see #getDataPropertyInstance()
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see ru.agentlab.dsl15926.Data#getDataType()
+	 * @see #getData()
 	 * @generated
 	 */
-	EReference getDataPropertyInstance_Property();
+	EReference getData_DataType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.DataPropertyInstance#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.Data#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see ru.agentlab.dsl15926.DataPropertyInstance#getValue()
-	 * @see #getDataPropertyInstance()
+	 * @see ru.agentlab.dsl15926.Data#getValue()
+	 * @see #getData()
 	 * @generated
 	 */
-	EAttribute getDataPropertyInstance_Value();
+	EAttribute getData_Value();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Class <em>Class</em>}'.
@@ -1853,48 +1565,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getTemplateRoleInstance_PropertyInstance();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.ObjectPropertyInstance <em>Object Property Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Object Property Instance</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance
-	 * @generated
-	 */
-	EClass getObjectPropertyInstance();
-
-	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.ObjectPropertyInstance#getProperty <em>Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Property</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance#getProperty()
-	 * @see #getObjectPropertyInstance()
-	 * @generated
-	 */
-	EReference getObjectPropertyInstance_Property();
-
-	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.ObjectPropertyInstance#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see ru.agentlab.dsl15926.ObjectPropertyInstance#getValue()
-	 * @see #getObjectPropertyInstance()
-	 * @generated
-	 */
-	EReference getObjectPropertyInstance_Value();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.PropertyInstance <em>Property Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property Instance</em>'.
-	 * @see ru.agentlab.dsl15926.PropertyInstance
-	 * @generated
-	 */
-	EClass getPropertyInstance();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Thing <em>Thing</em>}'.
@@ -2018,14 +1688,6 @@ public interface Dsl15926Package extends EPackage {
 		EClass TEMPLATE_ROLE = eINSTANCE.getTemplateRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEMPLATE_ROLE__PROPERTY = eINSTANCE.getTemplateRole_Property();
-
-		/**
 		 * The meta object literal for the '<em><b>Qualified Cardinality</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2068,20 +1730,12 @@ public interface Dsl15926Package extends EPackage {
 		EReference REPOSITORY__CLASSES = eINSTANCE.getRepository_Classes();
 
 		/**
-		 * The meta object literal for the '<em><b>Object Properties</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__OBJECT_PROPERTIES = eINSTANCE.getRepository_ObjectProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Propereties</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPOSITORY__DATA_PROPERETIES = eINSTANCE.getRepository_DataPropereties();
+		EReference REPOSITORY__DATA_TYPES = eINSTANCE.getRepository_DataTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Templates</b></em>' containment reference list feature.
@@ -2092,12 +1746,12 @@ public interface Dsl15926Package extends EPackage {
 		EReference REPOSITORY__TEMPLATES = eINSTANCE.getRepository_Templates();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Ranges</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Datas</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__DATA_RANGES = eINSTANCE.getRepository_DataRanges();
+		EReference REPOSITORY__DATAS = eINSTANCE.getRepository_Datas();
 
 		/**
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
@@ -2166,46 +1820,22 @@ public interface Dsl15926Package extends EPackage {
 		EReference NAMED_ELEMENT__ANNOTATIONS = eINSTANCE.getNamedElement_Annotations();
 
 		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ObjectPropertyImpl <em>Object Property</em>}' class.
+		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataTypeImpl <em>Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.ObjectPropertyImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getObjectProperty()
+		 * @see ru.agentlab.dsl15926.impl.DataTypeImpl
+		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataType()
 		 * @generated
 		 */
-		EClass OBJECT_PROPERTY = eINSTANCE.getObjectProperty();
+		EClass DATA_TYPE = eINSTANCE.getDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Range</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Range</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_PROPERTY__RANGE = eINSTANCE.getObjectProperty_Range();
-
-		/**
-		 * The meta object literal for the '<em><b>Super Property Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY__SUPER_PROPERTY_OF = eINSTANCE.getObjectProperty_SuperPropertyOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Property Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY__SUB_PROPERTY_OF = eINSTANCE.getObjectProperty_SubPropertyOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Disjoint Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY__DISJOINT_PROPERTIES = eINSTANCE.getObjectProperty_DisjointProperties();
+		EReference DATA_TYPE__RANGE = eINSTANCE.getDataType_Range();
 
 		/**
 		 * The meta object literal for the '<em><b>Equivalent Properties</b></em>' reference list feature.
@@ -2213,41 +1843,7 @@ public interface Dsl15926Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_PROPERTY__EQUIVALENT_PROPERTIES = eINSTANCE.getObjectProperty_EquivalentProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY__INSTANCES = eINSTANCE.getObjectProperty_Instances();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataPropertyImpl <em>Data Property</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.DataPropertyImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataProperty()
-		 * @generated
-		 */
-		EClass DATA_PROPERTY = eINSTANCE.getDataProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Range</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_PROPERTY__RANGE = eINSTANCE.getDataProperty_Range();
-
-		/**
-		 * The meta object literal for the '<em><b>Equivalent Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_PROPERTY__EQUIVALENT_PROPERTIES = eINSTANCE.getDataProperty_EquivalentProperties();
+		EReference DATA_TYPE__EQUIVALENT_PROPERTIES = eINSTANCE.getDataType_EquivalentProperties();
 
 		/**
 		 * The meta object literal for the '<em><b>Sub Property Of</b></em>' reference list feature.
@@ -2255,7 +1851,7 @@ public interface Dsl15926Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_PROPERTY__SUB_PROPERTY_OF = eINSTANCE.getDataProperty_SubPropertyOf();
+		EReference DATA_TYPE__SUB_PROPERTY_OF = eINSTANCE.getDataType_SubPropertyOf();
 
 		/**
 		 * The meta object literal for the '<em><b>Super Property Of</b></em>' reference list feature.
@@ -2263,7 +1859,7 @@ public interface Dsl15926Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_PROPERTY__SUPER_PROPERTY_OF = eINSTANCE.getDataProperty_SuperPropertyOf();
+		EReference DATA_TYPE__SUPER_PROPERTY_OF = eINSTANCE.getDataType_SuperPropertyOf();
 
 		/**
 		 * The meta object literal for the '<em><b>Disjoint Properties</b></em>' reference list feature.
@@ -2271,33 +1867,15 @@ public interface Dsl15926Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_PROPERTY__DISJOINT_PROPERTIES = eINSTANCE.getDataProperty_DisjointProperties();
+		EReference DATA_TYPE__DISJOINT_PROPERTIES = eINSTANCE.getDataType_DisjointProperties();
 
 		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_PROPERTY__INSTANCES = eINSTANCE.getDataProperty_Instances();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ClassPropertyImpl <em>Class Property</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.ClassPropertyImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClassProperty()
-		 * @generated
-		 */
-		EClass CLASS_PROPERTY = eINSTANCE.getClassProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Domain</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS_PROPERTY__DOMAIN = eINSTANCE.getClassProperty_Domain();
+		EReference DATA_TYPE__DATA = eINSTANCE.getDataType_Data();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
@@ -2346,14 +1924,6 @@ public interface Dsl15926Package extends EPackage {
 		EClass INDIVIDUAL = eINSTANCE.getIndividual();
 
 		/**
-		 * The meta object literal for the '<em><b>Property Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INDIVIDUAL__PROPERTY_VALUES = eINSTANCE.getIndividual_PropertyValues();
-
-		/**
 		 * The meta object literal for the '<em><b>Patterns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2362,22 +1932,22 @@ public interface Dsl15926Package extends EPackage {
 		EReference INDIVIDUAL__PATTERNS = eINSTANCE.getIndividual_Patterns();
 
 		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl <em>Data Property Instance</em>}' class.
+		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.DataPropertyInstanceImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataPropertyInstance()
+		 * @see ru.agentlab.dsl15926.impl.DataImpl
+		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getData()
 		 * @generated
 		 */
-		EClass DATA_PROPERTY_INSTANCE = eINSTANCE.getDataPropertyInstance();
+		EClass DATA = eINSTANCE.getData();
 
 		/**
-		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_PROPERTY_INSTANCE__PROPERTY = eINSTANCE.getDataPropertyInstance_Property();
+		EReference DATA__DATA_TYPE = eINSTANCE.getData_DataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -2385,7 +1955,7 @@ public interface Dsl15926Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_PROPERTY_INSTANCE__VALUE = eINSTANCE.getDataPropertyInstance_Value();
+		EAttribute DATA__VALUE = eINSTANCE.getData_Value();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
@@ -2474,42 +2044,6 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference TEMPLATE_ROLE_INSTANCE__PROPERTY_INSTANCE = eINSTANCE.getTemplateRoleInstance_PropertyInstance();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ObjectPropertyInstanceImpl <em>Object Property Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.ObjectPropertyInstanceImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getObjectPropertyInstance()
-		 * @generated
-		 */
-		EClass OBJECT_PROPERTY_INSTANCE = eINSTANCE.getObjectPropertyInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY_INSTANCE__PROPERTY = eINSTANCE.getObjectPropertyInstance_Property();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_PROPERTY_INSTANCE__VALUE = eINSTANCE.getObjectPropertyInstance_Value();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.PropertyInstanceImpl <em>Property Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.PropertyInstanceImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPropertyInstance()
-		 * @generated
-		 */
-		EClass PROPERTY_INSTANCE = eINSTANCE.getPropertyInstance();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ThingImpl <em>Thing</em>}' class.

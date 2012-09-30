@@ -19,10 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getClasses <em>Classes</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.Repository#getObjectProperties <em>Object Properties</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.Repository#getDataPropereties <em>Data Propereties</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.Repository#getDataTypes <em>Data Types</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getTemplates <em>Templates</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.Repository#getDataRanges <em>Data Ranges</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.Repository#getDatas <em>Datas</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getUrl <em>Url</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getImports <em>Imports</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getIndividuals <em>Individuals</em>}</li>
@@ -53,36 +52,20 @@ public interface Repository extends EObject {
 	EList<ru.agentlab.dsl15926.Class> getClasses();
 
 	/**
-	 * Returns the value of the '<em><b>Object Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.ObjectProperty}.
+	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Object Properties</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Object Properties</em>' containment reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_ObjectProperties()
+	 * @return the value of the '<em>Data Types</em>' containment reference list.
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_DataTypes()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	EList<ObjectProperty> getObjectProperties();
-
-	/**
-	 * Returns the value of the '<em><b>Data Propereties</b></em>' containment reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.DataProperty}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Propereties</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Propereties</em>' containment reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_DataPropereties()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<DataProperty> getDataPropereties();
+	EList<DataType> getDataTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Templates</b></em>' containment reference list.
@@ -101,20 +84,20 @@ public interface Repository extends EObject {
 	EList<Template> getTemplates();
 
 	/**
-	 * Returns the value of the '<em><b>Data Ranges</b></em>' containment reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.DataRange}.
+	 * Returns the value of the '<em><b>Datas</b></em>' containment reference list.
+	 * The list contents are of type {@link ru.agentlab.dsl15926.Data}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Ranges</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Datas</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Ranges</em>' containment reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_DataRanges()
+	 * @return the value of the '<em>Datas</em>' containment reference list.
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Datas()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	EList<DataRange> getDataRanges();
+	EList<Data> getDatas();
 
 	/**
 	 * Returns the value of the '<em><b>Url</b></em>' attribute.
