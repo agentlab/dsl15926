@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.Data;
@@ -176,7 +177,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<ru.agentlab.dsl15926.Class> getClasses() {
 		if (classes == null) {
-			classes = new EObjectContainmentEList.Resolving<ru.agentlab.dsl15926.Class>(ru.agentlab.dsl15926.Class.class, this, Dsl15926Package.REPOSITORY__CLASSES);
+			classes = new EObjectContainmentWithInverseEList.Resolving<ru.agentlab.dsl15926.Class>(ru.agentlab.dsl15926.Class.class, this, Dsl15926Package.REPOSITORY__CLASSES, Dsl15926Package.CLASS__REPOSITORY);
 		}
 		return classes;
 	}
@@ -188,7 +189,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<DataType> getDataTypes() {
 		if (dataTypes == null) {
-			dataTypes = new EObjectContainmentEList.Resolving<DataType>(DataType.class, this, Dsl15926Package.REPOSITORY__DATA_TYPES);
+			dataTypes = new EObjectContainmentWithInverseEList.Resolving<DataType>(DataType.class, this, Dsl15926Package.REPOSITORY__DATA_TYPES, Dsl15926Package.DATA_TYPE__REPOSITORY);
 		}
 		return dataTypes;
 	}
@@ -200,7 +201,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<Template> getTemplates() {
 		if (templates == null) {
-			templates = new EObjectContainmentEList.Resolving<Template>(Template.class, this, Dsl15926Package.REPOSITORY__TEMPLATES);
+			templates = new EObjectContainmentWithInverseEList.Resolving<Template>(Template.class, this, Dsl15926Package.REPOSITORY__TEMPLATES, Dsl15926Package.TEMPLATE__REPOSITORY);
 		}
 		return templates;
 	}
@@ -212,7 +213,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<Data> getDatas() {
 		if (datas == null) {
-			datas = new EObjectContainmentEList.Resolving<Data>(Data.class, this, Dsl15926Package.REPOSITORY__DATAS);
+			datas = new EObjectContainmentWithInverseEList.Resolving<Data>(Data.class, this, Dsl15926Package.REPOSITORY__DATAS, Dsl15926Package.DATA__REPOSITORY);
 		}
 		return datas;
 	}
@@ -257,7 +258,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<Individual> getIndividuals() {
 		if (individuals == null) {
-			individuals = new EObjectContainmentEList.Resolving<Individual>(Individual.class, this, Dsl15926Package.REPOSITORY__INDIVIDUALS);
+			individuals = new EObjectContainmentWithInverseEList.Resolving<Individual>(Individual.class, this, Dsl15926Package.REPOSITORY__INDIVIDUALS, Dsl15926Package.INDIVIDUAL__REPOSITORY);
 		}
 		return individuals;
 	}
@@ -269,7 +270,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<TemplateInstance> getTemplateInstances() {
 		if (templateInstances == null) {
-			templateInstances = new EObjectContainmentEList.Resolving<TemplateInstance>(TemplateInstance.class, this, Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES);
+			templateInstances = new EObjectContainmentWithInverseEList.Resolving<TemplateInstance>(TemplateInstance.class, this, Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES, Dsl15926Package.TEMPLATE_INSTANCE__REPOSITORY);
 		}
 		return templateInstances;
 	}
@@ -281,9 +282,36 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 */
 	public EList<Pattern> getPatterns() {
 		if (patterns == null) {
-			patterns = new EObjectContainmentEList.Resolving<Pattern>(Pattern.class, this, Dsl15926Package.REPOSITORY__PATTERNS);
+			patterns = new EObjectContainmentWithInverseEList.Resolving<Pattern>(Pattern.class, this, Dsl15926Package.REPOSITORY__PATTERNS, Dsl15926Package.PATTERN__REPOSITORY);
 		}
 		return patterns;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Dsl15926Package.REPOSITORY__CLASSES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__DATA_TYPES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataTypes()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__TEMPLATES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplates()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__DATAS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDatas()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIndividuals()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplateInstances()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__PATTERNS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPatterns()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

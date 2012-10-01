@@ -34,6 +34,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Class}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Class#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Classes</em>' containment reference list isn't clear,
@@ -42,7 +43,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Classes</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Classes()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.Class#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<ru.agentlab.dsl15926.Class> getClasses();
@@ -50,6 +52,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.DataType}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.DataType#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
@@ -58,7 +61,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Types</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_DataTypes()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.DataType#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<DataType> getDataTypes();
@@ -66,6 +70,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Templates</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Template}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Template#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Templates</em>' containment reference list isn't clear,
@@ -74,7 +79,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Templates</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Templates()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.Template#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Template> getTemplates();
@@ -82,6 +88,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Datas</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Data}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Datas</em>' containment reference list isn't clear,
@@ -90,7 +97,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Datas</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Datas()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.Data#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Data> getDatas();
@@ -140,6 +148,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Individuals</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Individual}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Individual#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Individuals</em>' containment reference list isn't clear,
@@ -148,7 +157,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Individuals</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Individuals()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.Individual#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Individual> getIndividuals();
@@ -156,6 +166,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Template Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.TemplateInstance}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.TemplateInstance#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Template Instances</em>' containment reference list isn't clear,
@@ -164,7 +175,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Template Instances</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_TemplateInstances()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.TemplateInstance#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<TemplateInstance> getTemplateInstances();
@@ -172,6 +184,7 @@ public interface Repository extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Patterns</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Pattern}.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Pattern#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Patterns</em>' containment reference list isn't clear,
@@ -180,7 +193,8 @@ public interface Repository extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Patterns</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Patterns()
-	 * @model containment="true" resolveProxies="true"
+	 * @see ru.agentlab.dsl15926.Pattern#getRepository
+	 * @model opposite="repository" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Pattern> getPatterns();

@@ -312,13 +312,22 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE__INSTANCES = ABSTRACT_OBJECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATE__REPOSITORY = ABSTRACT_OBJECT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 2;
+	int TEMPLATE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl <em>Template Role</em>}' class.
@@ -612,13 +621,22 @@ public interface Dsl15926Package extends EPackage {
 	int DATA_TYPE__DATA = ABSTRACT_OBJECT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__REPOSITORY = ABSTRACT_OBJECT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 6;
+	int DATA_TYPE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
@@ -732,13 +750,22 @@ public interface Dsl15926Package extends EPackage {
 	int INDIVIDUAL__PATTERNS = THING_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL__REPOSITORY = THING_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Individual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 1;
+	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
@@ -757,7 +784,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__LABEL = INDIVIDUAL__LABEL;
+	int DATA__LABEL = THING__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -766,7 +793,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__ANNOTATIONS = INDIVIDUAL__ANNOTATIONS;
+	int DATA__ANNOTATIONS = THING__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Classes</b></em>' reference list.
@@ -775,16 +802,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__CLASSES = INDIVIDUAL__CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Patterns</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__PATTERNS = INDIVIDUAL__PATTERNS;
+	int DATA__CLASSES = THING__CLASSES;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -793,7 +811,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__DATA_TYPE = INDIVIDUAL_FEATURE_COUNT + 0;
+	int DATA__DATA_TYPE = THING_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -802,7 +820,16 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__VALUE = INDIVIDUAL_FEATURE_COUNT + 1;
+	int DATA__VALUE = THING_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__REPOSITORY = THING_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data</em>' class.
@@ -811,7 +838,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FEATURE_COUNT = INDIVIDUAL_FEATURE_COUNT + 2;
+	int DATA_FEATURE_COUNT = THING_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
@@ -896,13 +923,22 @@ public interface Dsl15926Package extends EPackage {
 	int CLASS__INDIVIDUALS = ABSTRACT_OBJECT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__REPOSITORY = ABSTRACT_OBJECT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 1;
+	int CLASS_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl <em>Template Instance</em>}' class.
@@ -933,13 +969,22 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE_INSTANCE__ROLES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATE_INSTANCE__REPOSITORY = 2;
+
+	/**
 	 * The number of structural features of the '<em>Template Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_INSTANCE_FEATURE_COUNT = 2;
+	int TEMPLATE_INSTANCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.PatternImpl <em>Pattern</em>}' class.
@@ -979,13 +1024,22 @@ public interface Dsl15926Package extends EPackage {
 	int PATTERN__INDIVIDUALS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN__REPOSITORY = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleInstanceImpl <em>Template Role Instance</em>}' class.
@@ -1110,6 +1164,17 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getTemplate_Instances();
+
+	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Template#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.Template#getRepository()
+	 * @see #getTemplate()
+	 * @generated
+	 */
+	EReference getTemplate_Repository();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.TemplateRole <em>Template Role</em>}'.
@@ -1372,6 +1437,17 @@ public interface Dsl15926Package extends EPackage {
 	EReference getDataType_Data();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.DataType#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.DataType#getRepository()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EReference getDataType_Repository();
+
+	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataRange <em>Data Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1446,6 +1522,17 @@ public interface Dsl15926Package extends EPackage {
 	EReference getIndividual_Patterns();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Individual#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.Individual#getRepository()
+	 * @see #getIndividual()
+	 * @generated
+	 */
+	EReference getIndividual_Repository();
+
+	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1478,6 +1565,17 @@ public interface Dsl15926Package extends EPackage {
 	EAttribute getData_Value();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.Data#getRepository()
+	 * @see #getData()
+	 * @generated
+	 */
+	EReference getData_Repository();
+
+	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Class <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1497,6 +1595,17 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getClass_Individuals();
+
+	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Class#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.Class#getRepository()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Repository();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.TemplateInstance <em>Template Instance</em>}'.
@@ -1531,6 +1640,17 @@ public interface Dsl15926Package extends EPackage {
 	EReference getTemplateInstance_Roles();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.TemplateInstance#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.TemplateInstance#getRepository()
+	 * @see #getTemplateInstance()
+	 * @generated
+	 */
+	EReference getTemplateInstance_Repository();
+
+	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Pattern <em>Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1550,6 +1670,17 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getPattern_Individuals();
+
+	/**
+	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Pattern#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see ru.agentlab.dsl15926.Pattern#getRepository()
+	 * @see #getPattern()
+	 * @generated
+	 */
+	EReference getPattern_Repository();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.TemplateRoleInstance <em>Template Role Instance</em>}'.
@@ -1693,6 +1824,14 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference TEMPLATE__INSTANCES = eINSTANCE.getTemplate_Instances();
+
+		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEMPLATE__REPOSITORY = eINSTANCE.getTemplate_Repository();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleImpl <em>Template Role</em>}' class.
@@ -1895,6 +2034,14 @@ public interface Dsl15926Package extends EPackage {
 		EReference DATA_TYPE__DATA = eINSTANCE.getDataType_Data();
 
 		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_TYPE__REPOSITORY = eINSTANCE.getDataType_Repository();
+
+		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1957,6 +2104,14 @@ public interface Dsl15926Package extends EPackage {
 		EReference INDIVIDUAL__PATTERNS = eINSTANCE.getIndividual_Patterns();
 
 		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INDIVIDUAL__REPOSITORY = eINSTANCE.getIndividual_Repository();
+
+		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1983,6 +2138,14 @@ public interface Dsl15926Package extends EPackage {
 		EAttribute DATA__VALUE = eINSTANCE.getData_Value();
 
 		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__REPOSITORY = eINSTANCE.getData_Repository();
+
+		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1999,6 +2162,14 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference CLASS__INDIVIDUALS = eINSTANCE.getClass_Individuals();
+
+		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__REPOSITORY = eINSTANCE.getClass_Repository();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.TemplateInstanceImpl <em>Template Instance</em>}' class.
@@ -2027,6 +2198,14 @@ public interface Dsl15926Package extends EPackage {
 		EReference TEMPLATE_INSTANCE__ROLES = eINSTANCE.getTemplateInstance_Roles();
 
 		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEMPLATE_INSTANCE__REPOSITORY = eINSTANCE.getTemplateInstance_Repository();
+
+		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.PatternImpl <em>Pattern</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2043,6 +2222,14 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference PATTERN__INDIVIDUALS = eINSTANCE.getPattern_Individuals();
+
+		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATTERN__REPOSITORY = eINSTANCE.getPattern_Repository();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleInstanceImpl <em>Template Role Instance</em>}' class.

@@ -10,9 +10,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import ru.agentlab.dsl15926.Data;
 import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
+import ru.agentlab.dsl15926.Repository;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,12 +25,13 @@ import ru.agentlab.dsl15926.Dsl15926Package;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.DataImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.DataImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.DataImpl#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DataImpl extends IndividualImpl implements Data {
+public class DataImpl extends ThingImpl implements Data {
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -164,6 +167,57 @@ public class DataImpl extends IndividualImpl implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Repository getRepository() {
+		if (eContainerFeatureID() != Dsl15926Package.DATA__REPOSITORY) return null;
+		return (Repository)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Repository basicGetRepository() {
+		if (eContainerFeatureID() != Dsl15926Package.DATA__REPOSITORY) return null;
+		return (Repository)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRepository(Repository newRepository, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRepository, Dsl15926Package.DATA__REPOSITORY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRepository(Repository newRepository) {
+		if (newRepository != eInternalContainer() || (eContainerFeatureID() != Dsl15926Package.DATA__REPOSITORY && newRepository != null)) {
+			if (EcoreUtil.isAncestor(this, newRepository))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRepository != null)
+				msgs = ((InternalEObject)newRepository).eInverseAdd(this, Dsl15926Package.REPOSITORY__DATAS, Repository.class, msgs);
+			msgs = basicSetRepository(newRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.DATA__REPOSITORY, newRepository, newRepository));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -171,6 +225,10 @@ public class DataImpl extends IndividualImpl implements Data {
 				if (dataType != null)
 					msgs = ((InternalEObject)dataType).eInverseRemove(this, Dsl15926Package.DATA_TYPE__DATA, DataType.class, msgs);
 				return basicSetDataType((DataType)otherEnd, msgs);
+			case Dsl15926Package.DATA__REPOSITORY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetRepository((Repository)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -185,8 +243,24 @@ public class DataImpl extends IndividualImpl implements Data {
 		switch (featureID) {
 			case Dsl15926Package.DATA__DATA_TYPE:
 				return basicSetDataType(null, msgs);
+			case Dsl15926Package.DATA__REPOSITORY:
+				return basicSetRepository(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Dsl15926Package.DATA__REPOSITORY:
+				return eInternalContainer().eInverseRemove(this, Dsl15926Package.REPOSITORY__DATAS, Repository.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -202,6 +276,9 @@ public class DataImpl extends IndividualImpl implements Data {
 				return basicGetDataType();
 			case Dsl15926Package.DATA__VALUE:
 				return getValue();
+			case Dsl15926Package.DATA__REPOSITORY:
+				if (resolve) return getRepository();
+				return basicGetRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,6 +296,9 @@ public class DataImpl extends IndividualImpl implements Data {
 				return;
 			case Dsl15926Package.DATA__VALUE:
 				setValue((String)newValue);
+				return;
+			case Dsl15926Package.DATA__REPOSITORY:
+				setRepository((Repository)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,6 +318,9 @@ public class DataImpl extends IndividualImpl implements Data {
 			case Dsl15926Package.DATA__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case Dsl15926Package.DATA__REPOSITORY:
+				setRepository((Repository)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +337,8 @@ public class DataImpl extends IndividualImpl implements Data {
 				return dataType != null;
 			case Dsl15926Package.DATA__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case Dsl15926Package.DATA__REPOSITORY:
+				return basicGetRepository() != null;
 		}
 		return super.eIsSet(featureID);
 	}

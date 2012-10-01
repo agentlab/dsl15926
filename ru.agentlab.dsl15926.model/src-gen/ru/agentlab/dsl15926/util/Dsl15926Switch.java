@@ -148,7 +148,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 			case Dsl15926Package.DATA: {
 				Data data = (Data)theEObject;
 				T result = caseData(data);
-				if (result == null) result = caseIndividual(data);
 				if (result == null) result = caseThing(data);
 				if (result == null) result = caseNamedElement(data);
 				if (result == null) result = defaultCase(theEObject);

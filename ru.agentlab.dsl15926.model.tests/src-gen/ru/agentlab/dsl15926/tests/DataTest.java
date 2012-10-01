@@ -13,7 +13,7 @@ import ru.agentlab.dsl15926.Dsl15926Factory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataTest extends IndividualTest {
+public class DataTest extends ThingTest {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getTemplate <em>Template</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getRoles <em>Roles</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.TemplateInstance#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +68,33 @@ public interface TemplateInstance extends EObject {
 	 * @generated
 	 */
 	EList<TemplateRoleInstance> getRoles();
+
+	/**
+	 * Returns the value of the '<em><b>Repository</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Repository#getTemplateInstances <em>Template Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Repository</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Repository</em>' container reference.
+	 * @see #setRepository(Repository)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getTemplateInstance_Repository()
+	 * @see ru.agentlab.dsl15926.Repository#getTemplateInstances
+	 * @model opposite="templateInstances" transient="false"
+	 * @generated
+	 */
+	Repository getRepository();
+
+	/**
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.TemplateInstance#getRepository <em>Repository</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Repository</em>' container reference.
+	 * @see #getRepository()
+	 * @generated
+	 */
+	void setRepository(Repository value);
 
 } // TemplateInstance

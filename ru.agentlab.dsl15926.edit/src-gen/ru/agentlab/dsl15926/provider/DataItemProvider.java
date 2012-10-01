@@ -29,7 +29,7 @@ import ru.agentlab.dsl15926.Dsl15926Package;
  * @generated
  */
 public class DataItemProvider
-	extends IndividualItemProvider
+	extends ThingItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

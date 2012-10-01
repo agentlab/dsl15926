@@ -13,6 +13,7 @@ package ru.agentlab.dsl15926;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.Data#getDataType <em>Data Type</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Data#getValue <em>Value</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,7 +21,7 @@ package ru.agentlab.dsl15926;
  * @model
  * @generated
  */
-public interface Data extends Individual {
+public interface Data extends Thing {
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.DataType#getData <em>Data</em>}'.
@@ -74,5 +75,33 @@ public interface Data extends Individual {
 	 * @generated
 	 */
 	void setValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Repository</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Repository#getDatas <em>Datas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Repository</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Repository</em>' container reference.
+	 * @see #setRepository(Repository)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getData_Repository()
+	 * @see ru.agentlab.dsl15926.Repository#getDatas
+	 * @model opposite="datas" transient="false"
+	 * @generated
+	 */
+	Repository getRepository();
+
+	/**
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Repository</em>' container reference.
+	 * @see #getRepository()
+	 * @generated
+	 */
+	void setRepository(Repository value);
 
 } // Data

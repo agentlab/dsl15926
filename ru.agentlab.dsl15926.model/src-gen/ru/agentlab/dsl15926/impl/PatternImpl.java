@@ -4,6 +4,7 @@ package ru.agentlab.dsl15926.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,12 +12,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.Pattern;
+import ru.agentlab.dsl15926.Repository;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,7 @@ import ru.agentlab.dsl15926.Pattern;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.PatternImpl#getIndividuals <em>Individuals</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.PatternImpl#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,12 +83,67 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Repository getRepository() {
+		if (eContainerFeatureID() != Dsl15926Package.PATTERN__REPOSITORY) return null;
+		return (Repository)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Repository basicGetRepository() {
+		if (eContainerFeatureID() != Dsl15926Package.PATTERN__REPOSITORY) return null;
+		return (Repository)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRepository(Repository newRepository, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRepository, Dsl15926Package.PATTERN__REPOSITORY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRepository(Repository newRepository) {
+		if (newRepository != eInternalContainer() || (eContainerFeatureID() != Dsl15926Package.PATTERN__REPOSITORY && newRepository != null)) {
+			if (EcoreUtil.isAncestor(this, newRepository))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRepository != null)
+				msgs = ((InternalEObject)newRepository).eInverseAdd(this, Dsl15926Package.REPOSITORY__PATTERNS, Repository.class, msgs);
+			msgs = basicSetRepository(newRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.PATTERN__REPOSITORY, newRepository, newRepository));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Dsl15926Package.PATTERN__INDIVIDUALS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIndividuals()).basicAdd(otherEnd, msgs);
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetRepository((Repository)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,8 +158,24 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 		switch (featureID) {
 			case Dsl15926Package.PATTERN__INDIVIDUALS:
 				return ((InternalEList<?>)getIndividuals()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				return basicSetRepository(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				return eInternalContainer().eInverseRemove(this, Dsl15926Package.REPOSITORY__PATTERNS, Repository.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -112,6 +188,9 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 		switch (featureID) {
 			case Dsl15926Package.PATTERN__INDIVIDUALS:
 				return getIndividuals();
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				if (resolve) return getRepository();
+				return basicGetRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,6 +208,9 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 				getIndividuals().clear();
 				getIndividuals().addAll((Collection<? extends Individual>)newValue);
 				return;
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				setRepository((Repository)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,6 +226,9 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 			case Dsl15926Package.PATTERN__INDIVIDUALS:
 				getIndividuals().clear();
 				return;
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				setRepository((Repository)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,6 +243,8 @@ public class PatternImpl extends NamedElementImpl implements Pattern {
 		switch (featureID) {
 			case Dsl15926Package.PATTERN__INDIVIDUALS:
 				return individuals != null && !individuals.isEmpty();
+			case Dsl15926Package.PATTERN__REPOSITORY:
+				return basicGetRepository() != null;
 		}
 		return super.eIsSet(featureID);
 	}
