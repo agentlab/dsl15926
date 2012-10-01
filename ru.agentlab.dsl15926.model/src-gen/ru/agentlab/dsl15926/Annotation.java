@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -18,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.Annotation#getType <em>Type</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Annotation#getValue <em>Value</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.Annotation#getLang <em>Lang</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +74,31 @@ public interface Annotation extends EObject {
 	 * @generated
 	 */
 	void setValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lang</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lang</em>' attribute.
+	 * @see #setLang(String)
+	 * @see ru.agentlab.dsl15926.Dsl15926Package#getAnnotation_Lang()
+	 * @model
+	 * @generated
+	 */
+	String getLang();
+
+	/**
+	 * Sets the value of the '{@link ru.agentlab.dsl15926.Annotation#getLang <em>Lang</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lang</em>' attribute.
+	 * @see #getLang()
+	 * @generated
+	 */
+	void setLang(String value);
 
 } // Annotation

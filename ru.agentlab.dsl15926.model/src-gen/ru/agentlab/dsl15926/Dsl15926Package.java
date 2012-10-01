@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -79,7 +75,7 @@ public interface Dsl15926Package extends EPackage {
 	int NAMED_ELEMENT__LABEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -116,7 +112,7 @@ public interface Dsl15926Package extends EPackage {
 	int THING__LABEL = NAMED_ELEMENT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -162,7 +158,7 @@ public interface Dsl15926Package extends EPackage {
 	int ABSTRACT_OBJECT__LABEL = THING__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,7 +240,7 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE__LABEL = ABSTRACT_OBJECT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -344,7 +340,7 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE_ROLE__LABEL = NAMED_ELEMENT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -508,7 +504,7 @@ public interface Dsl15926Package extends EPackage {
 	int DATA_TYPE__LABEL = ABSTRACT_OBJECT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -672,13 +668,22 @@ public interface Dsl15926Package extends EPackage {
 	int ANNOTATION__VALUE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__LANG = 2;
+
+	/**
 	 * The number of structural features of the '<em>Annotation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_FEATURE_COUNT = 2;
+	int ANNOTATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.IndividualImpl <em>Individual</em>}' class.
@@ -700,7 +705,7 @@ public interface Dsl15926Package extends EPackage {
 	int INDIVIDUAL__LABEL = THING__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -755,7 +760,7 @@ public interface Dsl15926Package extends EPackage {
 	int DATA__LABEL = INDIVIDUAL__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -828,7 +833,7 @@ public interface Dsl15926Package extends EPackage {
 	int CLASS__LABEL = ABSTRACT_OBJECT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -956,7 +961,7 @@ public interface Dsl15926Package extends EPackage {
 	int PATTERN__LABEL = NAMED_ELEMENT__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1018,6 +1023,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @ordered
 	 */
 	int TEMPLATE_ROLE_INSTANCE_FEATURE_COUNT = 2;
+
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.AbstractObject <em>Abstract Object</em>}'.
@@ -1279,10 +1285,10 @@ public interface Dsl15926Package extends EPackage {
 	EAttribute getNamedElement_Label();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.NamedElement#getAnnotations <em>Annotations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.NamedElement#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Annotations</em>'.
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
 	 * @see ru.agentlab.dsl15926.NamedElement#getAnnotations()
 	 * @see #getNamedElement()
 	 * @generated
@@ -1406,6 +1412,17 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAnnotation_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.Annotation#getLang <em>Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lang</em>'.
+	 * @see ru.agentlab.dsl15926.Annotation#getLang()
+	 * @see #getAnnotation()
+	 * @generated
+	 */
+	EAttribute getAnnotation_Lang();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Individual <em>Individual</em>}'.
@@ -1812,7 +1829,7 @@ public interface Dsl15926Package extends EPackage {
 		EAttribute NAMED_ELEMENT__LABEL = eINSTANCE.getNamedElement_Label();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1912,6 +1929,14 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute ANNOTATION__VALUE = eINSTANCE.getAnnotation_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Lang</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANNOTATION__LANG = eINSTANCE.getAnnotation_Lang();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.IndividualImpl <em>Individual</em>}' class.

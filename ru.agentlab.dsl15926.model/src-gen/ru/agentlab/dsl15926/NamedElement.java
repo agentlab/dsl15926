@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926;
 
@@ -55,17 +51,17 @@ public interface NamedElement extends EObject {
 	void setLabel(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Annotation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Annotations</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' reference list.
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
 	 * @see ru.agentlab.dsl15926.Dsl15926Package#getNamedElement_Annotations()
-	 * @model
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Annotation> getAnnotations();

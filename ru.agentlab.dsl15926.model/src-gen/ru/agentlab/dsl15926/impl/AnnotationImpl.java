@@ -21,6 +21,7 @@ import ru.agentlab.dsl15926.Dsl15926Package;
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.AnnotationImpl#getType <em>Type</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.AnnotationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.AnnotationImpl#getLang <em>Lang</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 	 * @ordered
 	 */
 	protected String value = VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLang() <em>Lang</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLang()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LANG_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLang() <em>Lang</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLang()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lang = LANG_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLang() {
+		return lang;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLang(String newLang) {
+		String oldLang = lang;
+		lang = newLang;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Dsl15926Package.ANNOTATION__LANG, oldLang, lang));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 				return getType();
 			case Dsl15926Package.ANNOTATION__VALUE:
 				return getValue();
+			case Dsl15926Package.ANNOTATION__LANG:
+				return getLang();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 				return;
 			case Dsl15926Package.ANNOTATION__VALUE:
 				setValue((String)newValue);
+				return;
+			case Dsl15926Package.ANNOTATION__LANG:
+				setLang((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 			case Dsl15926Package.ANNOTATION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case Dsl15926Package.ANNOTATION__LANG:
+				setLang(LANG_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case Dsl15926Package.ANNOTATION__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case Dsl15926Package.ANNOTATION__LANG:
+				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class AnnotationImpl extends EObjectImpl implements Annotation {
 		result.append(type);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", lang: ");
+		result.append(lang);
 		result.append(')');
 		return result.toString();
 	}

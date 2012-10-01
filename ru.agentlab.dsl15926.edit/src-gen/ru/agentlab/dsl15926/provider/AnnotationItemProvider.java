@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ru.agentlab.dsl15926.provider;
 
@@ -66,6 +62,7 @@ public class AnnotationItemProvider
 
 			addTypePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addLangPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,6 +112,28 @@ public class AnnotationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Lang feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLangPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Annotation_lang_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_lang_feature", "_UI_Annotation_type"),
+				 Dsl15926Package.Literals.ANNOTATION__LANG,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Annotation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,6 +172,7 @@ public class AnnotationItemProvider
 		switch (notification.getFeatureID(Annotation.class)) {
 			case Dsl15926Package.ANNOTATION__TYPE:
 			case Dsl15926Package.ANNOTATION__VALUE:
+			case Dsl15926Package.ANNOTATION__LANG:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
