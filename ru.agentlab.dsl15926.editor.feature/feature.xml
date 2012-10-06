@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="ru.agentlab.dsl15926"
-      label="Dsl15926"
+      id="ru.agentlab.dsl15926.editor.feature"
+      label="ISO 15926 DSL Tree-View Editor"
       version="1.0.0.qualifier"
       provider-name="AgentLab"
+      plugin="ru.agentlab.dsl15926.app"
       os="linux,macosx,win32"
       ws="cocoa,gtk,win32"
       nl="en_US"
