@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ru.agentlab:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ru.agentlab="http://agentlab.ru/models/dsl15926/2012/08" url="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates">
+  <classes label="Class" subClassOf="//@classes.3" superClassOf="//@classes.5 //@classes.6"/>
+  <classes label="Thing" superClassOf="//@classes.2 //@classes.3"/>
+  <classes label="PossibleIndividual" subClassOf="//@classes.1"/>
+  <classes label="AbstractObject" subClassOf="//@classes.1" superClassOf="//@classes.0 //@classes.4"/>
+  <classes label="Relationship" subClassOf="//@classes.3" superClassOf="//@classes.7"/>
+  <classes label="ClassOfIndividual" subClassOf="//@classes.0" superClassOf="//@classes.14 //@classes.15"/>
+  <classes label="ClassOfClass" subClassOf="//@classes.0" superClassOf="//@classes.12"/>
+  <classes label="FunctionalMapping" subClassOf="//@classes.4" superClassOf="//@classes.8"/>
+  <classes label="PropertyQuantity" subClassOf="//@classes.7" superClassOf="//@classes.9"/>
+  <classes label="ArithmeticNumber" subClassOf="//@classes.8" superClassOf="//@classes.10 //@classes.11"/>
+  <classes label="IntegerNumber" subClassOf="//@classes.9"/>
+  <classes label="RealNumber" subClassOf="//@classes.9"/>
+  <classes label="ClassOfClassOfRelationship" subClassOf="//@classes.6" superClassOf="//@classes.13"/>
+  <classes label="ClassOfScale" subClassOf="//@classes.12"/>
+  <classes label="ClassOfPeriodInTime" subClassOf="//@classes.5"/>
+  <classes label="ClassOfArrangedIndividual" subClassOf="//@classes.5" superClassOf="//@classes.16"/>
+  <classes label="ClassOfInformationRepresentation" subClassOf="//@classes.15" superClassOf="//@classes.17"/>
+  <classes label="Language" subClassOf="//@classes.16"/>
+  <templates label="Specialization">
+    <roles label="hasSuperclass" qualifiedCardinality="1" entityType="//@classes.0">
+      <instances href="3VServiceCatalog.dsl15926#//@templateInstances.0/@roles.1"/>
+    </roles>
+    <roles label="hasSubclass" qualifiedCardinality="1" entityType="//@classes.0">
+      <instances href="3VServiceCatalog.dsl15926#//@templateInstances.0/@roles.0"/>
+    </roles>
+    <instances href="#//@templateInstances.0"/>
+    <instances href="3VServiceCatalog.dsl15926#//@templateInstances.0"/>
+  </templates>
+  <templates label="Classification" instances="//@templateInstances.1">
+    <roles label="hasClassifier" qualifiedCardinality="1" entityType="//@classes.0"/>
+    <roles label="hasClassified" entityType="//@classes.1"/>
+  </templates>
+  <templateInstances template="//@templates.0"/>
+  <templateInstances template="//@templates.1"/>
+</ru.agentlab:Repository>
