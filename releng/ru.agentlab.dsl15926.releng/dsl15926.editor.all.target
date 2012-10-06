@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+
+<target includeMode="feature" name="dsl15926.editor.all" sequenceNumber="20">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="4.2.1.M20120914-1800"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.2"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="com.google.guava.source" version="10.0.1.v201203051515"/>
+<unit id="com.google.guava" version="10.0.1.v201203051515"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20120526062928/repository/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.m2m.atl.sdk.feature.group" version="3.3.1.v201209061455"/>
+<unit id="org.eclipse.gef.sdk.feature.group" version="3.9.0.201208201742"/>
+<unit id="org.eclipse.gmf.feature.group" version="1.6.0.v20120517-1809-7d9X7FFYnmMJUVOKcqPSgIiK281V"/>
+<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.6.0.v20120517-1809-67R09E9QuFflXswwIO_z0E3d4k_X"/>
+<unit id="org.eclipse.gmf.tooling.feature.group" version="3.0.0.RC4a"/>
+<unit id="org.eclipse.gmf.tooling.runtime.feature.group" version="3.0.0.RC4a"/>
+<repository location="http://download.eclipse.org/releases/juno"/>
+</location>
+</locations>
+<environment>
+<os>win32</os>
+<ws>win32</ws>
+<arch>x86_64</arch>
+</environment>
+</target>
