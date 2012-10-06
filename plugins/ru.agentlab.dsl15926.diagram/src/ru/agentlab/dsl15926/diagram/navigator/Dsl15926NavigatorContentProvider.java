@@ -220,91 +220,6 @@ public class Dsl15926NavigatorContentProvider implements ICommonContentProvider 
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (Dsl15926VisualIDRegistry.getVisualID(view)) {
 
-		case TemplateEditPart.VISUAL_ID: {
-			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Dsl15926NavigatorGroup incominglinks = new Dsl15926NavigatorGroup(
-					Messages.NavigatorGroupName_Template_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Dsl15926NavigatorGroup outgoinglinks = new Dsl15926NavigatorGroup(
-					Messages.NavigatorGroupName_Template_2003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateRoleEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateRoleEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case TemplateRoleEditPart.VISUAL_ID: {
-			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			Dsl15926NavigatorGroup target = new Dsl15926NavigatorGroup(
-					Messages.NavigatorGroupName_TemplateRole_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Dsl15926NavigatorGroup source = new Dsl15926NavigatorGroup(
-					Messages.NavigatorGroupName_TemplateRole_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ClassEditPart.VISUAL_ID: {
-			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Dsl15926NavigatorGroup incominglinks = new Dsl15926NavigatorGroup(
-					Messages.NavigatorGroupName_Class_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateRoleInstanceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					Dsl15926VisualIDRegistry
-							.getType(TemplateRoleEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
 		case RepositoryEditPart.VISUAL_ID: {
 			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
@@ -345,6 +260,39 @@ public class Dsl15926NavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
+		case TemplateRoleEditPart.VISUAL_ID: {
+			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			Dsl15926NavigatorGroup target = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_TemplateRole_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Dsl15926NavigatorGroup source = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_TemplateRole_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
 		case TemplateRoleInstanceEditPart.VISUAL_ID: {
 			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -359,6 +307,16 @@ public class Dsl15926NavigatorContentProvider implements ICommonContentProvider 
 					Dsl15926VisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(IndividualEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					Dsl15926VisualIDRegistry
 							.getType(TemplateInstanceEditPart.VISUAL_ID));
@@ -369,6 +327,81 @@ public class Dsl15926NavigatorContentProvider implements ICommonContentProvider 
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ClassEditPart.VISUAL_ID: {
+			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Dsl15926NavigatorGroup incominglinks = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_Class_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleInstanceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case IndividualEditPart.VISUAL_ID: {
+			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Dsl15926NavigatorGroup incominglinks = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_Individual_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleInstanceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case TemplateEditPart.VISUAL_ID: {
+			LinkedList<Dsl15926AbstractNavigatorItem> result = new LinkedList<Dsl15926AbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Dsl15926NavigatorGroup incominglinks = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_Template_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Dsl15926NavigatorGroup outgoinglinks = new Dsl15926NavigatorGroup(
+					Messages.NavigatorGroupName_Template_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleInstanceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					Dsl15926VisualIDRegistry
+							.getType(TemplateRoleEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}

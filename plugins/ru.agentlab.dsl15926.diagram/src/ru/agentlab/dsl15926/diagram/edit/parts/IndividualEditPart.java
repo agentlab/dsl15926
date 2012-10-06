@@ -1,5 +1,8 @@
 package ru.agentlab.dsl15926.diagram.edit.parts;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
@@ -16,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -23,6 +27,7 @@ import org.eclipse.swt.graphics.Color;
 
 import ru.agentlab.dsl15926.diagram.edit.policies.IndividualItemSemanticEditPolicy;
 import ru.agentlab.dsl15926.diagram.part.Dsl15926VisualIDRegistry;
+import ru.agentlab.dsl15926.diagram.providers.Dsl15926ElementTypes;
 
 /**
  * @generated
@@ -242,6 +247,26 @@ public class IndividualEditPart extends ShapeNodeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(Dsl15926VisualIDRegistry
 				.getType(IndividualLabelEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(Dsl15926ElementTypes.TemplateRoleInstance_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == Dsl15926ElementTypes.TemplateRoleInstance_4001) {
+			types.add(Dsl15926ElementTypes.TemplateInstance_2001);
+		}
+		return types;
 	}
 
 	/**

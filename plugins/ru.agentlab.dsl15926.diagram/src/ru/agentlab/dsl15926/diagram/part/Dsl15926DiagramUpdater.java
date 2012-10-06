@@ -22,6 +22,7 @@ import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 import ru.agentlab.dsl15926.diagram.edit.parts.ClassEditPart;
 import ru.agentlab.dsl15926.diagram.edit.parts.IndividualEditPart;
 import ru.agentlab.dsl15926.diagram.edit.parts.RepositoryEditPart;
@@ -260,6 +261,8 @@ public class Dsl15926DiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<Dsl15926LinkDescriptor> result = new LinkedList<Dsl15926LinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_TemplateRoleInstance_4001(
+				modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_TemplateRole_4002(
 				modelElement, crossReferences));
 		return result;
@@ -270,7 +273,13 @@ public class Dsl15926DiagramUpdater {
 	 */
 	public static List<Dsl15926LinkDescriptor> getIndividual_2004IncomingLinks(
 			View view) {
-		return Collections.emptyList();
+		Individual modelElement = (Individual) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<Dsl15926LinkDescriptor> result = new LinkedList<Dsl15926LinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_TemplateRoleInstance_4001(
+				modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -360,7 +369,7 @@ public class Dsl15926DiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Class dst = link.getPropertyInstance();
+			Thing dst = link.getPropertyInstance();
 			result.add(new Dsl15926LinkDescriptor(container, dst, link,
 					Dsl15926ElementTypes.TemplateRoleInstance_4001,
 					TemplateRoleInstanceEditPart.VISUAL_ID));
@@ -397,7 +406,7 @@ public class Dsl15926DiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<Dsl15926LinkDescriptor> getIncomingTypeModelFacetLinks_TemplateRoleInstance_4001(
-			Class target,
+			Thing target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<Dsl15926LinkDescriptor> result = new LinkedList<Dsl15926LinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences

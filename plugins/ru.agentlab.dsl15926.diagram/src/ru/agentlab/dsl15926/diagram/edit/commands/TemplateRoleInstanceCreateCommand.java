@@ -16,6 +16,7 @@ import ru.agentlab.dsl15926.Class;
 import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 import ru.agentlab.dsl15926.diagram.edit.policies.Dsl15926BaseItemSemanticEditPolicy;
 
 /**
@@ -53,7 +54,7 @@ public class TemplateRoleInstanceCreateCommand extends EditElementCommand {
 		if (source != null && false == source instanceof TemplateInstance) {
 			return false;
 		}
-		if (target != null && false == target instanceof Class) {
+		if (target != null && false == target instanceof Thing) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -125,8 +126,8 @@ public class TemplateRoleInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected Class getTarget() {
-		return (Class) target;
+	protected Thing getTarget() {
+		return (Thing) target;
 	}
 
 }

@@ -22,6 +22,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 import ru.agentlab.dsl15926.diagram.edit.parts.ClassEditPart;
+import ru.agentlab.dsl15926.diagram.edit.parts.IndividualEditPart;
 import ru.agentlab.dsl15926.diagram.edit.parts.RepositoryEditPart;
 import ru.agentlab.dsl15926.diagram.edit.parts.TemplateEditPart;
 import ru.agentlab.dsl15926.diagram.edit.parts.TemplateInstanceEditPart;
@@ -79,6 +80,10 @@ public class Dsl15926ModelingAssistantProvider extends
 		if (targetEditPart instanceof TemplateEditPart) {
 			return ((TemplateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof IndividualEditPart) {
+			return ((IndividualEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -115,6 +120,10 @@ public class Dsl15926ModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof TemplateEditPart) {
 			return ((TemplateEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof IndividualEditPart) {
+			return ((IndividualEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

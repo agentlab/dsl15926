@@ -289,7 +289,8 @@ public class TemplateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(Dsl15926ElementTypes.TemplateRoleInstance_4001);
 		types.add(Dsl15926ElementTypes.TemplateRole_4002);
 		return types;
 	}
@@ -299,7 +300,9 @@ public class TemplateEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == Dsl15926ElementTypes.TemplateRole_4002) {
+		if (relationshipType == Dsl15926ElementTypes.TemplateRoleInstance_4001) {
+			types.add(Dsl15926ElementTypes.TemplateInstance_2001);
+		} else if (relationshipType == Dsl15926ElementTypes.TemplateRole_4002) {
 			types.add(Dsl15926ElementTypes.Template_2003);
 		}
 		return types;

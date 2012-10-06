@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import ru.agentlab.dsl15926.Class;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 import ru.agentlab.dsl15926.diagram.edit.policies.Dsl15926BaseItemSemanticEditPolicy;
 
 /**
@@ -67,7 +68,7 @@ public class TemplateRoleInstanceReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof TemplateInstance && newEnd instanceof TemplateInstance)) {
 			return false;
 		}
-		Class target = getLink().getPropertyInstance();
+		Thing target = getLink().getPropertyInstance();
 		return Dsl15926BaseItemSemanticEditPolicy.getLinkConstraints()
 				.canExistTemplateRoleInstance_4001(getLink(), getNewSource(),
 						target);
@@ -77,7 +78,7 @@ public class TemplateRoleInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Class && newEnd instanceof Class)) {
+		if (!(oldEnd instanceof Thing && newEnd instanceof Thing)) {
 			return false;
 		}
 		if (!(getLink().eContainer() instanceof TemplateInstance)) {
@@ -148,14 +149,14 @@ public class TemplateRoleInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected Class getOldTarget() {
-		return (Class) oldEnd;
+	protected Thing getOldTarget() {
+		return (Thing) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Class getNewTarget() {
-		return (Class) newEnd;
+	protected Thing getNewTarget() {
+		return (Thing) newEnd;
 	}
 }

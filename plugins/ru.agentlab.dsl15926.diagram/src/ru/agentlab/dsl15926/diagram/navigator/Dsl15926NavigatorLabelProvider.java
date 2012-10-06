@@ -92,24 +92,24 @@ public class Dsl15926NavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (Dsl15926VisualIDRegistry.getVisualID(view)) {
+		case RepositoryEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://agentlab.ru/models/dsl15926/2012/08?Repository", Dsl15926ElementTypes.Repository_1000); //$NON-NLS-1$
+		case TemplateRoleEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://agentlab.ru/models/dsl15926/2012/08?TemplateRole", Dsl15926ElementTypes.TemplateRole_4002); //$NON-NLS-1$
+		case TemplateRoleInstanceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://agentlab.ru/models/dsl15926/2012/08?TemplateRoleInstance", Dsl15926ElementTypes.TemplateRoleInstance_4001); //$NON-NLS-1$
+		case ClassEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://agentlab.ru/models/dsl15926/2012/08?Class", Dsl15926ElementTypes.Class_2002); //$NON-NLS-1$
 		case IndividualEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://agentlab.ru/models/dsl15926/2012/08?Individual", Dsl15926ElementTypes.Individual_2004); //$NON-NLS-1$
 		case TemplateEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://agentlab.ru/models/dsl15926/2012/08?Template", Dsl15926ElementTypes.Template_2003); //$NON-NLS-1$
-		case TemplateRoleEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://agentlab.ru/models/dsl15926/2012/08?TemplateRole", Dsl15926ElementTypes.TemplateRole_4002); //$NON-NLS-1$
-		case ClassEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://agentlab.ru/models/dsl15926/2012/08?Class", Dsl15926ElementTypes.Class_2002); //$NON-NLS-1$
-		case RepositoryEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://agentlab.ru/models/dsl15926/2012/08?Repository", Dsl15926ElementTypes.Repository_1000); //$NON-NLS-1$
-		case TemplateRoleInstanceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://agentlab.ru/models/dsl15926/2012/08?TemplateRoleInstance", Dsl15926ElementTypes.TemplateRoleInstance_4001); //$NON-NLS-1$
 		case TemplateInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://agentlab.ru/models/dsl15926/2012/08?TemplateInstance", Dsl15926ElementTypes.TemplateInstance_2001); //$NON-NLS-1$
@@ -165,18 +165,18 @@ public class Dsl15926NavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (Dsl15926VisualIDRegistry.getVisualID(view)) {
+		case RepositoryEditPart.VISUAL_ID:
+			return getRepository_1000Text(view);
+		case TemplateRoleEditPart.VISUAL_ID:
+			return getTemplateRole_4002Text(view);
+		case TemplateRoleInstanceEditPart.VISUAL_ID:
+			return getTemplateRoleInstance_4001Text(view);
+		case ClassEditPart.VISUAL_ID:
+			return getClass_2002Text(view);
 		case IndividualEditPart.VISUAL_ID:
 			return getIndividual_2004Text(view);
 		case TemplateEditPart.VISUAL_ID:
 			return getTemplate_2003Text(view);
-		case TemplateRoleEditPart.VISUAL_ID:
-			return getTemplateRole_4002Text(view);
-		case ClassEditPart.VISUAL_ID:
-			return getClass_2002Text(view);
-		case RepositoryEditPart.VISUAL_ID:
-			return getRepository_1000Text(view);
-		case TemplateRoleInstanceEditPart.VISUAL_ID:
-			return getTemplateRoleInstance_4001Text(view);
 		case TemplateInstanceEditPart.VISUAL_ID:
 			return getTemplateInstance_2001Text(view);
 		}

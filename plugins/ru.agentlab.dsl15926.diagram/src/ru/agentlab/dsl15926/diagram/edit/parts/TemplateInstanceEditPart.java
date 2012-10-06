@@ -205,6 +205,12 @@ public class TemplateInstanceEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof ClassEditPart) {
 			types.add(Dsl15926ElementTypes.TemplateRoleInstance_4001);
 		}
+		if (targetEditPart instanceof TemplateEditPart) {
+			types.add(Dsl15926ElementTypes.TemplateRoleInstance_4001);
+		}
+		if (targetEditPart instanceof IndividualEditPart) {
+			types.add(Dsl15926ElementTypes.TemplateRoleInstance_4001);
+		}
 		return types;
 	}
 
@@ -215,6 +221,8 @@ public class TemplateInstanceEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == Dsl15926ElementTypes.TemplateRoleInstance_4001) {
 			types.add(Dsl15926ElementTypes.Class_2002);
+			types.add(Dsl15926ElementTypes.Template_2003);
+			types.add(Dsl15926ElementTypes.Individual_2004);
 		}
 		return types;
 	}

@@ -14,8 +14,11 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
 import ru.agentlab.dsl15926.diagram.edit.commands.TemplateRoleCreateCommand;
+import ru.agentlab.dsl15926.diagram.edit.commands.TemplateRoleInstanceCreateCommand;
+import ru.agentlab.dsl15926.diagram.edit.commands.TemplateRoleInstanceReorientCommand;
 import ru.agentlab.dsl15926.diagram.edit.commands.TemplateRoleReorientCommand;
 import ru.agentlab.dsl15926.diagram.edit.parts.TemplateRoleEditPart;
+import ru.agentlab.dsl15926.diagram.edit.parts.TemplateRoleInstanceEditPart;
 import ru.agentlab.dsl15926.diagram.part.Dsl15926VisualIDRegistry;
 import ru.agentlab.dsl15926.diagram.providers.Dsl15926ElementTypes;
 
@@ -42,6 +45,13 @@ public class TemplateItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
+			if (Dsl15926VisualIDRegistry.getVisualID(incomingLink) == TemplateRoleInstanceEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(
+						incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 			if (Dsl15926VisualIDRegistry.getVisualID(incomingLink) == TemplateRoleEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						incomingLink.getElement(), false);
@@ -87,6 +97,10 @@ public class TemplateItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (Dsl15926ElementTypes.TemplateRoleInstance_4001 == req
+				.getElementType()) {
+			return null;
+		}
 		if (Dsl15926ElementTypes.TemplateRole_4002 == req.getElementType()) {
 			return getGEFWrapper(new TemplateRoleCreateCommand(req,
 					req.getSource(), req.getTarget()));
@@ -99,6 +113,11 @@ public class TemplateItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (Dsl15926ElementTypes.TemplateRoleInstance_4001 == req
+				.getElementType()) {
+			return getGEFWrapper(new TemplateRoleInstanceCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		if (Dsl15926ElementTypes.TemplateRole_4002 == req.getElementType()) {
 			return getGEFWrapper(new TemplateRoleCreateCommand(req,
 					req.getSource(), req.getTarget()));
@@ -115,6 +134,8 @@ public class TemplateItemSemanticEditPolicy extends
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case TemplateRoleInstanceEditPart.VISUAL_ID:
+			return getGEFWrapper(new TemplateRoleInstanceReorientCommand(req));
 		case TemplateRoleEditPart.VISUAL_ID:
 			return getGEFWrapper(new TemplateRoleReorientCommand(req));
 		}

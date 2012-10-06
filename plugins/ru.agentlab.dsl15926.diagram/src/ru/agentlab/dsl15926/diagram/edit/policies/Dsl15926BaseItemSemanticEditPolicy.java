@@ -38,6 +38,7 @@ import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
 import ru.agentlab.dsl15926.TemplateRoleInstance;
+import ru.agentlab.dsl15926.Thing;
 import ru.agentlab.dsl15926.diagram.part.Dsl15926DiagramEditorPlugin;
 import ru.agentlab.dsl15926.diagram.part.Dsl15926VisualIDRegistry;
 import ru.agentlab.dsl15926.diagram.providers.Dsl15926ElementTypes;
@@ -329,7 +330,7 @@ public class Dsl15926BaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateTemplateRoleInstance_4001(
-				TemplateInstance source, Class target) {
+				TemplateInstance source, Thing target) {
 			return canExistTemplateRoleInstance_4001(null, source, target);
 		}
 
@@ -346,7 +347,7 @@ public class Dsl15926BaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistTemplateRoleInstance_4001(
 				TemplateRoleInstance linkInstance, TemplateInstance source,
-				Class target) {
+				Thing target) {
 			return true;
 		}
 
