@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getClasses <em>Classes</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.Repository#getDataTypes <em>Data Types</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getTemplates <em>Templates</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.Repository#getDatas <em>Datas</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getUrl <em>Url</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getImports <em>Imports</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Repository#getIndividuals <em>Individuals</em>}</li>
@@ -50,24 +48,6 @@ public interface Repository extends EObject {
 	EList<ru.agentlab.dsl15926.Class> getClasses();
 
 	/**
-	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.DataType}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.DataType#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Types</em>' containment reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_DataTypes()
-	 * @see ru.agentlab.dsl15926.DataType#getRepository
-	 * @model opposite="repository" containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<DataType> getDataTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Templates</b></em>' containment reference list.
 	 * The list contents are of type {@link ru.agentlab.dsl15926.Template}.
 	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Template#getRepository <em>Repository</em>}'.
@@ -84,24 +64,6 @@ public interface Repository extends EObject {
 	 * @generated
 	 */
 	EList<Template> getTemplates();
-
-	/**
-	 * Returns the value of the '<em><b>Datas</b></em>' containment reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.Data}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Datas</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Datas</em>' containment reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getRepository_Datas()
-	 * @see ru.agentlab.dsl15926.Data#getRepository
-	 * @model opposite="repository" containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<Data> getDatas();
 
 	/**
 	 * Returns the value of the '<em><b>Url</b></em>' attribute.

@@ -5,8 +5,6 @@
 -->
 
 <plugin>
-   <extension-point id="testid" name="testname" schema="schema/testid.exsd"/>
-
    <extension point="org.eclipse.ui.newWizards">
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"

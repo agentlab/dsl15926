@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.Data;
-import ru.agentlab.dsl15926.DataRange;
-import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
@@ -102,24 +99,12 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter caseDataRange(DataRange object) {
-				return createDataRangeAdapter();
-			}
-			@Override
 			public Adapter caseAnnotation(Annotation object) {
 				return createAnnotationAdapter();
 			}
 			@Override
 			public Adapter caseIndividual(Individual object) {
 				return createIndividualAdapter();
-			}
-			@Override
-			public Adapter caseData(Data object) {
-				return createDataAdapter();
 			}
 			@Override
 			public Adapter caseClass(ru.agentlab.dsl15926.Class object) {
@@ -232,34 +217,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.DataType
-	 * @generated
-	 */
-	public Adapter createDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.DataRange <em>Data Range</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.DataRange
-	 * @generated
-	 */
-	public Adapter createDataRangeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Annotation <em>Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -284,20 +241,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIndividualAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.Data
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
 		return null;
 	}
 

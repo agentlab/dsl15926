@@ -9,9 +9,6 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.Data;
-import ru.agentlab.dsl15926.DataRange;
-import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
@@ -116,21 +113,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Dsl15926Package.DATA_TYPE: {
-				DataType dataType = (DataType)theEObject;
-				T result = caseDataType(dataType);
-				if (result == null) result = caseAbstractObject(dataType);
-				if (result == null) result = caseThing(dataType);
-				if (result == null) result = caseNamedElement(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.DATA_RANGE: {
-				DataRange dataRange = (DataRange)theEObject;
-				T result = caseDataRange(dataRange);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Dsl15926Package.ANNOTATION: {
 				Annotation annotation = (Annotation)theEObject;
 				T result = caseAnnotation(annotation);
@@ -142,14 +124,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				T result = caseIndividual(individual);
 				if (result == null) result = caseThing(individual);
 				if (result == null) result = caseNamedElement(individual);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Dsl15926Package.DATA: {
-				Data data = (Data)theEObject;
-				T result = caseData(data);
-				if (result == null) result = caseThing(data);
-				if (result == null) result = caseNamedElement(data);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -268,36 +242,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Range</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Range</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataRange(DataRange object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -324,21 +268,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIndividual(Individual object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseData(Data object) {
 		return null;
 	}
 

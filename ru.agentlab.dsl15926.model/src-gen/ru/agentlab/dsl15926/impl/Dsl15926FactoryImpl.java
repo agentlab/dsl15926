@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import ru.agentlab.dsl15926.Annotation;
-import ru.agentlab.dsl15926.Data;
-import ru.agentlab.dsl15926.DataRange;
-import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
@@ -71,11 +68,8 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 			case Dsl15926Package.TEMPLATE: return createTemplate();
 			case Dsl15926Package.TEMPLATE_ROLE: return createTemplateRole();
 			case Dsl15926Package.REPOSITORY: return createRepository();
-			case Dsl15926Package.DATA_TYPE: return createDataType();
-			case Dsl15926Package.DATA_RANGE: return createDataRange();
 			case Dsl15926Package.ANNOTATION: return createAnnotation();
 			case Dsl15926Package.INDIVIDUAL: return createIndividual();
-			case Dsl15926Package.DATA: return createData();
 			case Dsl15926Package.CLASS: return createClass();
 			case Dsl15926Package.TEMPLATE_INSTANCE: return createTemplateInstance();
 			case Dsl15926Package.PATTERN: return createPattern();
@@ -120,26 +114,6 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType createDataType() {
-		DataTypeImpl dataType = new DataTypeImpl();
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataRange createDataRange() {
-		DataRangeImpl dataRange = new DataRangeImpl();
-		return dataRange;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Annotation createAnnotation() {
 		AnnotationImpl annotation = new AnnotationImpl();
 		return annotation;
@@ -153,16 +127,6 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	public Individual createIndividual() {
 		IndividualImpl individual = new IndividualImpl();
 		return individual;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Data createData() {
-		DataImpl data = new DataImpl();
-		return data;
 	}
 
 	/**

@@ -100,7 +100,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getThing()
 	 * @generated
 	 */
-	int THING = 14;
+	int THING = 11;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -413,31 +413,13 @@ public interface Dsl15926Package extends EPackage {
 	int REPOSITORY__CLASSES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__DATA_TYPES = 1;
-
-	/**
 	 * The feature id for the '<em><b>Templates</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__TEMPLATES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Datas</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__DATAS = 3;
+	int REPOSITORY__TEMPLATES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -446,7 +428,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__URL = 4;
+	int REPOSITORY__URL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' attribute list.
@@ -455,7 +437,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__IMPORTS = 5;
+	int REPOSITORY__IMPORTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Individuals</b></em>' containment reference list.
@@ -464,7 +446,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__INDIVIDUALS = 6;
+	int REPOSITORY__INDIVIDUALS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Template Instances</b></em>' containment reference list.
@@ -473,7 +455,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__TEMPLATE_INSTANCES = 7;
+	int REPOSITORY__TEMPLATE_INSTANCES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Patterns</b></em>' containment reference list.
@@ -482,7 +464,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__PATTERNS = 8;
+	int REPOSITORY__PATTERNS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -491,171 +473,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = 9;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataTypeImpl <em>Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.DataTypeImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataType()
-	 * @generated
-	 */
-	int DATA_TYPE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__LABEL = ABSTRACT_OBJECT__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__ANNOTATIONS = ABSTRACT_OBJECT__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__CLASSES = ABSTRACT_OBJECT__CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Sub Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__SUB_CLASS_OF = ABSTRACT_OBJECT__SUB_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Super Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__SUPER_CLASS_OF = ABSTRACT_OBJECT__SUPER_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__DISJOINT_CLASSES = ABSTRACT_OBJECT__DISJOINT_CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__EQUIVALENT_CLASSES = ABSTRACT_OBJECT__EQUIVALENT_CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Range</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__RANGE = ABSTRACT_OBJECT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Properties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__EQUIVALENT_PROPERTIES = ABSTRACT_OBJECT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Sub Property Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__SUB_PROPERTY_OF = ABSTRACT_OBJECT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Super Property Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__SUPER_PROPERTY_OF = ABSTRACT_OBJECT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint Properties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__DISJOINT_PROPERTIES = ABSTRACT_OBJECT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__DATA = ABSTRACT_OBJECT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Repository</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__REPOSITORY = ABSTRACT_OBJECT_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FEATURE_COUNT = ABSTRACT_OBJECT_FEATURE_COUNT + 7;
-
-	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.DataRangeImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataRange()
-	 * @generated
-	 */
-	int DATA_RANGE = 6;
-
-	/**
-	 * The number of structural features of the '<em>Data Range</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RANGE_FEATURE_COUNT = 0;
+	int REPOSITORY_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.AnnotationImpl <em>Annotation</em>}' class.
@@ -665,7 +483,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getAnnotation()
 	 * @generated
 	 */
-	int ANNOTATION = 7;
+	int ANNOTATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -711,7 +529,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getIndividual()
 	 * @generated
 	 */
-	int INDIVIDUAL = 8;
+	int INDIVIDUAL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -768,79 +586,6 @@ public interface Dsl15926Package extends EPackage {
 	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.DataImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getData()
-	 * @generated
-	 */
-	int DATA = 9;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__LABEL = THING__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__ANNOTATIONS = THING__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__CLASSES = THING__CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__DATA_TYPE = THING_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__VALUE = THING_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Repository</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__REPOSITORY = THING_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FEATURE_COUNT = THING_FEATURE_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -848,7 +593,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 10;
+	int CLASS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -948,7 +693,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getTemplateInstance()
 	 * @generated
 	 */
-	int TEMPLATE_INSTANCE = 11;
+	int TEMPLATE_INSTANCE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Template</b></em>' reference.
@@ -994,7 +739,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPattern()
 	 * @generated
 	 */
-	int PATTERN = 12;
+	int PATTERN = 9;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1049,7 +794,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getTemplateRoleInstance()
 	 * @generated
 	 */
-	int TEMPLATE_ROLE_INSTANCE = 13;
+	int TEMPLATE_ROLE_INSTANCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Template Role</b></em>' reference.
@@ -1241,17 +986,6 @@ public interface Dsl15926Package extends EPackage {
 	EReference getRepository_Classes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDataTypes <em>Data Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data Types</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getDataTypes()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EReference getRepository_DataTypes();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getTemplates <em>Templates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1261,17 +995,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getRepository_Templates();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getDatas <em>Datas</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Datas</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getDatas()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EReference getRepository_Datas();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.Repository#getUrl <em>Url</em>}'.
@@ -1361,103 +1084,6 @@ public interface Dsl15926Package extends EPackage {
 	EReference getNamedElement_Annotations();
 
 	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Type</em>'.
-	 * @see ru.agentlab.dsl15926.DataType
-	 * @generated
-	 */
-	EClass getDataType();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.DataType#getRange <em>Range</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Range</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getRange()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_Range();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getEquivalentProperties <em>Equivalent Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Equivalent Properties</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getEquivalentProperties()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_EquivalentProperties();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getSubPropertyOf <em>Sub Property Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getSubPropertyOf()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_SubPropertyOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getSuperPropertyOf <em>Super Property Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Super Property Of</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getSuperPropertyOf()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_SuperPropertyOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getDisjointProperties <em>Disjoint Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Disjoint Properties</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getDisjointProperties()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_DisjointProperties();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.DataType#getData <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Data</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getData()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_Data();
-
-	/**
-	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.DataType#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Repository</em>'.
-	 * @see ru.agentlab.dsl15926.DataType#getRepository()
-	 * @see #getDataType()
-	 * @generated
-	 */
-	EReference getDataType_Repository();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.DataRange <em>Data Range</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Range</em>'.
-	 * @see ru.agentlab.dsl15926.DataRange
-	 * @generated
-	 */
-	EClass getDataRange();
-
-	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Annotation <em>Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1531,49 +1157,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EReference getIndividual_Repository();
-
-	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data</em>'.
-	 * @see ru.agentlab.dsl15926.Data
-	 * @generated
-	 */
-	EClass getData();
-
-	/**
-	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Data#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Type</em>'.
-	 * @see ru.agentlab.dsl15926.Data#getDataType()
-	 * @see #getData()
-	 * @generated
-	 */
-	EReference getData_DataType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ru.agentlab.dsl15926.Data#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see ru.agentlab.dsl15926.Data#getValue()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Value();
-
-	/**
-	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Data#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Repository</em>'.
-	 * @see ru.agentlab.dsl15926.Data#getRepository()
-	 * @see #getData()
-	 * @generated
-	 */
-	EReference getData_Repository();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Class <em>Class</em>}'.
@@ -1886,28 +1469,12 @@ public interface Dsl15926Package extends EPackage {
 		EReference REPOSITORY__CLASSES = eINSTANCE.getRepository_Classes();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPOSITORY__DATA_TYPES = eINSTANCE.getRepository_DataTypes();
-
-		/**
 		 * The meta object literal for the '<em><b>Templates</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REPOSITORY__TEMPLATES = eINSTANCE.getRepository_Templates();
-
-		/**
-		 * The meta object literal for the '<em><b>Datas</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPOSITORY__DATAS = eINSTANCE.getRepository_Datas();
 
 		/**
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
@@ -1976,82 +1543,6 @@ public interface Dsl15926Package extends EPackage {
 		EReference NAMED_ELEMENT__ANNOTATIONS = eINSTANCE.getNamedElement_Annotations();
 
 		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataTypeImpl <em>Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.DataTypeImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataType()
-		 * @generated
-		 */
-		EClass DATA_TYPE = eINSTANCE.getDataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Range</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__RANGE = eINSTANCE.getDataType_Range();
-
-		/**
-		 * The meta object literal for the '<em><b>Equivalent Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__EQUIVALENT_PROPERTIES = eINSTANCE.getDataType_EquivalentProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Property Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__SUB_PROPERTY_OF = eINSTANCE.getDataType_SubPropertyOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Super Property Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__SUPER_PROPERTY_OF = eINSTANCE.getDataType_SuperPropertyOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Disjoint Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__DISJOINT_PROPERTIES = eINSTANCE.getDataType_DisjointProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__DATA = eINSTANCE.getDataType_Data();
-
-		/**
-		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_TYPE__REPOSITORY = eINSTANCE.getDataType_Repository();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataRangeImpl <em>Data Range</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.DataRangeImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getDataRange()
-		 * @generated
-		 */
-		EClass DATA_RANGE = eINSTANCE.getDataRange();
-
-		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.AnnotationImpl <em>Annotation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2110,40 +1601,6 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference INDIVIDUAL__REPOSITORY = eINSTANCE.getIndividual_Repository();
-
-		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.DataImpl <em>Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.DataImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getData()
-		 * @generated
-		 */
-		EClass DATA = eINSTANCE.getData();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA__DATA_TYPE = eINSTANCE.getData_DataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__VALUE = eINSTANCE.getData_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA__REPOSITORY = eINSTANCE.getData_Repository();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.

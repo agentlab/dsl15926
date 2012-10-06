@@ -16,12 +16,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import ru.agentlab.dsl15926.Data;
-import ru.agentlab.dsl15926.DataType;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.Pattern;
@@ -37,9 +34,7 @@ import ru.agentlab.dsl15926.TemplateInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getClasses <em>Classes</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getDataTypes <em>Data Types</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getTemplates <em>Templates</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getDatas <em>Datas</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getIndividuals <em>Individuals</em>}</li>
@@ -62,16 +57,6 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	protected EList<ru.agentlab.dsl15926.Class> classes;
 
 	/**
-	 * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataType> dataTypes;
-
-	/**
 	 * The cached value of the '{@link #getTemplates() <em>Templates</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,16 +65,6 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * @ordered
 	 */
 	protected EList<Template> templates;
-
-	/**
-	 * The cached value of the '{@link #getDatas() <em>Datas</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatas()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> datas;
 
 	/**
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
@@ -187,35 +162,11 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataType> getDataTypes() {
-		if (dataTypes == null) {
-			dataTypes = new EObjectContainmentWithInverseEList.Resolving<DataType>(DataType.class, this, Dsl15926Package.REPOSITORY__DATA_TYPES, Dsl15926Package.DATA_TYPE__REPOSITORY);
-		}
-		return dataTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Template> getTemplates() {
 		if (templates == null) {
 			templates = new EObjectContainmentWithInverseEList.Resolving<Template>(Template.class, this, Dsl15926Package.REPOSITORY__TEMPLATES, Dsl15926Package.TEMPLATE__REPOSITORY);
 		}
 		return templates;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Data> getDatas() {
-		if (datas == null) {
-			datas = new EObjectContainmentWithInverseEList.Resolving<Data>(Data.class, this, Dsl15926Package.REPOSITORY__DATAS, Dsl15926Package.DATA__REPOSITORY);
-		}
-		return datas;
 	}
 
 	/**
@@ -298,12 +249,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		switch (featureID) {
 			case Dsl15926Package.REPOSITORY__CLASSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataTypes()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplates()).basicAdd(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__DATAS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDatas()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIndividuals()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
@@ -324,12 +271,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		switch (featureID) {
 			case Dsl15926Package.REPOSITORY__CLASSES:
 				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				return ((InternalEList<?>)getTemplates()).basicRemove(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__DATAS:
-				return ((InternalEList<?>)getDatas()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
 				return ((InternalEList<?>)getIndividuals()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
@@ -350,12 +293,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		switch (featureID) {
 			case Dsl15926Package.REPOSITORY__CLASSES:
 				return getClasses();
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				return getDataTypes();
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				return getTemplates();
-			case Dsl15926Package.REPOSITORY__DATAS:
-				return getDatas();
 			case Dsl15926Package.REPOSITORY__URL:
 				return getUrl();
 			case Dsl15926Package.REPOSITORY__IMPORTS:
@@ -383,17 +322,9 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				getClasses().clear();
 				getClasses().addAll((Collection<? extends ru.agentlab.dsl15926.Class>)newValue);
 				return;
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				getDataTypes().clear();
-				getDataTypes().addAll((Collection<? extends DataType>)newValue);
-				return;
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				getTemplates().clear();
 				getTemplates().addAll((Collection<? extends Template>)newValue);
-				return;
-			case Dsl15926Package.REPOSITORY__DATAS:
-				getDatas().clear();
-				getDatas().addAll((Collection<? extends Data>)newValue);
 				return;
 			case Dsl15926Package.REPOSITORY__URL:
 				setUrl((String)newValue);
@@ -429,14 +360,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 			case Dsl15926Package.REPOSITORY__CLASSES:
 				getClasses().clear();
 				return;
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				getDataTypes().clear();
-				return;
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				getTemplates().clear();
-				return;
-			case Dsl15926Package.REPOSITORY__DATAS:
-				getDatas().clear();
 				return;
 			case Dsl15926Package.REPOSITORY__URL:
 				setUrl(URL_EDEFAULT);
@@ -467,12 +392,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		switch (featureID) {
 			case Dsl15926Package.REPOSITORY__CLASSES:
 				return classes != null && !classes.isEmpty();
-			case Dsl15926Package.REPOSITORY__DATA_TYPES:
-				return dataTypes != null && !dataTypes.isEmpty();
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 				return templates != null && !templates.isEmpty();
-			case Dsl15926Package.REPOSITORY__DATAS:
-				return datas != null && !datas.isEmpty();
 			case Dsl15926Package.REPOSITORY__URL:
 				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 			case Dsl15926Package.REPOSITORY__IMPORTS:

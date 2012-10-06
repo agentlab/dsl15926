@@ -141,52 +141,6 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.DataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataTypeItemProvider dataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.DataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataTypeAdapter() {
-		if (dataTypeItemProvider == null) {
-			dataTypeItemProvider = new DataTypeItemProvider(this);
-		}
-
-		return dataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.DataRange} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataRangeItemProvider dataRangeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.DataRange}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataRangeAdapter() {
-		if (dataRangeItemProvider == null) {
-			dataRangeItemProvider = new DataRangeItemProvider(this);
-		}
-
-		return dataRangeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Annotation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,29 +184,6 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		}
 
 		return individualItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Data} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataItemProvider dataItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.Data}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataAdapter() {
-		if (dataItemProvider == null) {
-			dataItemProvider = new DataItemProvider(this);
-		}
-
-		return dataItemProvider;
 	}
 
 	/**
@@ -449,11 +380,8 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		if (templateItemProvider != null) templateItemProvider.dispose();
 		if (templateRoleItemProvider != null) templateRoleItemProvider.dispose();
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
-		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
-		if (dataRangeItemProvider != null) dataRangeItemProvider.dispose();
 		if (annotationItemProvider != null) annotationItemProvider.dispose();
 		if (individualItemProvider != null) individualItemProvider.dispose();
-		if (dataItemProvider != null) dataItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (templateInstanceItemProvider != null) templateInstanceItemProvider.dispose();
 		if (patternItemProvider != null) patternItemProvider.dispose();
