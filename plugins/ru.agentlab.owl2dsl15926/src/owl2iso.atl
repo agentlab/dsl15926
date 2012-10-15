@@ -1,0 +1,248 @@
+-- @path MM=/com.emf4sw.owl/model/owl2.ecore
+-- @path MM1=/ru.shishkin.diplom.iso15926/model/iso15926.ecore
+
+
+module owl2iso;
+create OUT: MM1 from IN: MM;
+
+uses owl2isoHelper;
+
+helper context MM!OWLClass def: isThing: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Thing' then
+		true
+	else
+		false
+	endif;
+
+helper context MM!OWLClass def: isIndividual: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PossibleIndividual' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isIndividual) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isRelationship: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Relationship' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isRelationship) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isClassOfClass: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfAbstractObject' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfClass) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isClassOfRelationship: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfRelationship' or 
+		self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfClassOfRelationship') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfRelationship) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+
+unique lazy rule OwlOntology2Lang {
+	from 
+		owl_ontology: MM1!NamedEntity
+	to
+		iso_rdl_language: MM1!Language(
+			name <- 'English'
+		)
+}
+rule OwlOntology2IsoRdl {
+	from
+		owl_ontology: MM!Ontology
+	to
+		iso_rdl: MM1!RDL (
+			id <- owl_ontology.URI,
+			nodes <- owl_ontology.classes,
+			name <- iso_rdl_name,
+			registredLanguages <- thisModule.OwlOntology2Lang()	
+		),
+		iso_rdl_name: MM1!Name (
+			name <- owl_ontology.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+rule OwlClass2IsoThing {
+	from
+		owl_thing: MM!OWLClass (
+			owl_thing.isThing
+		)
+	to
+		iso_thing: MM1!Class (
+			id <- owl_thing.URI,
+			superclassFor <- owl_thing.superClass,
+			name <- iso_relation_name,
+			description <- iso_relation_descr
+		),
+		iso_relation_name: MM1!Name (
+			name <- owl_thing.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_relation_descr: MM1!Description (
+			content <- owl_thing.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+rule OwlIndividual2IsoIndividual {
+	from
+		owl_individual: MM!OWLClass (
+			owl_individual.isIndividual and 
+			not owl_individual.isRelationship)
+	to
+		iso_individual: MM1!Class (
+			id <- owl_individual.URI,
+			superclassFor <- owl_individual.superClass,
+			name <- iso_individual_name,
+			description <- iso_individual_descr
+		),
+		iso_individual_name: MM1!Name (
+			name <- owl_individual.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_individual_descr: MM1!Description (
+			content <- owl_individual.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+rule OwlClass2IsoClass {
+	from
+		owl_class: MM!OWLClass (
+			not owl_class.isRelationship and 
+			not owl_class.isIndividual and 
+			not owl_class.isThing and 
+			not owl_class.isClassOfClass and
+			not owl_class.isClassOfRelationship)
+	to
+		iso_class: MM1!ClassOfClass (
+			id <- owl_class.URI,
+			superclassFor <- owl_class.superClass,
+			name <- iso_class_name,
+			description <- iso_class_descr
+		),
+		iso_class_name: MM1!Name (
+			name <- owl_class.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_class_descr: MM1!Description (
+			content <- owl_class.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+
+rule OwlClass2IsoRelationship {
+	from
+		owl_relation: MM!OWLClass (
+						owl_relation.isRelationship --and 
+						--not owl_relation.isClassOfClass and
+						--not owl_relation.isClassOfRelationship
+		)
+	to
+		iso_relation: MM1!ClassOfRelationship (
+			id <- owl_relation.URI,
+			superclassFor <- owl_relation.superClass,
+			name <- iso_relation_name,
+			description <- iso_relation_descr
+		),
+		iso_relation_name: MM1!Name (
+			name <- owl_relation.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_relation_descr: MM1!Description (
+			content <- owl_relation.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+rule OwlClass2IsoClassOfClass {
+	from
+		owl_class_of_class: MM!OWLClass (
+						owl_class_of_class.isClassOfClass and 
+						not owl_class_of_class.isClassOfRelationship --and
+						--not owl_class_of_class.isRelationship
+						
+		)
+	to
+		iso_class_of_class: MM1!ClassOfClassOfClass (
+			id <- owl_class_of_class.URI,
+			superclassFor <- owl_class_of_class.superClass,
+			name <- iso_class_of_class_name,
+			description <- iso_class_of_class_description
+		),
+		iso_class_of_class_name: MM1!Name (
+			name <- owl_class_of_class.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_class_of_class_description: MM1!Description (
+			content <- owl_class_of_class.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+rule OwlClass2IsoClassOfRelationship {
+	from
+		owl_class_of_relationship: MM!OWLClass (
+						owl_class_of_relationship.isClassOfRelationship --and 
+						--not owl_class_of_relationship.isRelationship --and 
+						--not owl_class_of_relationship.isClassOfClass
+		)
+	to
+		iso_class_of_relationship: MM1!ClassOfClassOfRelationship (
+			id <- owl_class_of_relationship.URI,
+			superclassFor <- owl_class_of_relationship.superClass,
+			name <- iso_class_of_relationship_name,
+			description <- iso_class_of_relationship_description
+		),
+		iso_class_of_relationship_name: MM1!Name (
+			name <- owl_class_of_relationship.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_class_of_relationship_description: MM1!Description (
+			content <- owl_class_of_relationship.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+
+
+--
+

@@ -1,0 +1,101 @@
+-- @path MM=/com.emf4sw.owl/model/owl2.ecore
+-- @path MM1=/ru.shishkin.diplom.iso15926/model/iso15926.ecore
+
+module owl2isoPart7;
+create OUT : MM1 from IN : MM;
+
+uses owl2isoHelper;
+
+helper context MM!OWLClass def: isProtoTemplateStatement: Boolean =
+	if self.URI.startsWith('http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#') then
+		true
+	else
+		false
+	endif;
+
+helper context MM!OWLClass def: isThing: Boolean =
+	if self.URI = 'http://www.w3.org/2002/07/owl#Thing' then
+		true
+	else
+		false
+	endif;
+
+helper context MM!OWLClass def: isPart2: Boolean =
+	if self.URI.startsWith('http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#') then
+		true
+	else
+		false
+	endif;
+
+unique lazy rule OwlOntology2Lang {
+	from 
+		owl_ontology: MM1!NamedEntity
+	to
+		iso_rdl_language: MM1!Language(
+			name <- 'English'
+		)
+}
+--
+--rule OwlOntology2IsoRdl {
+--	from
+--		owl_ontology: MM!Ontology
+--	to
+--		iso_rdl: MM1!RDL (
+--			id <- owl_ontology.URI,
+--			--nodes <- owl_ontology.classes,
+--			templates <- owl_ontology.classes,
+--			name <- iso_rdl_name,
+--			registredLanguages <- thisModule.OwlOntology2Lang()
+----			description <- iso_rdl_descr	
+--		),
+--		iso_rdl_name: MM1!Name (
+--			name <- owl_ontology.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
+
+rule OwlClass2IsoTemplate{
+	from
+		owl_class: MM!OWLClass (owl_class.isProtoTemplateStatement)
+	to
+		iso_class: MM1!Template (
+			id <- owl_class.URI,
+			superTemplateFor <- owl_class.superClass,
+			name <- iso_class_name,
+			description <- iso_class_descr--,
+			--templateRole <- owl_class.keys
+		),
+		iso_class_name: MM1!Name (
+			name <- owl_class.URI.resolveLocalName(),
+			language <- thisModule.OwlOntology2Lang()
+		),
+		iso_class_descr: MM1!Description (
+			content <- owl_class.comment,
+			language <- thisModule.OwlOntology2Lang()
+		)
+}
+--
+--lazy rule OwlProperty2IsoTemplateRole{
+--	from
+--		owl_property: MM!OWLProperty
+--	to
+--		iso_template_role: MM1!TemplateRole(
+--			id <- owl_property.URI,
+--			--restriction <- iso_template_role_restriction,
+--			name <- iso_class_name
+----			description <- iso_class_descr
+--		),
+----		iso_template_role_restriction: MM1!AllValuesFromClass(
+----			reference <- owl_property.range.first()
+----		),
+--		iso_class_name: MM1!Name (
+--			name <- owl_property.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+----		iso_class_descr: MM1!Description (
+----			content <- owl_property.comment,
+----			language <- thisModule.OwlOntology2Lang()
+----		)
+--}
+
+

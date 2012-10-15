@@ -1,0 +1,31 @@
+library owl2isoHelper;
+
+helper def: RDF: String = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+helper def: RDFS: String = 'http://www.w3.org/2000/01/rdf-schema#';
+helper def: OWL: String = 'http://www.w3.org/2002/07/owl#';
+helper def: XSD: String = 'http://www.w3.org/2001/XMLSchema#';
+
+helper def: findLocalName(seq : Sequence(String)) : String =
+	if (seq.isEmpty()) then ''
+	else
+		if (seq.last().regexReplaceAll('[0-9]+(.[0-9]+)?', '').size() <= 1)
+			then thisModule.findLocalName(seq->subSequence(1, seq.size()-1))
+			else seq.last()
+		endif
+	endif;
+
+helper context String def: resolveLocalName() : String =
+	let uri : String = 
+		if (self.startsWith('http://')) then
+			self.substring('http://'.size(), self.size())
+		else self endif 
+	in 
+		let indexOfSharp: Integer = uri.lastIndexOf('#')
+		in if (indexOfSharp < 0) then
+			let splits : Sequence(String) = uri.split('/') in
+				thisModule.findLocalName(splits).regexReplaceAll('\\.', '_')
+			else uri.substring(indexOfSharp + 2, uri.size()) endif;
+--		
+--helper def: Thing: owl!OWLClass = owl!OWLClass.allInstancesFrom('IN')->any(e | e.getURI() = 'http://www.w3.org/2002/07/owl#Thing');
+--
+
