@@ -1,4 +1,4 @@
-package ru.agentlab.owl2iso15926.part7;
+package ru.agentlab.owl2dsl15926.part7;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,8 +25,8 @@ import org.eclipse.m2m.atl.core.emf.EMFModelFactory;
 import org.eclipse.m2m.atl.core.launch.ILauncher;
 import org.eclipse.m2m.atl.engine.emfvm.launch.EMFVMLauncher;
 
-import ru.shihkin.diplom.iso15926.Iso15926Package;
-import ru.shihkin.diplom.iso15926.impl.Iso15926FactoryImpl;
+import ru.agentlab.dsl15926.Dsl15926Package;
+import ru.agentlab.dsl15926.impl.Dsl15926FactoryImpl;
 
 import com.emf4sw.owl.OWLPackage;
 import com.emf4sw.owl.resource.impl.OWLXMLResourceFactory;
@@ -59,12 +59,12 @@ public class Owl2IsoPart7 {
 		Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new XMIResourceFactoryImpl());
 		Registry.INSTANCE.getExtensionToFactoryMap().put("owl", new OWLXMLResourceFactory());
-		Registry.INSTANCE.getExtensionToFactoryMap().put("iso15926", new Iso15926FactoryImpl());
+		Registry.INSTANCE.getExtensionToFactoryMap().put("iso15926", new Dsl15926FactoryImpl());
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(RDFPackage.eINSTANCE.getNsURI(), RDFPackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(OWLPackage.eINSTANCE.getNsURI(), OWLPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(Iso15926Package.eINSTANCE.getNsURI(), Iso15926Package.eINSTANCE);
+		resourceSet.getPackageRegistry().put(Dsl15926Package.eINSTANCE.getNsURI(), Dsl15926Package.eINSTANCE);
 
 		Resource owlResource = resourceSet.createResource(URI.createURI(ontologyPath));
 		owlResource.load(Collections.EMPTY_MAP);
@@ -79,7 +79,7 @@ public class Owl2IsoPart7 {
 			IReferenceModel owlMM = factory.newReferenceModel();
 			injector.inject(owlMM, OWLPackage.eNS_URI);
 			IReferenceModel ontoMM = factory.newReferenceModel();
-			injector.inject(ontoMM, Iso15926Package.eNS_URI);
+			injector.inject(ontoMM, Dsl15926Package.eNS_URI);
 			
 			EMFModel inOwl = (EMFModel) factory.newModel(owlMM);
 			EMFModel outOnto = (EMFModel) factory.newModel(ontoMM);

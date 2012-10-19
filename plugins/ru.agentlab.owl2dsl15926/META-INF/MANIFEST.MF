@@ -14,7 +14,8 @@ Require-Bundle: com.atl.common,
  com.emf4sw.rdf,
  com.emf4sw.owl,
  com.emf4sw.owl.jena,
- org.eclipse.m2m.atl.engine.emfvm;bundle-version="3.2.1"
+ org.eclipse.m2m.atl.engine.emfvm;bundle-version="3.2.1",
+ ru.agentlab.dsl15926.model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: com.emf4sw.owl,
  com.emf4sw.rdf
