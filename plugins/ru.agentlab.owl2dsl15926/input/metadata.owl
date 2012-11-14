@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY p7tm "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#" >
+    <!ENTITY p7tpl "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#" >
+    <!ENTITY dm "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#" >
+]>
+
+
+<rdf:RDF xmlns="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/metadata#"
+     xml:base="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/metadata"
+     xmlns:p7tm="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:p7tpl="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dm="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:comment
+            >This ontology provides metadata properties for classes, templates and individuals.</rdfs:comment>
+    </owl:Ontology>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- Note 1: no domain and range is defined for all these annotation properties; they can be used on anything. --> 
+    
+    <!-- 
+	    Note 2: the following metadata fields from ISO 15926-6 are not translated into annotation properties because they have real OWL alternatives:
+	    - superclass (use rdfs:subclassOf)
+	    - ISO 15926-2 entity (use rdf:type)
+	    - classification (use rdf:type)
+	    - first/second related class + role of first/second re-lated class + first/second related class cardinality (use template)
+    -->
+    
+    
+    <!-- following annotation properties are subproperties of rdfs defined properties -->
+    
+    <owl:AnnotationProperty rdf:about="#annUniqueName">
+        <rdfs:label>unique name</rdfs:label>
+        <rdfs:comment
+            >The name identifier of the reference data item</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;label" />
+    </owl:AnnotationProperty>
+    
+    <owl:AnnotationProperty rdf:about="#annTextDefinition">
+        <rdfs:label>text definition</rdfs:label>
+        <rdfs:comment
+            >The text definition for the reference data item.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment" />
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annSource">
+        <rdfs:label>source</rdfs:label>
+        <rdfs:comment
+            >The source of the text definition for the reference data item.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso" />
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annNotes">
+        <rdfs:label>notes</rdfs:label>
+        <rdfs:comment
+            >Notes and other informative text about the reference data item.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment" />
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annAdministrativeNote">
+        <rdfs:label>administrative note</rdfs:label>
+        <rdfs:comment
+            >An administrative note about a reference data item</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment" />
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annExplanatoryComment">
+        <rdfs:label>explanatory comment</rdfs:label>
+        <rdfs:comment
+            >A description of the reason for the creation of the refer-ence data item .</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment" />
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annChangeDescription">
+        <rdfs:label>change description</rdfs:label>
+        <rdfs:comment
+            >A description of the most recent change.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment" />
+    </owl:AnnotationProperty>
+
+
+
+    <!-- following annotation properties are not subproperties. -->
+
+
+
+    <owl:AnnotationProperty rdf:about="#annRule">
+        <rdfs:label>Rule</rdfs:label>
+        <rdfs:comment
+            >A rule, method, or script applicable in application software.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annAccessCode">
+        <rdfs:label>Access Code</rdfs:label>
+        <rdfs:comment
+            >A security code (resource group) of the information represented by a template instance. It is used as a parameter in an ACL (Access Control List).</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+    <owl:AnnotationProperty rdf:about="#annURI">
+        <rdfs:label>URI</rdfs:label>
+        <rdfs:comment
+            >A URI of the reference data item</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annUniqueNumber">
+        <rdfs:label>unique number</rdfs:label>
+        <rdfs:comment
+            >The integer identifier of the reference data item</rdfs:comment>
+    </owl:AnnotationProperty>
+
+
+    <owl:AnnotationProperty rdf:about="#annSynonym">
+        <rdfs:label>synonym</rdfs:label>
+        <rdfs:comment
+            >A synonym for the unique name of the reference data item</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annCreationDate">
+        <rdfs:label>creation date</rdfs:label>
+        <rdfs:comment
+            >The date of creation of a reference data item within the reference data library.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annEffectiveDate">
+        <rdfs:label>effective date</rdfs:label>
+        <rdfs:comment
+            >The date of the status of the release of the reference data item (if released).</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annLastChangeDate">
+        <rdfs:label>last change date</rdfs:label>
+        <rdfs:comment
+            >The data of the last change to the reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annRegistrationStatus">
+        <rdfs:label>registration status</rdfs:label>
+        <rdfs:comment
+            >The status of the reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annStewardshipContact">
+        <rdfs:label>stewardship contact</rdfs:label>
+        <rdfs:comment
+            >The name of the person who is the contact for the stewardship of a reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annStewardshipOrganization">
+        <rdfs:label>stewardship organization</rdfs:label>
+        <rdfs:comment
+            >The name of the organization that performs the steward-ship of a reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annSubmissionContact">
+        <rdfs:label>submission contact</rdfs:label>
+        <rdfs:comment
+            >The name of the person who is the contact for the submission of a reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annSubmittingOrganization">
+        <rdfs:label>submitting organization</rdfs:label>
+        <rdfs:comment
+            >The name of the organization that performs the "submission of a reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annUnresolvedIssues">
+        <rdfs:label>unresolved issues</rdfs:label>
+        <rdfs:comment
+            >A description of any unresolved issues for a reference data item.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annSymbol">
+        <rdfs:label>symbol</rdfs:label>
+        <rdfs:comment
+            >The symbol used to represent a unit of measure.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annOperator">
+        <rdfs:label>operator</rdfs:label>
+        <rdfs:comment
+            >The operator which defined a unit of measure by an expression.  The allowed values are 'multiply', 'divide', 'factor', and 'exponentiate'.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annFirstOperand">
+        <rdfs:label>first operand</rdfs:label>
+        <rdfs:comment
+            >The name identifier of the first unit of measure in a 'multiply', 'divide', 'factor' or 'exponentiate' operation.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annSecondOperand">
+        <rdfs:label>second operand</rdfs:label>
+        <rdfs:comment
+            >The name identifier of the second unit of measure in a 'multiply' or 'divide' operation.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annFactor_Prefix">
+        <rdfs:label>factor/prefix</rdfs:label>
+        <rdfs:comment
+            >The real number which is used to derive one unit of measure from another in a 'factor' operation.  Either a number or an ISO prefix, such as 'milli' or 'kilo' can be specified.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="#annExponent">
+        <rdfs:label>exponent</rdfs:label>
+        <rdfs:comment
+            >The integer number which is used to derive one unit of measure from another in an 'exponentiate' operation.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+
+</rdf:RDF>

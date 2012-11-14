@@ -1,0 +1,73 @@
+@namespace(uri="http://agentlab.ru/models/dsl15926/2012/08", prefix="ru.agentlab")
+package dsl15926;
+
+abstract class AbstractObject extends Thing {
+  ref AbstractObject[*]#superClassOf subClassOf;
+  ref AbstractObject[*]#subClassOf superClassOf;
+  ref AbstractObject[*] disjointClasses;
+  ref AbstractObject[*] equivalentClasses;
+}
+
+class Template extends AbstractObject {
+  val TemplateRole[*] roles;
+  ref TemplateInstance[*]#template instances;
+  ref Repository#templates repository;
+}
+
+class TemplateRole extends NamedElement {
+  attr String qualifiedCardinality;
+  ref TemplateRoleInstance[*]#templateRole instances;
+  ref AbstractObject entityType;
+}
+
+class Repository {
+  val Class[*]#repository classes;
+  val Template[*]#repository templates;
+  attr String url;
+  attr String[*] imports;
+  val Individual[*]#repository individuals;
+  val TemplateInstance[*]#repository templateInstances;
+  val Pattern[*]#repository patterns;
+}
+
+abstract class NamedElement {
+  attr String label;
+  val Annotation[*] annotations;
+}
+
+class Annotation {
+  attr String type;
+  attr String value;
+  attr String lang;
+}
+
+class Individual extends Thing {
+  ref Pattern[*]#individuals patterns;
+  ref Repository#individuals repository;
+}
+
+class Class extends AbstractObject {
+  ref Thing[*]#classes individuals;
+  ref Repository#classes repository;
+}
+
+class TemplateInstance {
+  ref Template#instances template;
+  val TemplateRoleInstance[*] roles;
+  ref Repository#templateInstances repository;
+}
+
+class Pattern extends NamedElement {
+  ref Individual[*]#patterns individuals;
+  ref Repository#patterns repository;
+}
+
+class TemplateRoleInstance {
+  ref TemplateRole#instances templateRole;
+  ref Thing[1] propertyInstance;
+}
+
+abstract class Thing extends NamedElement {
+  ref Class[*]#individuals classes;
+}
+

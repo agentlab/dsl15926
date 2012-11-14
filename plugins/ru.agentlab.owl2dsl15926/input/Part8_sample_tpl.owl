@@ -1,0 +1,1153 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY tpl "http://rdl.example.org/sampleTemplates#" >
+    <!ENTITY RDL "http://rdl.example.org/sampleReferenceData#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY p7tm "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#" >
+    <!ENTITY dm "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#" >
+    <!ENTITY p7tpl "http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#" >
+]>
+
+
+<rdf:RDF xmlns="http://rdl.example.org/sampleTemplates#"
+     xml:base="http://rdl.example.org/sampleTemplates"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:p7tm="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#"
+     xmlns:p7tpl="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dm="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#"
+     xmlns:tpl="http://rdl.example.org/sampleTemplates#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:RDL="http://rdl.example.org/sampleReferenceData#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:comment
+            >This ontology contains examples of template signatures.</rdfs:comment>
+        <owl:imports rdf:resource="http://rdl.example.org/sampleReferenceData"/>
+        <owl:imports rdf:resource="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates"/>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#hasRole -->
+
+    <owl:ObjectProperty rdf:about="&p7tm;hasRole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#hasRoleFillerType -->
+
+    <owl:ObjectProperty rdf:about="&p7tm;hasRoleFillerType"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#hasSubTemplate -->
+
+    <owl:ObjectProperty rdf:about="&p7tm;hasSubTemplate"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#hasSuperTemplate -->
+
+    <owl:ObjectProperty rdf:about="&p7tm;hasSuperTemplate"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#hasTemplate -->
+
+    <owl:ObjectProperty rdf:about="&p7tm;hasTemplate"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#hasAssemblyType -->
+
+    <owl:ObjectProperty rdf:about="#hasAssemblyType">
+        <rdfs:label>hasAssemblyType</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&p7tpl;hasRelation"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasClassOfPart -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasClassOfPart"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasClassOfWhole -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasClassOfWhole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasIndividual -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasPart -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasPart"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasRelation -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasRelation"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasWhole -->
+
+    <owl:ObjectProperty rdf:about="&p7tpl;hasWhole"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#valNumberOfRoles -->
+
+    <owl:DatatypeProperty rdf:about="&p7tm;valNumberOfRoles"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#valRoleIndex -->
+
+    <owl:DatatypeProperty rdf:about="&p7tm;valRoleIndex"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#valMaximumCardinalityOfPart -->
+
+    <owl:DatatypeProperty rdf:about="#valMaximumCardinalityOfPart">
+        <rdfs:label
+            >valMaximumCardinalityOfPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&p7tpl;valMaximumCardinality"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#valMaximumCardinalityOfWhole -->
+
+    <owl:DatatypeProperty rdf:about="#valMaximumCardinalityOfWhole">
+        <rdfs:label
+            >valMaximumCardinalityOfWhole</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&p7tpl;valMaximumCardinality"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#valMinimumCardinalityOfPart -->
+
+    <owl:DatatypeProperty rdf:about="#valMinimumCardinalityOfPart">
+        <rdfs:label
+            >valMinimumCardinalityOfPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&p7tpl;valMinimumCardinality"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#valMinimumCardinalityOfWhole -->
+
+    <owl:DatatypeProperty rdf:about="#valMinimumCardinalityOfWhole">
+        <rdfs:label
+            >valMinimumCardinalityOfWhole</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&p7tpl;valMinimumCardinality"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#valMaximumCardinality -->
+
+    <owl:DatatypeProperty rdf:about="&p7tpl;valMaximumCardinality"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#valMinimumCardinality -->
+
+    <owl:DatatypeProperty rdf:about="&p7tpl;valMinimumCardinality"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#valStartTime -->
+
+    <owl:DatatypeProperty rdf:about="&p7tpl;valStartTime"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ArrangedIndividual -->
+
+    <owl:Class rdf:about="&dm;ArrangedIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfArrangedIndividual -->
+
+    <owl:Class rdf:about="&dm;ClassOfArrangedIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfAssemblyOfIndividual -->
+
+    <owl:Class rdf:about="&dm;ClassOfAssemblyOfIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfIndividual -->
+
+    <owl:Class rdf:about="&dm;ClassOfIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PossibleIndividual -->
+
+    <owl:Class rdf:about="&dm;PossibleIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#BaseTemplateStatement -->
+
+    <owl:Class rdf:about="&p7tm;BaseTemplateStatement"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#RDLcoreTemplateStatement -->
+
+    <owl:Class rdf:about="&p7tm;RDLcoreTemplateStatement"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#RDLindustryTemplateStatement -->
+
+    <owl:Class rdf:about="&p7tm;RDLindustryTemplateStatement"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#Template -->
+
+    <owl:Class rdf:about="&p7tm;Template"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#TemplateDescription -->
+
+    <owl:Class rdf:about="&p7tm;TemplateDescription"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#TemplateRole -->
+
+    <owl:Class rdf:about="&p7tm;TemplateRole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#TemplateRoleDescription -->
+
+    <owl:Class rdf:about="&p7tm;TemplateRoleDescription"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model#TemplateSpecialization -->
+
+    <owl:Class rdf:about="&p7tm;TemplateSpecialization"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#Person -->
+
+    <owl:Class rdf:about="&RDL;Person"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#PipingNetworkSegment -->
+
+    <owl:Class rdf:about="&RDL;PipingNetworkSegment"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#PipingNetworkSystem -->
+
+    <owl:Class rdf:about="&RDL;PipingNetworkSystem"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#AssemblyRelation -->
+
+    <owl:Class rdf:about="#AssemblyRelation">
+        <rdfs:label
+            >AssemblyRelation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p7tm;BaseTemplateStatement"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMaximumCardinalityOfPart"/>
+                        <owl:allValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMaximumCardinalityOfPart"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMaximumCardinalityOfWhole"/>
+                        <owl:allValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMaximumCardinalityOfWhole"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasClassOfPart"/>
+                        <owl:allValuesFrom rdf:resource="&dm;ClassOfIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasClassOfPart"/>
+                        <owl:onClass rdf:resource="&dm;ClassOfIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMinimumCardinalityOfWhole"/>
+                        <owl:allValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMinimumCardinalityOfWhole"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMinimumCardinalityOfPart"/>
+                        <owl:allValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#valMinimumCardinalityOfPart"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasClassOfWhole"/>
+                        <owl:allValuesFrom rdf:resource="&dm;ClassOfArrangedIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasClassOfWhole"/>
+                        <owl:onClass rdf:resource="&dm;ClassOfArrangedIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAssemblyType"/>
+                        <owl:allValuesFrom rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAssemblyType"/>
+                        <owl:onClass rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >Template axiom:
+
+AssemblyRelation( x1, x2, x3, x4, x5, x6, x7 ) &lt;-&gt;
+  ClassOfIndividual( x1 ) &amp;
+  ClassOfArrangedIndividual( x2 ) &amp;
+  ClassOfAssemblyOfIndividual( x3 ) &amp;
+  INTEGER( x4 ) &amp;
+  INTEGER( x5 ) &amp;
+  INTEGER( x6 ) &amp;
+  INTEGER( x7 ) &amp;
+  ClassOfAssemblyOfIndividualTriple( x3, x1, x2 ) &amp;
+  CardinalityEnd1MinMax( x3, x4, x5 ) &amp;
+  CardinalityEnd2MinMax( x3, x6, x7 ) .</rdfs:comment>
+        <rdfs:comment
+            >This template is for describing assembly relations.
+| 1 | Class of Part                | dm:ClassOfIndividual           |
+| 2 | Class of Whole               | dm:ClassOfArrangedIndividual   |
+| 3 | Context                      | dm:ClassOfAssemblyOfIndividual |
+| 4 | Minimum Cardinality of Part  | dm:INTEGER                     |
+| 5 | Maximum Cardinality of Part  | dm:INTEGER                     |
+| 6 | Minimum Cardinality of Part  | dm:INTEGER                     |
+| 7 | Maximum Cardinality of Whole | dm:INTEGER                     |</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#BeginningOfPerson_dateAsEventObject -->
+
+    <owl:Class rdf:about="#BeginningOfPerson_dateAsEventObject">
+        <rdfs:label
+            >BeginningOfPerson_dateAsEventObject</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p7tm;RDLcoreTemplateStatement"/>
+        <rdfs:subClassOf rdf:resource="&p7tpl;Beginning"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasWhole"/>
+                        <owl:allValuesFrom rdf:resource="&RDL;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasWhole"/>
+                        <owl:onClass rdf:resource="&RDL;Person"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >This class is a constrained version of the Beginning proto-template. It limits acceptable values for the hasWhole role to the class Person.</rdfs:comment>
+        <rdfs:comment
+            >This sample template is categorized as &quot;RDL core&quot; because it uses a Person class. Note, Person isn&#39;t defined in ISO 15926-4.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#BeginningOfPerson_dateAsXsdTime -->
+
+    <owl:Class rdf:about="#BeginningOfPerson_dateAsXsdTime">
+        <rdfs:label
+            >BeginningEndOfIndividual</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p7tm;RDLcoreTemplateStatement"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasIndividual"/>
+                        <owl:allValuesFrom rdf:resource="&RDL;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasIndividual"/>
+                        <owl:onClass rdf:resource="&RDL;Person"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;valStartTime"/>
+                        <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;valStartTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >This class is similar to the Part 7 WD BeginningEndOfIndividualTemplate, but without the &quot;end&quot; argument. With this template, dates are recorded as XSD date values. Compare to BeginningOfPerson_dateAsEventObject, where dates are recorded as ISO 15926 events.</rdfs:comment>
+        <rdfs:comment
+            >This sample template is categorized as &quot;RDL core&quot; because it uses a Person class. Note, Person isn&#39;t defined in ISO 15926-4.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#ClassifiedAssemblyOfIndividual -->
+
+    <owl:Class rdf:about="#ClassifiedAssemblyOfIndividual">
+        <rdfs:subClassOf rdf:resource="&p7tm;BaseTemplateStatement"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAssemblyType"/>
+                        <owl:allValuesFrom rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAssemblyType"/>
+                        <owl:onClass rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasWhole"/>
+                        <owl:allValuesFrom rdf:resource="&dm;ArrangedIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasWhole"/>
+                        <owl:onClass rdf:resource="&dm;ArrangedIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasPart"/>
+                        <owl:allValuesFrom rdf:resource="&dm;PossibleIndividual"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&p7tpl;hasPart"/>
+                        <owl:onClass rdf:resource="&dm;PossibleIndividual"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >This template is set up to match the pattern of
+ClassifiedIdentification, as defined in P7.
+
+Signature for ClassifiedAssemblyOfIndividual:
+| 1 | Part    | dm:PossibleIndividual       |
+| 2 | Whole   | dm:ArrangedIndividual       |
+| 3 | Context | dm:ClassOfAssemblyOfIndividual |</rdfs:comment>
+        <rdfs:comment
+            >Template axiom:
+
+ClassifiedAssemblyOfIndividual( x1, x2, x3 ) &lt;-&gt;
+  PossibleIndividual( x1 ) &amp;
+  ArrangedIndividual( x2 ) &amp;
+  ClassOfAssemblyOfIndividual( x3 ) &amp;
+  exists y ( AssemblyOfIndividualTriple( y, x1, x2 ) &amp;
+    ClassificationOfRelationship( y, x3 ) .</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#PipingNetworkSystemHasSegment -->
+
+    <owl:Class rdf:about="#PipingNetworkSystemHasSegment">
+        <rdfs:subClassOf rdf:resource="&p7tm;RDLindustryTemplateStatement"/>
+        <rdfs:subClassOf rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAssemblyType"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&RDL;PipingNetworkSystemHasSegment"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&p7tpl;hasWhole"/>
+                <owl:someValuesFrom rdf:resource="&RDL;PipingNetworkSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&p7tpl;hasPart"/>
+                <owl:someValuesFrom rdf:resource="&RDL;PipingNetworkSegment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >This is a /specialized/ variant of ClassifiedAssemblyOfIndividual,
+made for the purpose of recording parts of piping systems.</rdfs:comment>
+        <rdfs:comment
+            >Signature for PipingNetworkSystemHasSegment:
+
+| 1 | Part    | RDL:PipingNetworkSegment            |
+| 2 | Whole   | RDL:PipingNetworkSystem             |
+| 3 | Context | {RDL:PipingNetworkSystemHasSegment} |</rdfs:comment>
+        <rdfs:comment
+            >Template axiom:
+
+PipingNetworkSystemHasSegment( x1, x2, x3 ) &lt;-&gt;
+  ClassificationOfIndividual( x1, RD_PipingNetworkSegment ) &amp;
+  ClassificationOfIndividual( x2, RDLPipingNetworkSystem ) &amp;
+  ClassificationOfClassOfRelationship( x3, {RDLPipingNetworkSystemHasSegment} ) &amp;
+  ClassifiedAssemblyOfIndividual( x1, x2, x3 ) .</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#Template -->
+
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRole -->
+
+    <owl:Class rdf:about="#TemplateRole">
+        <rdfs:subClassOf rdf:resource="&p7tm;TemplateRole"/>
+    </owl:Class>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#Beginning -->
+
+    <owl:Class rdf:about="&p7tpl;Beginning"/>
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfArrangedIndividual -->
+
+    <owl:Thing rdf:about="&dm;ClassOfArrangedIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfAssemblyOfIndividual -->
+
+    <owl:Thing rdf:about="&dm;ClassOfAssemblyOfIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfIndividual -->
+
+    <owl:Thing rdf:about="&dm;ClassOfIndividual"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Event -->
+
+    <owl:Thing rdf:about="&dm;Event"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PossibleIndividual -->
+
+    <owl:Thing rdf:about="&dm;PossibleIndividual"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#Person -->
+
+    <owl:Thing rdf:about="&RDL;Person"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#PipingNetworkSegment -->
+
+    <owl:Thing rdf:about="&RDL;PipingNetworkSegment"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#PipingNetworkSystem -->
+
+    <owl:Thing rdf:about="&RDL;PipingNetworkSystem"/>
+
+
+
+    <!-- http://rdl.example.org/sampleReferenceData#PipingNetworkSystemHasSegment -->
+
+    <owl:Thing rdf:about="&RDL;PipingNetworkSystemHasSegment"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#AssemblyRelation -->
+
+    <owl:Thing rdf:about="#AssemblyRelation">
+        <rdf:type rdf:resource="&p7tm;Template"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#BeginningOfPerson_dateAsEventObject -->
+
+    <owl:Thing rdf:about="#BeginningOfPerson_dateAsEventObject">
+        <rdf:type rdf:resource="&p7tm;Template"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#BeginningOfPerson_dateAsXsdTime -->
+
+    <owl:Thing rdf:about="#BeginningOfPerson_dateAsXsdTime">
+        <rdf:type rdf:resource="&p7tm;Template"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#ClassifiedAssemblyOfIndividual -->
+
+    <owl:Thing rdf:about="#ClassifiedAssemblyOfIndividual"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#PipingNetworkSystemHasSegment -->
+
+    <owl:Thing rdf:about="#PipingNetworkSystemHasSegment"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateDescription_of_AssemblyRelation -->
+
+    <p7tm:TemplateDescription rdf:about="#TemplateDescription_of_AssemblyRelation">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateDescription_of_AssemblyRelation</rdfs:label>
+        <p7tm:valNumberOfRoles rdf:datatype="&xsd;integer">7</p7tm:valNumberOfRoles>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+    </p7tm:TemplateDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateDescription_of_BeginningOfPerson_dateAsEventObject -->
+
+    <owl:Thing rdf:about="#TemplateDescription_of_BeginningOfPerson_dateAsEventObject">
+        <rdf:type rdf:resource="&p7tm;TemplateDescription"/>
+        <rdfs:label
+            >TemplateDescription_of_BeginningOfPerson_dateAsEventObject</rdfs:label>
+        <p7tm:valNumberOfRoles rdf:datatype="&xsd;integer">2</p7tm:valNumberOfRoles>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsEventObject"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateDescription_of_BeginningOfPerson_dateAsXsdTime -->
+
+    <p7tm:TemplateDescription rdf:about="#TemplateDescription_of_BeginningOfPerson_dateAsXsdTime">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateDescription_of_BeginningOfPerson_dateAsXsdTime</rdfs:label>
+        <p7tm:valNumberOfRoles rdf:datatype="&xsd;integer">2</p7tm:valNumberOfRoles>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsXsdTime"/>
+    </p7tm:TemplateDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateDescription_of_ClassifiedAssemblyOfIndividual -->
+
+    <owl:Thing rdf:about="#TemplateDescription_of_ClassifiedAssemblyOfIndividual">
+        <rdf:type rdf:resource="&p7tm;TemplateDescription"/>
+        <rdfs:label
+            >TemplateDescription_of_ClassifiedAssemblyOfIndividual</rdfs:label>
+        <p7tm:valNumberOfRoles rdf:datatype="&xsd;integer">3</p7tm:valNumberOfRoles>
+        <p7tm:hasTemplate rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateDescription_of_PipingNetworkSystemHasSegment -->
+
+    <owl:Thing rdf:about="#TemplateDescription_of_PipingNetworkSystemHasSegment">
+        <rdf:type rdf:resource="&p7tm;TemplateDescription"/>
+        <rdfs:label
+            >TemplateDescription_of_PipingNetworkSystemHasSegment</rdfs:label>
+        <p7tm:valNumberOfRoles rdf:datatype="&xsd;integer">3</p7tm:valNumberOfRoles>
+        <p7tm:hasTemplate rdf:resource="#PipingNetworkSystemHasSegment"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_1 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_AssemblyRelation_1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_1</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">1</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;ClassOfIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasClassOfPart"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_2 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_AssemblyRelation_2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_2</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">2</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;ClassOfArrangedIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasClassOfWhole"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_3 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_AssemblyRelation_3">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_3</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">3</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="#hasAssemblyType"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_4 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_AssemblyRelation_4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_4</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">4</p7tm:valRoleIndex>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="#minimumCardinalityPart"/>
+        <p7tm:hasRoleFillerType rdf:resource="&xsd;double"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_5 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_AssemblyRelation_5">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_5</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">5</p7tm:valRoleIndex>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="#maximumCardinalityPart"/>
+        <p7tm:hasRoleFillerType rdf:resource="&xsd;double"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_6 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_AssemblyRelation_6">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_6</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">6</p7tm:valRoleIndex>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="#minimumCardinalityWhole"/>
+        <p7tm:hasRoleFillerType rdf:resource="&xsd;double"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_AssemblyRelation_7 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_AssemblyRelation_7">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_AssemblyRelation_7</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">7</p7tm:valRoleIndex>
+        <p7tm:hasTemplate rdf:resource="#AssemblyRelation"/>
+        <p7tm:hasRole rdf:resource="#maximumCardinalityWhole"/>
+        <p7tm:hasRoleFillerType rdf:resource="&xsd;double"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_BeginningOfPerson_dateAsEventObject_1 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_BeginningOfPerson_dateAsEventObject_1">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">1</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;Event"/>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsEventObject"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasPart"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_BeginningOfPerson_dateAsEventObject_2 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_BeginningOfPerson_dateAsEventObject_2">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">2</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&RDL;Person"/>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsEventObject"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasWhole"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_BeginningOfPerson_dateAsXsdTime_1 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_BeginningOfPerson_dateAsXsdTime_1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">1</p7tm:valRoleIndex>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsXsdTime"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;valStartTime"/>
+        <p7tm:hasRoleFillerType rdf:resource="&xsd;dateTime"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_BeginningOfPerson_dateAsXsdTime_2 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_BeginningOfPerson_dateAsXsdTime_2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">2</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&RDL;Person"/>
+        <p7tm:hasTemplate rdf:resource="#BeginningOfPerson_dateAsXsdTime"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasWhole"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_1 -->
+
+    <p7tm:TemplateRoleDescription rdf:about="#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_1</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">1</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;PossibleIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasPart"/>
+    </p7tm:TemplateRoleDescription>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_2 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_2">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_2</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">2</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;ClassOfIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasWhole"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_3 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_3">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_ClassifiedAssemblyOfIndividual_3</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">3</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&dm;ClassOfAssemblyOfIndividual"/>
+        <p7tm:hasTemplate rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+        <p7tm:hasRole rdf:resource="#hasAssemblyType"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_1 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_1">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_PipingNetworkSystemHasSegment_1</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">1</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&RDL;PipingNetworkSegment"/>
+        <p7tm:hasTemplate rdf:resource="#PipingNetworkSystemHasSegment"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasPart"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_2 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_2">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_PipingNetworkSystemHasSegment_2</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">2</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&RDL;PipingNetworkSystem"/>
+        <p7tm:hasTemplate rdf:resource="#PipingNetworkSystemHasSegment"/>
+        <p7tm:hasRole rdf:resource="&p7tpl;hasWhole"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_3 -->
+
+    <owl:Thing rdf:about="#TemplateRoleDescription_of_PipingNetworkSystemHasSegment_3">
+        <rdf:type rdf:resource="&p7tm;TemplateRoleDescription"/>
+        <rdfs:label
+            >TemplateRoleDescription_of_PipingNetworkSystemHasSegment_3</rdfs:label>
+        <p7tm:valRoleIndex rdf:datatype="&xsd;integer">3</p7tm:valRoleIndex>
+        <p7tm:hasRoleFillerType rdf:resource="&RDL;PipingNetworkSystemHasSegment"/>
+        <p7tm:hasTemplate rdf:resource="#PipingNetworkSystemHasSegment"/>
+        <p7tm:hasRole rdf:resource="#hasAssemblyType"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#TemplateSpecialization_of_ClassifiedAssemblyOfIndividual_to_PipingNetworkSystemHasSegment -->
+
+    <owl:Thing rdf:about="#TemplateSpecialization_of_ClassifiedAssemblyOfIndividual_to_PipingNetworkSystemHasSegment">
+        <rdf:type rdf:resource="&p7tm;TemplateSpecialization"/>
+        <rdfs:label
+            >TemplateSpecialization_of_ClassifiedAssemblyOfIndividual_to_PipingNetworkSystemHasSegment</rdfs:label>
+        <p7tm:hasSuperTemplate rdf:resource="#ClassifiedAssemblyOfIndividual"/>
+        <p7tm:hasSubTemplate rdf:resource="#PipingNetworkSystemHasSegment"/>
+    </owl:Thing>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#hasAssemblyType -->
+
+    <owl:Thing rdf:about="#hasAssemblyType"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#maximumCardinalityPart -->
+
+    <owl:Thing rdf:about="#maximumCardinalityPart"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#maximumCardinalityWhole -->
+
+    <owl:Thing rdf:about="#maximumCardinalityWhole"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#minimumCardinalityPart -->
+
+    <owl:Thing rdf:about="#minimumCardinalityPart"/>
+
+
+
+    <!-- http://rdl.example.org/sampleTemplates#minimumCardinalityWhole -->
+
+    <owl:Thing rdf:about="#minimumCardinalityWhole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasClassOfPart -->
+
+    <owl:Thing rdf:about="&p7tpl;hasClassOfPart"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasClassOfWhole -->
+
+    <owl:Thing rdf:about="&p7tpl;hasClassOfWhole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasContext -->
+
+    <owl:Thing rdf:about="&p7tpl;hasContext"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasPart -->
+
+    <owl:Thing rdf:about="&p7tpl;hasPart"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#hasWhole -->
+
+    <owl:Thing rdf:about="&p7tpl;hasWhole"/>
+
+
+
+    <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates#valStartTime -->
+
+    <owl:Thing rdf:about="&p7tpl;valStartTime"/>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#dateTime -->
+
+    <owl:Thing rdf:about="&xsd;dateTime"/>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#double -->
+
+    <owl:Thing rdf:about="&xsd;double"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

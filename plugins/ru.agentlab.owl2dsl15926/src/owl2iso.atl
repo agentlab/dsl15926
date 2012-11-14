@@ -1,5 +1,5 @@
 -- @path MM=/com.emf4sw.owl/model/owl2.ecore
--- @path MM1=/ru.shishkin.diplom.iso15926/model/iso15926.ecore
+-- @path MM1=/ru.agentlab.dsl15926/model/dsl15926.ecore
 
 
 module owl2iso;
@@ -14,14 +14,29 @@ helper context MM!OWLClass def: isThing: Boolean =
 		false
 	endif;
 
-helper context MM!OWLClass def: isIndividual: Boolean =
+helper context MM!OWLClass def: isPossibleIndividual: Boolean =
 	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PossibleIndividual' then
 		true
 	else
 		if self.isThing then
 			false
 		else
-			if self.subClassOf -> exists(i | i.isIndividual) then
+			if self.subClassOf -> exists(i | i.isPossibleIndividual) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isAbstractObject: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#AbstractObject' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.AbstractObject) then
 				true
 			else
 				false
@@ -44,8 +59,287 @@ helper context MM!OWLClass def: isRelationship: Boolean =
 		endif
 	endif;
 
+helper context MM!OWLClass def: isClass: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Class' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClass) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isMultidimensionalObject: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#MultidimensionalObject' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isMultidimensionalObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+-- ///////////////////////////
+-- PossibleIndividual
+-- ///////////////////////////
+
+helper context MM!OWLClass def: isEvent: Boolean =
+	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Event' then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isEvent) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isPeriodInTime: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PeriodInTime') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isPeriodInTime) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isPhysicalObject: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PhysicalObject') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isPhysialObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+
+helper context MM!OWLClass def: isWholeLifeIndividual: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#WholeLifeIndividual') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isWholeLifeIndividual)then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isActivity: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Activity') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.Activity) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isActualIndividual: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ActualIndividual') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.ActualIndividual) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isArrangedIndividual: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ArrangedIndividual') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.ArrangedIndividual) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isPointInTime: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#PointInTime') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.PointInTime) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isFunctionalPhysicalObject: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#FunctionalPhysicalObject') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isFunctionalPhysicalObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isMaterializedPhysicalObject: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#MaterializedPhysicalObject') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isMaterializedPhysicalObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isSpatialLocation: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#SpatialLocation') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isSpatialLocation) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isStream: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Stream') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isStream) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+-- ///////////////////////////
+-- Class
+-- ///////////////////////////
+
+helper context MM!OWLClass def: isClassOfAbstractObject: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfAbstractObject') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfAbstarctObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isClassOfIndividual: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfIndividual') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfIndividual) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isRoleAndDomain: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#RoleAndDomain') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isRoleAndDomain) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isCardinality: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Cardinality') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isCardinality) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
 helper context MM!OWLClass def: isClassOfClass: Boolean =
-	if self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfAbstractObject' then
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfClass') then
 		true
 	else
 		if self.isThing then
@@ -59,9 +353,23 @@ helper context MM!OWLClass def: isClassOfClass: Boolean =
 		endif
 	endif;
 
+helper context MM!OWLClass def: isClassOfMultidimensionalObject: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfMultidimensionalObject') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfMultidimensionaObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
 helper context MM!OWLClass def: isClassOfRelationship: Boolean =
-	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfRelationship' or 
-		self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfClassOfRelationship') then
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfRelationship') then
 		true
 	else
 		if self.isThing then
@@ -75,173 +383,583 @@ helper context MM!OWLClass def: isClassOfRelationship: Boolean =
 		endif
 	endif;
 
+helper context MM!OWLClass def: isClassOfArrangedIndividual: Boolean =
+	if (self.URI = ' http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfArrangedIndividual') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfAbstractObject) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
 
-unique lazy rule OwlOntology2Lang {
-	from 
-		owl_ontology: MM1!NamedEntity
-	to
-		iso_rdl_language: MM1!Language(
-			name <- 'English'
-		)
-}
-rule OwlOntology2IsoRdl {
-	from
-		owl_ontology: MM!Ontology
-	to
-		iso_rdl: MM1!RDL (
-			id <- owl_ontology.URI,
-			nodes <- owl_ontology.classes,
-			name <- iso_rdl_name,
-			registredLanguages <- thisModule.OwlOntology2Lang()	
-		),
-		iso_rdl_name: MM1!Name (
-			name <- owl_ontology.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		)
-}
+helper context MM!OWLClass def: isClassOfEvent: Boolean =
+	if (self.URI = ' http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfEvent') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfEvent) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
 
-rule OwlClass2IsoThing {
+helper context MM!OWLClass def: isClassOfPeriodInTime: Boolean =
+	if (self.URI = ' http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ClassOfPeriodInTime') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isClassOfPeriodInTime) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isIndividualDimension: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#IndividualDimension') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isIndividualDimension) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isProperty: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Property') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isProperty) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isParticipatingRoleAndDomain: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#ParticipatingRoleAndDomain') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isParticipatingRoleAndDomain) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+
+helper context MM!OWLClass def: isStatus: Boolean =
+	if (self.URI = 'http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Status') then
+		true
+	else
+		if self.isThing then
+			false
+		else
+			if self.subClassOf -> exists(i | i.isStatus) then
+				true
+			else
+				false
+			endif
+		endif
+	endif;
+--unique lazy rule OwlOntology2Lang {
+--	from 
+--		owl_ontology: MM1!NamedEntity
+--	to
+--		iso_rdl_language: MM1!Language(
+--			name <- 'English'
+--		)
+--}
+--rule OwlOntology2IsoRdl {
+--	from
+--		owl_ontology: MM!Ontology
+--	to
+--		iso_rdl: MM1!RDL (
+--			id <- owl_ontology.URI,
+--			nodes <- owl_ontology.classes,
+--			name <- iso_rdl_name,
+--			registredLanguages <- thisModule.OwlOntology2Lang()	
+--		),
+--		iso_rdl_name: MM1!Name (
+--			name <- owl_ontology.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
+
+rule OWLThing2DslThing{
 	from
-		owl_thing: MM!OWLClass (
+		owl_thing:MM!OWLClass (
 			owl_thing.isThing
 		)
 	to
-		iso_thing: MM1!Class (
-			id <- owl_thing.URI,
-			superclassFor <- owl_thing.superClass,
-			name <- iso_relation_name,
-			description <- iso_relation_descr
-		),
-		iso_relation_name: MM1!Name (
-			name <- owl_thing.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_relation_descr: MM1!Description (
-			content <- owl_thing.comment,
-			language <- thisModule.OwlOntology2Lang()
-		)
+		dsl_thing: MM1!Thing 
 }
 
-rule OwlIndividual2IsoIndividual {
+rule OWLAbstractObject2DslAbstractObject{
 	from
-		owl_individual: MM!OWLClass (
-			owl_individual.isIndividual and 
-			not owl_individual.isRelationship)
-	to
-		iso_individual: MM1!Class (
-			id <- owl_individual.URI,
-			superclassFor <- owl_individual.superClass,
-			name <- iso_individual_name,
-			description <- iso_individual_descr
-		),
-		iso_individual_name: MM1!Name (
-			name <- owl_individual.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_individual_descr: MM1!Description (
-			content <- owl_individual.comment,
-			language <- thisModule.OwlOntology2Lang()
+		owl_abstractObject: MM!OWLClass( 
+			owl_abstractObject.isAbstractObject
 		)
+	to
+		dsl_abstractObject: MM1!AbstractObject
 }
 
-rule OwlClass2IsoClass {
+rule OWLPossibleIndividual2DslIndividual{
+	from
+		owl_possibleIndividual: MM!OWLClass( 
+			owl_possibleIndividual.isPossibleIndividual
+		)
+	to
+		dsl_IndividualPossibleIndividual: MM1!Individual
+}
+
+rule OwlClass2DslClass {
 	from
 		owl_class: MM!OWLClass (
-			not owl_class.isRelationship and 
-			not owl_class.isIndividual and 
-			not owl_class.isThing and 
-			not owl_class.isClassOfClass and
-			not owl_class.isClassOfRelationship)
+			owl_class.isClass
+		)
 	to
-		iso_class: MM1!ClassOfClass (
-			id <- owl_class.URI,
-			superclassFor <- owl_class.superClass,
-			name <- iso_class_name,
-			description <- iso_class_descr
-		),
-		iso_class_name: MM1!Name (
-			name <- owl_class.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_class_descr: MM1!Description (
-			content <- owl_class.comment,
-			language <- thisModule.OwlOntology2Lang()
+		dsl_class: MM1!Class 
+}
+
+rule OWLMultidimensionalObject2DslTemplate {
+	from
+		owl_multidimensionalObject: MM!OWLClass (
+			owl_multidimensionalObject.isMultidimensionalObject
+		)
+	to
+		dsl_templateMultidimensionalObject: MM1!Template 
+}
+
+rule OWLRelationship2DslTemplate {
+	from
+		owl_relationship: MM!OWLClass (
+			owl_relationship.isRelationship and 
+			not owl_relationship.isMultidimensionalObject
+		)
+	to
+		dsl_templateRelationship: MM1!Template 
+}
+-- ///////////////////////////
+-- PossibleIndividual
+-- ///////////////////////////
+
+rule OWLEvent2DslIndividual{
+	from
+		owl_event:MM!OWLClass(
+			owl_event.isEvent 
+		)
+	to 
+		dsl_individualEvent: MM1!Individual
+}
+ rule OWLPeriodInTime2DslIndividual{
+ 	from
+		owl_periodInTime: MM!OWLClass(
+			owl_periodInTime.isPeriodInTime
+		)
+	to 
+		dsl_individualPeriofInTime: MM1!Individual
+ }
+ 
+ rule OWLPhysicalObject2DslIndividual{
+ 	from
+		owl_physicalObject: MM!OWLClass(
+			owl_physicalObject.isPeriodInTime	
+		)
+	to 
+		dsl_individualPhysicalObject: MM1!Individual
+ }
+ 
+rule OWLWholeLifeIndividual2DslIndividual{
+ 	from
+		owl_wholeLifeIndividual: MM!OWLClass(
+			owl_wholeLifeIndividual.isWholeLifeIndividual
+		)
+	to 
+		dsl_individualWholeLifeIndividual: MM1!Individual
+ }
+  
+rule OWLActualIndividual2DslIndividual{
+ 	from
+		owl_actualIndividual: MM!OWLClass(
+			owl_actualIndividual.isActualIndividual
+		)
+	to
+		dsl_individualActualIndividual: MM1!Individual
+}
+
+rule OWLActivity2DslIndividual{
+ 	from
+		owl_activity: MM!OWLClass(
+			owl_activity.isActivity
+		)
+	to 
+		dsl_individualActivity: MM1!Individual
+}
+
+rule OWLArrangedIndividual2DslIndividual{
+ 	from
+		owl_arrangedIndividual: MM!OWLClass(
+			owl_arrangedIndividual.isArrangedIndividual
+		)
+	to 
+		dsl_individualArrangedIndividual: MM1!Individual
+}
+
+rule OWLPointInTime2DslIndividual{
+ 	from
+		owl_pointInTime: MM!OWLClass(
+			owl_pointInTime.isPointInTime
+		)
+	to 
+		dsl_individualPointInTime: MM1!Individual
+}
+
+rule OWLFunctionalPhysicalObject2DslIndividual{
+ 	from
+		owl_functionalPhysicalObject: MM!OWLClass(
+			owl_functionalPhysicalObject.isFunctionalPhysicalObject
+		)
+	to 
+		dsl_individualFunctionalPhysicalObject: MM1!Individual
+}
+
+rule OWLMaterializedPhysicalObject2DslIndividual{
+ 	from
+		owl_materializedPhysicalObject: MM!OWLClass(
+			owl_materializedPhysicalObject.isMaterializedPhysicalObject
+		)
+	to 
+		dsl_individualMaterializedPhysicalObject: MM1!Individual
+}
+
+rule OWLSpatialLocation2DslIndividual{
+ 	from
+		owl_spatialLocation: MM!OWLClass(
+			owl_spatialLocation.isSpatialLocation
+		)
+	to 
+		dsl_individualSpatialLocation: MM1!Individual
+}
+
+rule OWLStream2DslIndividual{
+ 	from
+		owl_stream: MM!OWLClass(
+			owl_stream.isStream
+		)
+	to 
+		dsl_individualStream: MM1!Individual
+}
+-- ///////////////////////////
+-- Class
+-- ///////////////////////////
+
+rule OWLClassOfAbstractObject2DslClass{
+ 	from
+		owl_classOfAbstractObject: MM!OWLClass(
+			owl_classOfAbstractObject.isClassOfAbstractObject 
+			--and owl_classOfAbstractObject.disjointClasses
+			
+		)
+	to 
+		dsl_classClassOfAbstractObject: MM1!Class(
+			subClassOf <- owl_classOfAbstractObject.subClassOf
+			, disjointClasses <- owl_classOfAbstractObject.disjointClasses
 		)
 }
 
+rule OWLClassOfIndividual2DslClass{
+ 	from
+		owl_classOfIndividual: MM!OWLClass(
+			owl_classOfIndividual.isClassOfIndividual
+		)
+	to 
+		dsl_classClassOfAbstractObject: MM1!Class(
+			subClassOf <- owl_classOfIndividual.subClassOf
+		)
+}
 
-rule OwlClass2IsoRelationship {
-	from
-		owl_relation: MM!OWLClass (
-						owl_relation.isRelationship --and 
+rule OWLRoleAndDomain2DslClass{
+ 	from
+		owl_roleAndDomain: MM!OWLClass(
+			owl_roleAndDomain.isRoleAndDomain
+		)
+	to 
+		dsl_classRoleAndDomain: MM1!Class(
+			subClassOf <- owl_roleAndDomain.subClassOf
+		)
+}
+
+rule OWLCardinality2DslClass{
+ 	from
+		owl_cardinality: MM!OWLClass(
+			owl_cardinality.isCardinality
+		)
+	to 
+		dsl_classCardinality: MM1!Class(
+			subClassOf <- owl_cardinality.subClassOf
+		)
+}
+
+rule OWLClassOfClass2DslClass{
+ 	from
+		owl_classOfClass: MM!OWLClass(
+			owl_classOfClass.isClassOfClass
+		)
+	to 
+		dsl_classClassOfClass: MM1!Class(
+			subClassOf <- owl_classOfClass.subClassOf	
+		)
+}
+
+rule OWLClassOfMultidimensionalObject2DslClass{
+ 	from
+		owl_classOfMultidimensionalObject: MM!OWLClass(
+			owl_classOfMultidimensionalObject.isClassOfMultidimensionalObject
+		)
+	to 
+		dsl_classClassOfMultidimensionalObject: MM1!Class(
+			subClassOf <- owl_classOfMultidimensionalObject.subClassOf	
+		)
+}
+
+rule OWLClassOfRelationship2DslClass{
+ 	from
+		owl_classOfRelationship: MM!OWLClass(
+			owl_classOfRelationship.isClassOfRelationship
+		)
+	to 
+		dsl_classClassOfRelationship: MM1!Class(
+			subClassOf <- owl_classOfRelationship.subClassOf	
+		)
+}
+
+rule OWLClassOfArrangedIndividual2DslClass{
+ 	from
+		owl_classOfArrangedIndividual: MM!OWLClass(
+			owl_classOfArrangedIndividual.isClassOfArrangedIndividual
+		)
+	to 
+		dsl_classClassOfArrangedIndividual: MM1!Class(
+			subClassOf <- owl_classOfArrangedIndividual.subClassOf
+			, disjointClasses <- owl_classOfArrangedIndividual.disjointClasses
+		)
+}
+
+rule OWLClassOfEvent2DslClass{
+ 	from
+		owl_classOfEvent: MM!OWLClass(
+			owl_classOfEvent.isClassOfEvent
+		)
+	to 
+		dsl_classClassOfEvent: MM1!Class(
+			subClassOf <- owl_classOfEvent.subClassOf
+			, disjointClasses <- owl_classOfEvent.disjointClasses
+		)
+}
+
+rule OWLClassOfPeriodInTime2DslClass{
+ 	from
+		owl_classOfPeriodInTime: MM!OWLClass(
+			owl_classOfPeriodInTime.isClassOfPeriodInTime
+		)
+	to 
+		dsl_classClassOfPeriodInTime: MM1!Class(
+			subClassOf <- owl_classOfPeriodInTime.subClassOf
+			, disjointClasses <- owl_classOfPeriodInTime.disjointClasses
+		)
+}
+
+rule OWLIndividualDimension2DslClass{
+ 	from
+		owl_individualDimension: MM!OWLClass(
+			owl_individualDimension.isIndividualDimension
+		)
+	to 
+		dsl_classIndividualDimension: MM1!Class(
+			subClassOf <- owl_individualDimension.subClassOf
+			, disjointClasses <- owl_individualDimension.disjointClasses
+		)
+}
+
+rule OWLParticipatingRoleAndDomain2DslClass{
+ 	from
+		owl_participatingRoleAndDomain: MM!OWLClass(
+			owl_participatingRoleAndDomain.isParticipatingRoleAndDomain
+		)
+	to 
+		dsl_classParticipatingRoleAndDomain: MM1!Class(
+			subClassOf <- owl_participatingRoleAndDomain.subClassOf
+		)
+}
+
+rule OWLProperty2DslClass{
+ 	from
+		owl_property: MM!OWLClass(
+			owl_property.isProperty
+		)
+	to 
+		dsl_classProperty: MM1!Class(
+			subClassOf <- owl_property.subClassOf
+			, disjointClasses <- owl_property.disjointClasses
+		)
+}
+
+rule OWLStatus2DslClass{
+ 	from
+		owl_status: MM!OWLClass(
+			owl_status.isStatus
+		)
+	to 
+		dsl_classStatus: MM1!Class(
+			subClassOf <- owl_status.subClassOf
+		)
+}
+--rule OwlIndividual2IsoIndividual {
+--	from
+--		owl_individual: MM!OWLClass (
+--			owl_individual.isIndividual and 
+--			not owl_individual.isRelationship)
+--	to
+--		iso_individual: MM1!Class (
+--			id <- owl_individual.URI,
+--			superclassFor <- owl_individual.superClass,
+--			name <- iso_individual_name,
+--			description <- iso_individual_descr
+--		),
+--		iso_individual_name: MM1!Name (
+--			name <- owl_individual.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		),
+--		iso_individual_descr: MM1!Description (
+--			content <- owl_individual.comment,
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
+
+--rule OwlClass2IsoClass {
+--	from
+--		owl_class: MM!OWLClass (
+--			not owl_class.isRelationship and 
+--			not owl_class.isIndividual and 
+--			not owl_class.isThing and 
+--			not owl_class.isClassOfClass and
+--			not owl_class.isClassOfRelationship)
+--	to
+--		iso_class: MM1!ClassOfClass (
+--			id <- owl_class.URI,
+--			superclassFor <- owl_class.superClass,
+--			name <- iso_class_name,
+--			description <- iso_class_descr
+--		),
+--		iso_class_name: MM1!Name (
+--			name <- owl_class.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		),
+--		iso_class_descr: MM1!Description (
+--			content <- owl_class.comment,
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
+
+
+--rule OwlClass2IsoRelationship {
+--	from
+--		owl_relation: MM!OWLClass (
+--						owl_relation.isRelationship --and 
 						--not owl_relation.isClassOfClass and
 						--not owl_relation.isClassOfRelationship
-		)
-	to
-		iso_relation: MM1!ClassOfRelationship (
-			id <- owl_relation.URI,
-			superclassFor <- owl_relation.superClass,
-			name <- iso_relation_name,
-			description <- iso_relation_descr
-		),
-		iso_relation_name: MM1!Name (
-			name <- owl_relation.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_relation_descr: MM1!Description (
-			content <- owl_relation.comment,
-			language <- thisModule.OwlOntology2Lang()
-		)
-}
+--		)
+--	to
+--		iso_relation: MM1!ClassOfRelationship (
+--			id <- owl_relation.URI,
+--			superclassFor <- owl_relation.superClass,
+--			name <- iso_relation_name,
+--			description <- iso_relation_descr
+--		),
+--		iso_relation_name: MM1!Name (
+--			name <- owl_relation.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		),
+--		iso_relation_descr: MM1!Description (
+--			content <- owl_relation.comment,
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
 
-rule OwlClass2IsoClassOfClass {
-	from
-		owl_class_of_class: MM!OWLClass (
-						owl_class_of_class.isClassOfClass and 
-						not owl_class_of_class.isClassOfRelationship --and
-						--not owl_class_of_class.isRelationship
-						
-		)
-	to
-		iso_class_of_class: MM1!ClassOfClassOfClass (
-			id <- owl_class_of_class.URI,
-			superclassFor <- owl_class_of_class.superClass,
-			name <- iso_class_of_class_name,
-			description <- iso_class_of_class_description
-		),
-		iso_class_of_class_name: MM1!Name (
-			name <- owl_class_of_class.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_class_of_class_description: MM1!Description (
-			content <- owl_class_of_class.comment,
-			language <- thisModule.OwlOntology2Lang()
-		)
-}
+--rule OwlClass2IsoClassOfClass {
+--	from
+--		owl_class_of_class: MM!OWLClass (
+--						owl_class_of_class.isClassOfClass and 
+--						not owl_class_of_class.isClassOfRelationship --and
+--						--not owl_class_of_class.isRelationship
+--						
+--		)
+--	to
+--		iso_class_of_class: MM1!ClassOfClassOfClass (
+--			id <- owl_class_of_class.URI,
+--			superclassFor <- owl_class_of_class.superClass,
+--			name <- iso_class_of_class_name,
+--			description <- iso_class_of_class_description
+--		),
+--		iso_class_of_class_name: MM1!Name (
+--			name <- owl_class_of_class.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		),
+--		iso_class_of_class_description: MM1!Description (
+--			content <- owl_class_of_class.comment,
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
 
-rule OwlClass2IsoClassOfRelationship {
-	from
-		owl_class_of_relationship: MM!OWLClass (
-						owl_class_of_relationship.isClassOfRelationship --and 
+--rule OwlClass2IsoClassOfRelationship {
+--	from
+--		owl_class_of_relationship: MM!OWLClass (
+--						owl_class_of_relationship.isClassOfRelationship --and 
 						--not owl_class_of_relationship.isRelationship --and 
 						--not owl_class_of_relationship.isClassOfClass
-		)
-	to
-		iso_class_of_relationship: MM1!ClassOfClassOfRelationship (
-			id <- owl_class_of_relationship.URI,
-			superclassFor <- owl_class_of_relationship.superClass,
-			name <- iso_class_of_relationship_name,
-			description <- iso_class_of_relationship_description
-		),
-		iso_class_of_relationship_name: MM1!Name (
-			name <- owl_class_of_relationship.URI.resolveLocalName(),
-			language <- thisModule.OwlOntology2Lang()
-		),
-		iso_class_of_relationship_description: MM1!Description (
-			content <- owl_class_of_relationship.comment,
-			language <- thisModule.OwlOntology2Lang()
-		)
-}
+--		)
+--	to
+--		iso_class_of_relationship: MM1!ClassOfClassOfRelationship (
+--			id <- owl_class_of_relationship.URI,
+--			superclassFor <- owl_class_of_relationship.superClass,
+--			name <- iso_class_of_relationship_name,
+--			description <- iso_class_of_relationship_description
+--		),
+--		iso_class_of_relationship_name: MM1!Name (
+--			name <- owl_class_of_relationship.URI.resolveLocalName(),
+--			language <- thisModule.OwlOntology2Lang()
+--		),
+--		iso_class_of_relationship_description: MM1!Description (
+--			content <- owl_class_of_relationship.comment,
+--			language <- thisModule.OwlOntology2Lang()
+--		)
+--}
 
 
 --

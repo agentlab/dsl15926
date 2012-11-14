@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=file:/C:/Users/amivanoff/Dropbox/Knowledge%20Representation/ISO15926/ISO%2015926-8/RDF/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://data.mycompany.com/sampleInstances" uri="Part8_sample_instances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://rdl.example.org/sampleReferenceData" uri="Part8_sample_RDL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://rdl.example.org/sampleTemplates" uri="Part8_sample_tpl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model" uri="data-model.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/metadata" uri="metadata.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/template-model" uri="p7tm.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1333720310607" name="http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/templates" uri="p7tpl.owl"/>
+    </group>
+</catalog>

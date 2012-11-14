@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target includeMode="feature" name="dsl15926.editor.all" sequenceNumber="24">
+<?pde version="3.8"?><target includeMode="feature" name="dsl15926.editor.all" sequenceNumber="26">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.sdk.ide" version="4.2.1.M20120914-1800"/>
@@ -41,6 +41,10 @@
 <unit id="org.openrdf.feature.feature.group" version="2.4.0"/>
 <unit id="org.codehaus.jackson.feature.feature.group" version="1.7.4"/>
 <repository location="http://svn.codespot.com/a/eclipselabs.org/emf4sw/dependencies/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="com.atl.common.feature.feature.group" version="0.7.1.201105162128"/>
+<repository location="http://svn.codespot.com/a/eclipselabs.org/atl-commons/snapshots/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="com.atl.common.feature.feature.group" version="0.7.1.201105162128"/>

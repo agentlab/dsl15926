@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ru.agentlab.owl2dsl15926.part7.Owl2IsoPart7"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;./input/p7tpl.owl&quot; &quot;./output/p7tpl.iso15926&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;${workspace_loc:owl}/input/p7tpl.owl&quot; &quot;${workspace_loc:owl}/output/p7tpl.iso15926&quot;"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ru.agentlab.owl2dsl15926"/>
 </launchConfiguration>
