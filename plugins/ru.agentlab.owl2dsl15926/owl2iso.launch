@@ -39,7 +39,7 @@
 <mapEntry key="OUT" value="MM1"/>
 </mapAttribute>
 <mapAttribute key="Path">
-<mapEntry key="IN" value="/ru.agentlab.owl2dsl15926/input/TestOntology.owl"/>
+<mapEntry key="IN" value="/ru.agentlab.owl2dsl15926/input/data-model.owl"/>
 <mapEntry key="MM" value="/com.emf4sw.owl/model/owl2.ecore"/>
 <mapEntry key="MM1" value="/ru.agentlab.dsl15926/model/dsl15926.ecore"/>
 <mapEntry key="OUT" value="/ru.agentlab.owl2dsl15926/output/qwe.iso15926"/>
