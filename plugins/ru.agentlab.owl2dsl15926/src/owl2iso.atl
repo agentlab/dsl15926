@@ -1346,3 +1346,491 @@ rule OWLWholeLifeIndividual2DslIndividual{
 	to 
 		dsl_individualWholeLifeIndividual: MM1!Individual
  }
+
+
+--///////////////////////////////////
+--Templates
+--//////////////////////////////////
+
+rule OWLApproval2DslTemplate{
+ 	from
+		owl_approval: MM!OWLClass(
+			owl_approval.isApproval
+		)
+	to
+		dsl_roleApprover: MM1!TemplateRole(
+--			entityType <- dsl_roleApprover.isPossibleIndividual
+		)
+		, dsl_roleApproved: MM1!TemplateRole(
+--			entityType <- dsl_roleApproved.isRelationship	
+		)
+		, dsl_templateApproval: MM1!Template(
+--		subClassOf <- owl_approval.subClassOf
+		 roles <- Sequence {dsl_roleApprover, dsl_roleApproved}
+		)
+		
+}
+
+rule OWLArrangementOfIndividual2DslTemplate{
+ 	from
+		owl_arrangementOfIndividual: MM!OWLClass(
+			owl_arrangementOfIndividual.isArrangementOfIndividual
+		)
+	to 
+		dsl_roleWhole:MM1!TemplateRole(
+--			entityType <- dsl_roleWhole.isArrangedIndividual	
+		)
+		, dsl_templateArrangementOfIndividual: MM1!Template(
+--			roles <- dsl_roleWhole
+--			, subClassOf <- owl_arrangementOfIndividual.subClassOf
+		)
+}
+
+rule OWLAssemblyOfIndividual2DslTemplate{
+ 	from
+		owl_assemblyOfIndividual: MM!OWLClass(
+			owl_assemblyOfIndividual.isAssemblyOfIndividual
+		)
+	to 
+		 dsl_templateArrangementOfIndividual: MM1!Template(
+--			subClassOf <- owl_assemblyOfIndividual.subClassOf
+		)
+}
+  
+rule OWLBeginning2DslTemplate{
+ 	from
+		owl_beginning: MM!OWLClass(
+			owl_beginning.isBeginning
+		)
+	to 
+		 dsl_templateBeginning: MM1!Template(
+--			subClassOf <- owl_beginning.subClassOf
+		)
+}
+
+rule OWLBoundaryOfNumberSpace2DslTemplate{
+ 	from
+		owl_boundaryOfNumberSpace: MM!OWLClass(
+			owl_boundaryOfNumberSpace.isBoundaryOfNumberSpace
+		)
+	to 
+		dsl_roleSubclass: MM1!TemplateRole(
+--			entityType <- dsl_roleSubclass.isNumberSpace	
+		)
+		, dsl_roleSuperclass: MM1!TemplateRole(
+--			entityType <- dsl_roleSuperclass.isNumberSpace	
+		)
+		 , dsl_templateBoundaryOfNumberSpace: MM1!Template(
+--			subClassOf <- owl_boundaryOfNumberSpace.subClassOf
+--			, roles <- Sequence {dsl_roleSubclass, dsl_roleSuperclass}
+		)
+}
+
+rule OWLCauseOfEvent2DslTemplate{
+ 	from
+		owl_causeOfEvent: MM!OWLClass(
+			owl_causeOfEvent.isCauseOfEvent
+		)
+	to 
+		dsl_roleCaused: MM1!TemplateRole(
+--			entityType <- dsl_roleCaused.isEvent
+		)
+		, dsl_roleCauser: MM1!TemplateRole(
+--			entityType <- dsl_roleCauser.isActivity	
+		)
+		 , dsl_templateCauseOfEvent: MM1!Template(
+--			subClassOf <- owl_causeOfEvent.subClassOf
+--			, roles <- Sequence {dsl_roleCaused, dsl_roleCauser}
+		)
+}
+
+rule OWLClassOfApproval2DslTemplate{
+ 	from
+		owl_classOfApproval: MM!OWLClass(
+			owl_classOfApproval.isClassOfApproval
+		)
+	to 
+		dsl_roleClassOfApproved: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfRelationship
+		)
+		, dsl_roleClassOfApprover: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		, dsl_templateClassOfApproval: MM1!Template(
+			subClassOf <- owl_classOfApproval.subClassOf
+			, roles <- Sequence {dsl_roleClassOfApproved, dsl_roleClassOfApprover}
+		)
+}
+
+rule OWLClassOfApprovalByStatus2DslTemplate{
+ 	from
+		owl_classOfApprovalByStatus: MM!OWLClass(
+			owl_classOfApprovalByStatus.isClassOfApprovalByStatus
+		)
+	to 
+		dsl_roleClassOfApprovedByStatus: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfRelationship
+		)
+		, dsl_roleClassOfApproverByStatus: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		, dsl_templateClassOfApprovalByStatus: MM1!Template(
+			subClassOf <- owl_classOfApprovalByStatus.subClassOf
+			, roles <- Sequence {dsl_roleClassOfApprovedByStatus, dsl_roleClassOfApproverByStatus}
+		)
+}
+
+rule OWLClassOfArrangementOfIndividual{
+	from
+		owl_classOfArrangementOfIndividual: MM!OWLClass(
+			owl_classOfArrangementOfIndividual.isClassOfArrangementOfIndividual	
+		)
+	to
+		dsl_roleClassOfWhole: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfArrangementIndividual
+		)
+		, dsl_templateClassOfArrangementOfIndividual: MM1!Template(
+			subClassOf <- owl_classOfArrangementOfIndividual.subClassOf
+			, roles <- dsl_roleClassOfWhole 
+		)
+}
+
+rule OWLClassOfAssemblyOfIndividual2DslTemplate{
+	from
+		owl_classOfAssemblyOfIndividual: MM!OWLClass(
+			owl_classOfAssemblyOfIndividual.isClassOfAssemblyOfIndividual	
+		)
+	to
+		dsl_roleClassOfWhole: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfArrangementIndividual
+		)
+		, dsl_templateClassOfArrangementOfIndividual: MM1!Template(
+			subClassOf <- owl_classOfAssemblyOfIndividual.subClassOf
+			, roles <- dsl_roleClassOfWhole 
+		)
+}
+
+rule OWLClassOfAssertion2DslTemplate{
+ 	from
+		owl_classOfAssertion: MM!OWLClass(
+			owl_classOfAssertion.isClassOfAssertion
+		)
+	to 
+		dsl_templateClassOfAssertion: MM1!Template(
+			subClassOf <- owl_classOfAssertion.subClassOf
+			--, roles <- 
+		)
+}
+
+rule OWLClassOfCauseOfBeginningOfClassOfIndividual2DslTemplate{
+ 	from
+		owl_classOfCauseOfBeginningOfClassOfIndividual: MM!OWLClass(
+			owl_classOfCauseOfBeginningOfClassOfIndividual.isClassOfCauseOfBeginningOfClassOfIndividual
+		)
+	to 
+		dsl_roleClassOfBegun: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		, dsl_roleClassOfCauser: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfActivity 	
+		)
+		, dsl_templateClassOfAssertion: MM1!Template(
+			subClassOf <- owl_classOfCauseOfBeginningOfClassOfIndividual.subClassOf
+			, roles <- Sequence {dsl_roleClassOfBegun, dsl_roleClassOfCauser}
+		)
+}
+
+rule OWLClassOfCauseOfEndingOfClassOfIndividual2DslTemplate{
+ 	from
+		owl_classOfCauseOfEndingOfClassOfIndividual: MM!OWLClass(
+			owl_classOfCauseOfEndingOfClassOfIndividual.isClassOfCauseOfEndingOfClassOfIndividual
+		)
+	to 
+		dsl_roleClassOfCauser: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfActivity 	
+		)
+		,dsl_roleClassOfEnded: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		, dsl_templateClassOfAssertion: MM1!Template(
+			subClassOf <- owl_classOfCauseOfEndingOfClassOfIndividual.subClassOf
+			, roles <- Sequence { dsl_roleClassOfCauser, dsl_roleClassOfEnded}
+		)
+}
+
+rule OWLClassOfClassOfComposition2DslTemplate{
+	from
+		owl_classOfClassOfComposition: MM!OWLClass(
+			owl_classOfClassOfComposition.isClassOfClassOfComposition	
+		)
+	to 
+		dsl_roleClassOfClassOfPart: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfIndividual	
+		)
+		,dsl_roleClassOfClassOfWhole: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfIndividual	
+		)
+		,dsl_templateClassOfClassOfComposition: MM1!Template(
+			subClassOf <- owl_classOfClassOfComposition.subClassOf
+			,roles <- Sequence {dsl_roleClassOfClassOfPart, dsl_roleClassOfClassOfWhole}
+		)
+}
+
+rule OWLClassOfClassOfDefinition2DslTemplate{
+	from
+		owl_classOfClassOfDefinition: MM!OWLClass(
+			owl_classOfClassOfDefinition.isClassOfClassOfDefinition	
+		)
+	to 
+		dsl_roleClassOfPattern: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfDefinition
+		)
+		,dsl_roleClassOfRepresented: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfDefinition
+		)
+		,dsl_templateClassOfClassOfDefinition: MM1!Template(
+			subClassOf <- owl_classOfClassOfDefinition.subClassOf
+			,roles <- Sequence {dsl_roleClassOfPattern, dsl_roleClassOfRepresented}
+		)
+}
+
+rule OWLClassOfClassOfDescription2DslTemplate{
+	from
+		owl_classOfClassOfDescription: MM!OWLClass(
+			owl_classOfClassOfDescription.isClassOfClassOfDescription	
+		)
+	to 
+		dsl_roleClassOfPattern: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfDescription	
+		)
+		,dsl_roleClassOfRepresented: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfDescription	
+		)
+		,dsl_templateClassOfClassOfDescription: MM1!Template(
+			subClassOf <- owl_classOfClassOfDescription.subClassOf
+			,roles <- Sequence {dsl_roleClassOfPattern, dsl_roleClassOfRepresented}
+		)
+}
+
+rule OWLClassOfClassOfIdentification2DslTemplate{
+	from
+		owl_classOfClassOfIdentification: MM!OWLClass(
+			owl_classOfClassOfIdentification.isClassOfClassOfIdentification	
+		)
+	to 
+		dsl_roleClassOfPattern: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIdentification
+		)
+		,dsl_roleClassOfRepresented: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIdentification	
+		)
+		,dsl_templateClassOfClassOfIdentification: MM1!Template(
+			subClassOf <- owl_classOfClassOfIdentification.subClassOf
+			,roles <- Sequence {dsl_roleClassOfPattern, dsl_roleClassOfRepresented}
+		)
+}
+
+rule OWLClassOfClassOfRepresentation2DslTemplate{
+	from
+		owl_classOfClassOfRepresentation: MM!OWLClass(
+			owl_classOfClassOfRepresentation.isClassOfClassOfRepresentation	
+		)
+	to 
+		dsl_roleClassOfPattern: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfInformationRepresentation
+		)
+		,dsl_roleClassOfRepresented: MM1!TemplateRole(
+			entityType <- thisModule.isClass
+		)
+		,dsl_templateClassOfClassOfRepresentation: MM1!Template(
+			subClassOf <- owl_classOfClassOfRepresentation.subClassOf
+			,roles <- Sequence {dsl_roleClassOfPattern, dsl_roleClassOfRepresented}
+		)
+}
+
+rule OWLClassOfClassOfRepresentationTranslation2DslTemplate{
+	from
+		owl_classOfClassOfRepresentationTranslation: MM!OWLClass(
+			owl_classOfClassOfRepresentationTranslation.isClassOfClassOfRepresentationTranslation	
+		)
+	to 
+		dsl_roleClassOfFirst: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfInformationRepresentation
+		)
+		,dsl_roleClassOfSecond: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfInformationRepresentation
+		)
+		,dsl_templateClassOfClassOfRepresentationTranslation: MM1!Template(
+			subClassOf <- owl_classOfClassOfRepresentationTranslation.subClassOf
+			,roles <- Sequence {dsl_roleClassOfFirst, dsl_roleClassOfSecond}
+		)
+}
+
+rule OWLClassOfClassOfResponsibilityForRepresentation2DslTemplate{
+	from
+		owl_classOfClassOfResponsibilityForRepresentation: MM!OWLClass(
+			owl_classOfClassOfResponsibilityForRepresentation.isClassOfClassOfResponsibilityForRepresentation	
+		)
+	to 
+		dsl_roleClassOfClassOfControlled: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfRepresentation
+		)
+		,dsl_roleController: MM1!TemplateRole(
+			entityType <- thisModule.isPossibleIndividual
+		)
+		,dsl_templateClassOfClassOfResponsibilityForRepresentation: MM1!Template(
+			subClassOf <- owl_classOfClassOfResponsibilityForRepresentation.subClassOf
+			,roles <- Sequence {dsl_roleClassOfClassOfControlled, dsl_roleController}
+		)
+}
+
+rule OWLClassOfClassOfUsageOfRepresentation2DslTemplate{
+	from
+		owl_classOfClassOfUsageOfRepresentation: MM!OWLClass(
+			owl_classOfClassOfUsageOfRepresentation.isClassOfClassOfUsageOfRepresentation
+		)
+	to 
+		dsl_roleClassOfClassOfUsed: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClassOfRepresentation
+		)
+		,dsl_roleUser: MM1!TemplateRole(
+			entityType <- thisModule.isPossibleIndividual
+		)
+		,dsl_templateClassOfClassOfUsageOfRepresentation: MM1!Template(
+			subClassOf <- owl_classOfClassOfUsageOfRepresentation.subClassOf
+			,roles <- Sequence {dsl_roleClassOfClassOfUsed, dsl_roleUser}
+		)
+}
+
+rule OWLClassOfClassification2DslTemplate{
+	from
+		owl_classOfClassification: MM!OWLClass(
+			owl_classOfClassification.isClassOfClassification
+		)
+	to 
+		dsl_roleClassOfClassified: MM1!TemplateRole(
+			entityType <- thisModule.isClass
+		)
+		,dsl_roleClassOfClassifier: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfClass
+		)
+		,dsl_templateClassOfClassification: MM1!Template(
+			subClassOf <- owl_classOfClassification.subClassOf
+			,roles <- Sequence {dsl_roleClassOfClassified, dsl_roleClassOfClassifier}
+		)
+}
+
+rule OWLClassOfCompositionOfIndividual2DslTemplate{
+	from
+		owl_classOfCompositionOfIndividual: MM!OWLClass(
+			owl_classOfCompositionOfIndividual.isClassOfCompositionOfIndividual
+		)
+	to 
+		dsl_roleClassOfPart: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		,dsl_roleClassOfWhole: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		,dsl_templateClassOfCompositionOfIndividual: MM1!Template(
+			subClassOf <- owl_classOfCompositionOfIndividual.subClassOf
+			,roles <- Sequence {dsl_roleClassOfPart, dsl_roleClassOfWhole}
+		)
+}
+
+rule OWLClassOfConnectionOfIndividual2DslTemplate{
+	from
+		owl_classOfConnectionOfIndividual: MM!OWLClass(
+			owl_classOfConnectionOfIndividual.isClassOfConnectionOfIndividual
+		)
+	to 
+		dsl_roleClassOfSide1: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		,dsl_roleClassOfSide2: MM1!TemplateRole(
+			entityType <- thisModule.isClassOfIndividual
+		)
+		,dsl_templateClassOfConnectionOfIndividual: MM1!Template(
+			subClassOf <- owl_classOfConnectionOfIndividual.subClassOf
+			,roles <- Sequence {dsl_roleClassOfSide1, dsl_roleClassOfSide2}
+		)
+}
+
+rule OWLClassOfContainmentOfIndividual2DslTemplate{
+ 	from
+		owl_classOfContainmentOfIndividual: MM!OWLClass(
+			owl_classOfContainmentOfIndividual.isClassOfContainmentOfIndividual
+		)
+	to 
+		dsl_templateClassOfContainmentOfIndividual: MM1!Template(
+			subClassOf <- owl_classOfContainmentOfIndividual.subClassOf
+		)
+}
+
+rule OWLClassOfDefinition2DslTemplate{
+ 	from
+		owl_classOfDefinition: MM!OWLClass(
+			owl_classOfDefinition.isClassOfDefinition
+		)
+	to 
+		dsl_roleRepresented: MM1!TemplateRole(
+			entityType <- thisModule.isClass	
+		)
+		,dsl_templateClassOfDefinition: MM1!Template(
+			subClassOf <- owl_classOfDefinition.subClassOf
+		)
+}
+
+rule OWLClassOfDescription2DslTemplate{
+ 	from
+		owl_classOfDescription: MM!OWLClass(
+			owl_classOfDescription.isClassOfDescription
+		)
+	to 
+		dsl_templateClassOfDescription: MM1!Template(
+			subClassOf <- owl_classOfDescription.subClassOf
+		)
+}
+
+rule OWLClassOfDimensionForShape2DslTemplate{
+ 	from
+		owl_classOfDimensionForShape: MM!OWLClass(
+			owl_classOfDimensionForShape.isClassOfDimensionForShape
+		)
+	to 
+		dsl_roleClassOfDimension: MM1!TemplateRole(
+		entityType <- thisModule.isClassOfShapeDimension	
+		)
+		,dsl_roleClassOfShape: MM1!TemplateRole(
+		entityType <- thisModule.isClassOfShape	
+		)
+		,dsl_templateClassOfDimensionForShape: MM1!Template(
+			subClassOf <- owl_classOfDimensionForShape.subClassOf
+			,roles <- Sequence {dsl_roleClassOfDimension, dsl_roleClassOfShape}
+		)
+}
+
+rule OWLClassOfDirectConnection2DslTemplate{
+ 	from
+		owl_classOfDirectConnection: MM!OWLClass(
+			owl_classOfDirectConnection.isClassOfDirectConnection
+		)
+	to 
+		dsl_templateClassOfDirectConnection: MM1!Template(
+			subClassOf <- owl_classOfDirectConnection.subClassOf
+		)
+}
+
+--rule OWLClassOfFunctionalMapping2DslTemplate{
+-- 	from
+--		owl_classOfFunctionalMapping: MM!OWLClass(
+--			owl_classOfFunctionalMapping.isClassOfFunctionalMapping
+--		)
+--	to 
+--		dsl_roleCodomain: MM1!TemplateRole(
+--			entityType <- 	
+--		)
+--		,dsl_templateClassOfFunctionalMapping: MM1!Template(
+--			subClassOf <- owl_classOfFunctionalMapping.subClassOf
+--		)
+--}
