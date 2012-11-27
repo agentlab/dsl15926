@@ -2075,7 +2075,7 @@ matter, energy, or both.</rdfs:comment>
         <rdfs:comment rdf:datatype="&xsd;string"
             >RANGE: RECOGNIZING</rdfs:comment>
     </owl:Class>
-d
+
 
 
     <!-- http://standards.iso.org/iso/ts/15926/-8/ed-1/tech/reference-data/data-model#Relationship -->

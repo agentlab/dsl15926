@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ru.agentlab="http://agentlab.ru/models/dsl15926/2012/08">
+  <ru.agentlab:Class superClassOf="/2"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/0"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:TemplateRole/>
+  <ru.agentlab:TemplateRole/>
+  <ru.agentlab:Template/>
+  <ru.agentlab:Class subClassOf="/16" disjointClasses="/30 /28 /27 /17"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/11"/>
+  <ru.agentlab:Class superClassOf="/10 /12 /23 /43"/>
+  <ru.agentlab:Class subClassOf="/11" superClassOf="/16 /29" disjointClasses="/23"/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class subClassOf="/12" superClassOf="/8 /17 /19 /27 /28 /30 /31"/>
+  <ru.agentlab:Class subClassOf="/16" superClassOf="/18" disjointClasses="/30 /28 /27"/>
+  <ru.agentlab:Class subClassOf="/17"/>
+  <ru.agentlab:Class subClassOf="/16"/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class subClassOf="/11" superClassOf="/34 /36 /40 /45"/>
+  <ru.agentlab:Class subClassOf="/29"/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class subClassOf="/16" disjointClasses="/30 /28"/>
+  <ru.agentlab:Class subClassOf="/16" disjointClasses="/30"/>
+  <ru.agentlab:Class subClassOf="/12" superClassOf="/24"/>
+  <ru.agentlab:Class subClassOf="/16"/>
+  <ru.agentlab:Class subClassOf="/16"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/23" disjointClasses="/45 /40"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/43 /23"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/23" disjointClasses="/45"/>
+  <ru.agentlab:Class/>
+  <ru.agentlab:Class subClassOf="/43"/>
+  <ru.agentlab:Class subClassOf="/11" superClassOf="/36 /42"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Class subClassOf="/23"/>
+  <ru.agentlab:Individual/>
+  <ru.agentlab:Individual/>
+</xmi:XMI>

@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ru.agentlab.owl.OwlToXmi"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;./input/test.owl&quot; &quot;./output/test.xmi&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;./input/data-model.owl&quot; &quot;./output/data-model.xmi&quot;"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ru.agentlab.owl2dsl15926"/>
 </launchConfiguration>
