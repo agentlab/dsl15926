@@ -2,7 +2,6 @@
  */
 package ru.agentlab.dsl15926;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link ru.agentlab.dsl15926.Individual#getPatterns <em>Patterns</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.Individual#getRepository <em>Repository</em>}</li>
  * </ul>
  * </p>
@@ -22,24 +20,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Individual extends Thing {
-	/**
-	 * Returns the value of the '<em><b>Patterns</b></em>' reference list.
-	 * The list contents are of type {@link ru.agentlab.dsl15926.Pattern}.
-	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Pattern#getIndividuals <em>Individuals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Patterns</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Patterns</em>' reference list.
-	 * @see ru.agentlab.dsl15926.Dsl15926Package#getIndividual_Patterns()
-	 * @see ru.agentlab.dsl15926.Pattern#getIndividuals
-	 * @model opposite="individuals"
-	 * @generated
-	 */
-	EList<Pattern> getPatterns();
-
 	/**
 	 * Returns the value of the '<em><b>Repository</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link ru.agentlab.dsl15926.Repository#getIndividuals <em>Individuals</em>}'.

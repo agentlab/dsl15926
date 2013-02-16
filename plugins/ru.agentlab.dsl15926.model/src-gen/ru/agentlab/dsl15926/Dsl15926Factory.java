@@ -85,15 +85,6 @@ public interface Dsl15926Factory extends EFactory {
 	TemplateInstance createTemplateInstance();
 
 	/**
-	 * Returns a new object of class '<em>Pattern</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pattern</em>'.
-	 * @generated
-	 */
-	Pattern createPattern();
-
-	/**
 	 * Returns a new object of class '<em>Template Role Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +92,24 @@ public interface Dsl15926Factory extends EFactory {
 	 * @generated
 	 */
 	TemplateRoleInstance createTemplateRoleInstance();
+
+	/**
+	 * Returns a new object of class '<em>Classification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Classification</em>'.
+	 * @generated
+	 */
+	Classification createClassification();
+
+	/**
+	 * Returns a new object of class '<em>Specialization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Specialization</em>'.
+	 * @generated
+	 */
+	Specialization createSpecialization();
 
 	/**
 	 * Returns the package supported by this factory.

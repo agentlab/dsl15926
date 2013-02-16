@@ -233,29 +233,6 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Pattern} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PatternItemProvider patternItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ru.agentlab.dsl15926.Pattern}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPatternAdapter() {
-		if (patternItemProvider == null) {
-			patternItemProvider = new PatternItemProvider(this);
-		}
-
-		return patternItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.TemplateRoleInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,6 +253,52 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		}
 
 		return templateRoleInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Classification} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ClassificationItemProvider classificationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ru.agentlab.dsl15926.Classification}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createClassificationAdapter() {
+		if (classificationItemProvider == null) {
+			classificationItemProvider = new ClassificationItemProvider(this);
+		}
+
+		return classificationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ru.agentlab.dsl15926.Specialization} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SpecializationItemProvider specializationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ru.agentlab.dsl15926.Specialization}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSpecializationAdapter() {
+		if (specializationItemProvider == null) {
+			specializationItemProvider = new SpecializationItemProvider(this);
+		}
+
+		return specializationItemProvider;
 	}
 
 	/**
@@ -384,8 +407,9 @@ public class Dsl15926ItemProviderAdapterFactory extends Dsl15926AdapterFactory i
 		if (individualItemProvider != null) individualItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (templateInstanceItemProvider != null) templateInstanceItemProvider.dispose();
-		if (patternItemProvider != null) patternItemProvider.dispose();
 		if (templateRoleInstanceItemProvider != null) templateRoleInstanceItemProvider.dispose();
+		if (classificationItemProvider != null) classificationItemProvider.dispose();
+		if (specializationItemProvider != null) specializationItemProvider.dispose();
 	}
 
 }

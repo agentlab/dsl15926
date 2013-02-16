@@ -11,11 +11,12 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import ru.agentlab.dsl15926.Annotation;
+import ru.agentlab.dsl15926.Classification;
 import ru.agentlab.dsl15926.Dsl15926Factory;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
-import ru.agentlab.dsl15926.Pattern;
 import ru.agentlab.dsl15926.Repository;
+import ru.agentlab.dsl15926.Specialization;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
@@ -36,7 +37,7 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 */
 	public static Dsl15926Factory init() {
 		try {
-			Dsl15926Factory theDsl15926Factory = (Dsl15926Factory)EPackage.Registry.INSTANCE.getEFactory("http://agentlab.ru/models/dsl15926/2012/08"); 
+			Dsl15926Factory theDsl15926Factory = (Dsl15926Factory)EPackage.Registry.INSTANCE.getEFactory(Dsl15926Package.eNS_URI);
 			if (theDsl15926Factory != null) {
 				return theDsl15926Factory;
 			}
@@ -72,8 +73,9 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 			case Dsl15926Package.INDIVIDUAL: return createIndividual();
 			case Dsl15926Package.CLASS: return createClass();
 			case Dsl15926Package.TEMPLATE_INSTANCE: return createTemplateInstance();
-			case Dsl15926Package.PATTERN: return createPattern();
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE: return createTemplateRoleInstance();
+			case Dsl15926Package.CLASSIFICATION: return createClassification();
+			case Dsl15926Package.SPECIALIZATION: return createSpecialization();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -154,9 +156,9 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pattern createPattern() {
-		PatternImpl pattern = new PatternImpl();
-		return pattern;
+	public TemplateRoleInstance createTemplateRoleInstance() {
+		TemplateRoleInstanceImpl templateRoleInstance = new TemplateRoleInstanceImpl();
+		return templateRoleInstance;
 	}
 
 	/**
@@ -164,9 +166,19 @@ public class Dsl15926FactoryImpl extends EFactoryImpl implements Dsl15926Factory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplateRoleInstance createTemplateRoleInstance() {
-		TemplateRoleInstanceImpl templateRoleInstance = new TemplateRoleInstanceImpl();
-		return templateRoleInstance;
+	public Classification createClassification() {
+		ClassificationImpl classification = new ClassificationImpl();
+		return classification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Specialization createSpecialization() {
+		SpecializationImpl specialization = new SpecializationImpl();
+		return specialization;
 	}
 
 	/**

@@ -129,7 +129,8 @@ public class RepositoryItemProvider
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATES);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__INDIVIDUALS);
 			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__TEMPLATE_INSTANCES);
-			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__PATTERNS);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__CLASSIFICATIONS);
+			childrenFeatures.add(Dsl15926Package.Literals.REPOSITORY__SPECIALIZATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -192,7 +193,8 @@ public class RepositoryItemProvider
 			case Dsl15926Package.REPOSITORY__TEMPLATES:
 			case Dsl15926Package.REPOSITORY__INDIVIDUALS:
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
-			case Dsl15926Package.REPOSITORY__PATTERNS:
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -232,8 +234,13 @@ public class RepositoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Dsl15926Package.Literals.REPOSITORY__PATTERNS,
-				 Dsl15926Factory.eINSTANCE.createPattern()));
+				(Dsl15926Package.Literals.REPOSITORY__CLASSIFICATIONS,
+				 Dsl15926Factory.eINSTANCE.createClassification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Dsl15926Package.Literals.REPOSITORY__SPECIALIZATIONS,
+				 Dsl15926Factory.eINSTANCE.createSpecialization()));
 	}
 
 	/**

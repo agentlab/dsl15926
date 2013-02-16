@@ -45,7 +45,7 @@ public interface Dsl15926Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "ru.agentlab";
+	String eNS_PREFIX = "iso15926";
 
 	/**
 	 * The singleton instance of the package.
@@ -100,7 +100,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getThing()
 	 * @generated
 	 */
-	int THING = 11;
+	int THING = 10;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -176,49 +176,13 @@ public interface Dsl15926Package extends EPackage {
 	int ABSTRACT_OBJECT__CLASSES = THING__CLASSES;
 
 	/**
-	 * The feature id for the '<em><b>Sub Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_OBJECT__SUB_CLASS_OF = THING_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Super Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_OBJECT__SUPER_CLASS_OF = THING_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_OBJECT__DISJOINT_CLASSES = THING_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_OBJECT__EQUIVALENT_CLASSES = THING_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Abstract Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_OBJECT_FEATURE_COUNT = THING_FEATURE_COUNT + 4;
+	int ABSTRACT_OBJECT_FEATURE_COUNT = THING_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.TemplateImpl <em>Template</em>}' class.
@@ -256,42 +220,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @ordered
 	 */
 	int TEMPLATE__CLASSES = ABSTRACT_OBJECT__CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Sub Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE__SUB_CLASS_OF = ABSTRACT_OBJECT__SUB_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Super Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE__SUPER_CLASS_OF = ABSTRACT_OBJECT__SUPER_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE__DISJOINT_CLASSES = ABSTRACT_OBJECT__DISJOINT_CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE__EQUIVALENT_CLASSES = ABSTRACT_OBJECT__EQUIVALENT_CLASSES;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -458,13 +386,22 @@ public interface Dsl15926Package extends EPackage {
 	int REPOSITORY__TEMPLATE_INSTANCES = 5;
 
 	/**
-	 * The feature id for the '<em><b>Patterns</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Classifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__PATTERNS = 6;
+	int REPOSITORY__CLASSIFICATIONS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__SPECIALIZATIONS = 7;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -473,7 +410,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = 7;
+	int REPOSITORY_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.AnnotationImpl <em>Annotation</em>}' class.
@@ -559,22 +496,13 @@ public interface Dsl15926Package extends EPackage {
 	int INDIVIDUAL__CLASSES = THING__CLASSES;
 
 	/**
-	 * The feature id for the '<em><b>Patterns</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIVIDUAL__PATTERNS = THING_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Repository</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL__REPOSITORY = THING_FEATURE_COUNT + 1;
+	int INDIVIDUAL__REPOSITORY = THING_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Individual</em>' class.
@@ -583,7 +511,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 2;
+	int INDIVIDUAL_FEATURE_COUNT = THING_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassImpl <em>Class</em>}' class.
@@ -621,42 +549,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @ordered
 	 */
 	int CLASS__CLASSES = ABSTRACT_OBJECT__CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Sub Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__SUB_CLASS_OF = ABSTRACT_OBJECT__SUB_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Super Class Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__SUPER_CLASS_OF = ABSTRACT_OBJECT__SUPER_CLASS_OF;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__DISJOINT_CLASSES = ABSTRACT_OBJECT__DISJOINT_CLASSES;
-
-	/**
-	 * The feature id for the '<em><b>Equivalent Classes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__EQUIVALENT_CLASSES = ABSTRACT_OBJECT__EQUIVALENT_CLASSES;
 
 	/**
 	 * The feature id for the '<em><b>Individuals</b></em>' reference list.
@@ -732,61 +624,6 @@ public interface Dsl15926Package extends EPackage {
 	int TEMPLATE_INSTANCE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.PatternImpl <em>Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ru.agentlab.dsl15926.impl.PatternImpl
-	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPattern()
-	 * @generated
-	 */
-	int PATTERN = 9;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN__LABEL = NAMED_ELEMENT__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Individuals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN__INDIVIDUALS = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Repository</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN__REPOSITORY = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Pattern</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleInstanceImpl <em>Template Role Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -794,7 +631,7 @@ public interface Dsl15926Package extends EPackage {
 	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getTemplateRoleInstance()
 	 * @generated
 	 */
-	int TEMPLATE_ROLE_INSTANCE = 10;
+	int TEMPLATE_ROLE_INSTANCE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Template Role</b></em>' reference.
@@ -823,6 +660,80 @@ public interface Dsl15926Package extends EPackage {
 	 */
 	int TEMPLATE_ROLE_INSTANCE_FEATURE_COUNT = 2;
 
+	/**
+	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.ClassificationImpl <em>Classification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ru.agentlab.dsl15926.impl.ClassificationImpl
+	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClassification()
+	 * @generated
+	 */
+	int CLASSIFICATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION__CLASSIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Classified</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION__CLASSIFIED = 1;
+
+	/**
+	 * The number of structural features of the '<em>Classification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link ru.agentlab.dsl15926.impl.SpecializationImpl <em>Specialization</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ru.agentlab.dsl15926.impl.SpecializationImpl
+	 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getSpecialization()
+	 * @generated
+	 */
+	int SPECIALIZATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__SUPER_CLASS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sub Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__SUB_CLASS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Specialization</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION_FEATURE_COUNT = 2;
+
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.AbstractObject <em>Abstract Object</em>}'.
@@ -833,50 +744,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EClass getAbstractObject();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.AbstractObject#getSubClassOf <em>Sub Class Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Class Of</em>'.
-	 * @see ru.agentlab.dsl15926.AbstractObject#getSubClassOf()
-	 * @see #getAbstractObject()
-	 * @generated
-	 */
-	EReference getAbstractObject_SubClassOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.AbstractObject#getSuperClassOf <em>Super Class Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Super Class Of</em>'.
-	 * @see ru.agentlab.dsl15926.AbstractObject#getSuperClassOf()
-	 * @see #getAbstractObject()
-	 * @generated
-	 */
-	EReference getAbstractObject_SuperClassOf();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.AbstractObject#getDisjointClasses <em>Disjoint Classes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Disjoint Classes</em>'.
-	 * @see ru.agentlab.dsl15926.AbstractObject#getDisjointClasses()
-	 * @see #getAbstractObject()
-	 * @generated
-	 */
-	EReference getAbstractObject_DisjointClasses();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.AbstractObject#getEquivalentClasses <em>Equivalent Classes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Equivalent Classes</em>'.
-	 * @see ru.agentlab.dsl15926.AbstractObject#getEquivalentClasses()
-	 * @see #getAbstractObject()
-	 * @generated
-	 */
-	EReference getAbstractObject_EquivalentClasses();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Template <em>Template</em>}'.
@@ -1041,15 +908,26 @@ public interface Dsl15926Package extends EPackage {
 	EReference getRepository_TemplateInstances();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getPatterns <em>Patterns</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getClassifications <em>Classifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Patterns</em>'.
-	 * @see ru.agentlab.dsl15926.Repository#getPatterns()
+	 * @return the meta object for the containment reference list '<em>Classifications</em>'.
+	 * @see ru.agentlab.dsl15926.Repository#getClassifications()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_Patterns();
+	EReference getRepository_Classifications();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ru.agentlab.dsl15926.Repository#getSpecializations <em>Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Specializations</em>'.
+	 * @see ru.agentlab.dsl15926.Repository#getSpecializations()
+	 * @see #getRepository()
+	 * @generated
+	 */
+	EReference getRepository_Specializations();
 
 	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.NamedElement <em>Named Element</em>}'.
@@ -1135,17 +1013,6 @@ public interface Dsl15926Package extends EPackage {
 	 * @generated
 	 */
 	EClass getIndividual();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.Individual#getPatterns <em>Patterns</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Patterns</em>'.
-	 * @see ru.agentlab.dsl15926.Individual#getPatterns()
-	 * @see #getIndividual()
-	 * @generated
-	 */
-	EReference getIndividual_Patterns();
 
 	/**
 	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Individual#getRepository <em>Repository</em>}'.
@@ -1234,38 +1101,6 @@ public interface Dsl15926Package extends EPackage {
 	EReference getTemplateInstance_Repository();
 
 	/**
-	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Pattern <em>Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pattern</em>'.
-	 * @see ru.agentlab.dsl15926.Pattern
-	 * @generated
-	 */
-	EClass getPattern();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ru.agentlab.dsl15926.Pattern#getIndividuals <em>Individuals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Individuals</em>'.
-	 * @see ru.agentlab.dsl15926.Pattern#getIndividuals()
-	 * @see #getPattern()
-	 * @generated
-	 */
-	EReference getPattern_Individuals();
-
-	/**
-	 * Returns the meta object for the container reference '{@link ru.agentlab.dsl15926.Pattern#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Repository</em>'.
-	 * @see ru.agentlab.dsl15926.Pattern#getRepository()
-	 * @see #getPattern()
-	 * @generated
-	 */
-	EReference getPattern_Repository();
-
-	/**
 	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.TemplateRoleInstance <em>Template Role Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1319,6 +1154,70 @@ public interface Dsl15926Package extends EPackage {
 	EReference getThing_Classes();
 
 	/**
+	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Classification <em>Classification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Classification</em>'.
+	 * @see ru.agentlab.dsl15926.Classification
+	 * @generated
+	 */
+	EClass getClassification();
+
+	/**
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Classification#getClassifier <em>Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Classifier</em>'.
+	 * @see ru.agentlab.dsl15926.Classification#getClassifier()
+	 * @see #getClassification()
+	 * @generated
+	 */
+	EReference getClassification_Classifier();
+
+	/**
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Classification#getClassified <em>Classified</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Classified</em>'.
+	 * @see ru.agentlab.dsl15926.Classification#getClassified()
+	 * @see #getClassification()
+	 * @generated
+	 */
+	EReference getClassification_Classified();
+
+	/**
+	 * Returns the meta object for class '{@link ru.agentlab.dsl15926.Specialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Specialization</em>'.
+	 * @see ru.agentlab.dsl15926.Specialization
+	 * @generated
+	 */
+	EClass getSpecialization();
+
+	/**
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Specialization#getSuperClass <em>Super Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Super Class</em>'.
+	 * @see ru.agentlab.dsl15926.Specialization#getSuperClass()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_SuperClass();
+
+	/**
+	 * Returns the meta object for the reference '{@link ru.agentlab.dsl15926.Specialization#getSubClass <em>Sub Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sub Class</em>'.
+	 * @see ru.agentlab.dsl15926.Specialization#getSubClass()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_SubClass();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1349,38 +1248,6 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EClass ABSTRACT_OBJECT = eINSTANCE.getAbstractObject();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Class Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_OBJECT__SUB_CLASS_OF = eINSTANCE.getAbstractObject_SubClassOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Super Class Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_OBJECT__SUPER_CLASS_OF = eINSTANCE.getAbstractObject_SuperClassOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Disjoint Classes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_OBJECT__DISJOINT_CLASSES = eINSTANCE.getAbstractObject_DisjointClasses();
-
-		/**
-		 * The meta object literal for the '<em><b>Equivalent Classes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_OBJECT__EQUIVALENT_CLASSES = eINSTANCE.getAbstractObject_EquivalentClasses();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.TemplateImpl <em>Template</em>}' class.
@@ -1509,12 +1376,20 @@ public interface Dsl15926Package extends EPackage {
 		EReference REPOSITORY__TEMPLATE_INSTANCES = eINSTANCE.getRepository_TemplateInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Patterns</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Classifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__PATTERNS = eINSTANCE.getRepository_Patterns();
+		EReference REPOSITORY__CLASSIFICATIONS = eINSTANCE.getRepository_Classifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REPOSITORY__SPECIALIZATIONS = eINSTANCE.getRepository_Specializations();
 
 		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -1587,14 +1462,6 @@ public interface Dsl15926Package extends EPackage {
 		EClass INDIVIDUAL = eINSTANCE.getIndividual();
 
 		/**
-		 * The meta object literal for the '<em><b>Patterns</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INDIVIDUAL__PATTERNS = eINSTANCE.getIndividual_Patterns();
-
-		/**
 		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1663,32 +1530,6 @@ public interface Dsl15926Package extends EPackage {
 		EReference TEMPLATE_INSTANCE__REPOSITORY = eINSTANCE.getTemplateInstance_Repository();
 
 		/**
-		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.PatternImpl <em>Pattern</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ru.agentlab.dsl15926.impl.PatternImpl
-		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getPattern()
-		 * @generated
-		 */
-		EClass PATTERN = eINSTANCE.getPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Individuals</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PATTERN__INDIVIDUALS = eINSTANCE.getPattern_Individuals();
-
-		/**
-		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PATTERN__REPOSITORY = eINSTANCE.getPattern_Repository();
-
-		/**
 		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.TemplateRoleInstanceImpl <em>Template Role Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1731,6 +1572,58 @@ public interface Dsl15926Package extends EPackage {
 		 * @generated
 		 */
 		EReference THING__CLASSES = eINSTANCE.getThing_Classes();
+
+		/**
+		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.ClassificationImpl <em>Classification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ru.agentlab.dsl15926.impl.ClassificationImpl
+		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getClassification()
+		 * @generated
+		 */
+		EClass CLASSIFICATION = eINSTANCE.getClassification();
+
+		/**
+		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASSIFICATION__CLASSIFIER = eINSTANCE.getClassification_Classifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Classified</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASSIFICATION__CLASSIFIED = eINSTANCE.getClassification_Classified();
+
+		/**
+		 * The meta object literal for the '{@link ru.agentlab.dsl15926.impl.SpecializationImpl <em>Specialization</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ru.agentlab.dsl15926.impl.SpecializationImpl
+		 * @see ru.agentlab.dsl15926.impl.Dsl15926PackageImpl#getSpecialization()
+		 * @generated
+		 */
+		EClass SPECIALIZATION = eINSTANCE.getSpecialization();
+
+		/**
+		 * The meta object literal for the '<em><b>Super Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__SUPER_CLASS = eINSTANCE.getSpecialization_SuperClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__SUB_CLASS = eINSTANCE.getSpecialization_SubClass();
 
 	}
 

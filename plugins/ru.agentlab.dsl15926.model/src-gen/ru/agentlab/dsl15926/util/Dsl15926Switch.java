@@ -9,11 +9,12 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
+import ru.agentlab.dsl15926.Classification;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
-import ru.agentlab.dsl15926.Pattern;
 import ru.agentlab.dsl15926.Repository;
+import ru.agentlab.dsl15926.Specialization;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
@@ -142,13 +143,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Dsl15926Package.PATTERN: {
-				Pattern pattern = (Pattern)theEObject;
-				T result = casePattern(pattern);
-				if (result == null) result = caseNamedElement(pattern);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Dsl15926Package.TEMPLATE_ROLE_INSTANCE: {
 				TemplateRoleInstance templateRoleInstance = (TemplateRoleInstance)theEObject;
 				T result = caseTemplateRoleInstance(templateRoleInstance);
@@ -159,6 +153,18 @@ public class Dsl15926Switch<T> extends Switch<T> {
 				Thing thing = (Thing)theEObject;
 				T result = caseThing(thing);
 				if (result == null) result = caseNamedElement(thing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Dsl15926Package.CLASSIFICATION: {
+				Classification classification = (Classification)theEObject;
+				T result = caseClassification(classification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Dsl15926Package.SPECIALIZATION: {
+				Specialization specialization = (Specialization)theEObject;
+				T result = caseSpecialization(specialization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -302,21 +308,6 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pattern</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pattern</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePattern(Pattern object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Template Role Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -343,6 +334,36 @@ public class Dsl15926Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseThing(Thing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Classification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Classification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClassification(Classification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Specialization</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Specialization</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpecialization(Specialization object) {
 		return null;
 	}
 

@@ -16,13 +16,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import ru.agentlab.dsl15926.Classification;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
-import ru.agentlab.dsl15926.Pattern;
 import ru.agentlab.dsl15926.Repository;
+import ru.agentlab.dsl15926.Specialization;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 
@@ -39,7 +41,8 @@ import ru.agentlab.dsl15926.TemplateInstance;
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getIndividuals <em>Individuals</em>}</li>
  *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getTemplateInstances <em>Template Instances</em>}</li>
- *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getPatterns <em>Patterns</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getClassifications <em>Classifications</em>}</li>
+ *   <li>{@link ru.agentlab.dsl15926.impl.RepositoryImpl#getSpecializations <em>Specializations</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,14 +120,24 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	protected EList<TemplateInstance> templateInstances;
 
 	/**
-	 * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' containment reference list.
+	 * The cached value of the '{@link #getClassifications() <em>Classifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatterns()
+	 * @see #getClassifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Pattern> patterns;
+	protected EList<Classification> classifications;
+
+	/**
+	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecializations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specialization> specializations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,11 +244,23 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Pattern> getPatterns() {
-		if (patterns == null) {
-			patterns = new EObjectContainmentWithInverseEList.Resolving<Pattern>(Pattern.class, this, Dsl15926Package.REPOSITORY__PATTERNS, Dsl15926Package.PATTERN__REPOSITORY);
+	public EList<Classification> getClassifications() {
+		if (classifications == null) {
+			classifications = new EObjectContainmentEList.Resolving<Classification>(Classification.class, this, Dsl15926Package.REPOSITORY__CLASSIFICATIONS);
 		}
-		return patterns;
+		return classifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Specialization> getSpecializations() {
+		if (specializations == null) {
+			specializations = new EObjectContainmentEList.Resolving<Specialization>(Specialization.class, this, Dsl15926Package.REPOSITORY__SPECIALIZATIONS);
+		}
+		return specializations;
 	}
 
 	/**
@@ -255,8 +280,6 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIndividuals()).basicAdd(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplateInstances()).basicAdd(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPatterns()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -277,8 +300,10 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				return ((InternalEList<?>)getIndividuals()).basicRemove(otherEnd, msgs);
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 				return ((InternalEList<?>)getTemplateInstances()).basicRemove(otherEnd, msgs);
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				return ((InternalEList<?>)getPatterns()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+				return ((InternalEList<?>)getClassifications()).basicRemove(otherEnd, msgs);
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
+				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -303,8 +328,10 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				return getIndividuals();
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 				return getTemplateInstances();
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				return getPatterns();
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+				return getClassifications();
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
+				return getSpecializations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,9 +368,13 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				getTemplateInstances().clear();
 				getTemplateInstances().addAll((Collection<? extends TemplateInstance>)newValue);
 				return;
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				getPatterns().clear();
-				getPatterns().addAll((Collection<? extends Pattern>)newValue);
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+				getClassifications().clear();
+				getClassifications().addAll((Collection<? extends Classification>)newValue);
+				return;
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
+				getSpecializations().clear();
+				getSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -375,8 +406,11 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 				getTemplateInstances().clear();
 				return;
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				getPatterns().clear();
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+				getClassifications().clear();
+				return;
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
+				getSpecializations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -402,8 +436,10 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 				return individuals != null && !individuals.isEmpty();
 			case Dsl15926Package.REPOSITORY__TEMPLATE_INSTANCES:
 				return templateInstances != null && !templateInstances.isEmpty();
-			case Dsl15926Package.REPOSITORY__PATTERNS:
-				return patterns != null && !patterns.isEmpty();
+			case Dsl15926Package.REPOSITORY__CLASSIFICATIONS:
+				return classifications != null && !classifications.isEmpty();
+			case Dsl15926Package.REPOSITORY__SPECIALIZATIONS:
+				return specializations != null && !specializations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

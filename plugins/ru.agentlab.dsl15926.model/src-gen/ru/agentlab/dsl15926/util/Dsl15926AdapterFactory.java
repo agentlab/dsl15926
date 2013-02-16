@@ -11,11 +11,12 @@ import org.eclipse.emf.ecore.EObject;
 
 import ru.agentlab.dsl15926.AbstractObject;
 import ru.agentlab.dsl15926.Annotation;
+import ru.agentlab.dsl15926.Classification;
 import ru.agentlab.dsl15926.Dsl15926Package;
 import ru.agentlab.dsl15926.Individual;
 import ru.agentlab.dsl15926.NamedElement;
-import ru.agentlab.dsl15926.Pattern;
 import ru.agentlab.dsl15926.Repository;
+import ru.agentlab.dsl15926.Specialization;
 import ru.agentlab.dsl15926.Template;
 import ru.agentlab.dsl15926.TemplateInstance;
 import ru.agentlab.dsl15926.TemplateRole;
@@ -115,16 +116,20 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 				return createTemplateInstanceAdapter();
 			}
 			@Override
-			public Adapter casePattern(Pattern object) {
-				return createPatternAdapter();
-			}
-			@Override
 			public Adapter caseTemplateRoleInstance(TemplateRoleInstance object) {
 				return createTemplateRoleInstanceAdapter();
 			}
 			@Override
 			public Adapter caseThing(Thing object) {
 				return createThingAdapter();
+			}
+			@Override
+			public Adapter caseClassification(Classification object) {
+				return createClassificationAdapter();
+			}
+			@Override
+			public Adapter caseSpecialization(Specialization object) {
+				return createSpecializationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -273,20 +278,6 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Pattern <em>Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ru.agentlab.dsl15926.Pattern
-	 * @generated
-	 */
-	public Adapter createPatternAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.TemplateRoleInstance <em>Template Role Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -311,6 +302,34 @@ public class Dsl15926AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Classification <em>Classification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.Classification
+	 * @generated
+	 */
+	public Adapter createClassificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ru.agentlab.dsl15926.Specialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ru.agentlab.dsl15926.Specialization
+	 * @generated
+	 */
+	public Adapter createSpecializationAdapter() {
 		return null;
 	}
 
