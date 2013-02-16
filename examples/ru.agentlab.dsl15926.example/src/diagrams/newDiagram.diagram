@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:iso15926="http://agentlab.ru/models/dsl15926/2012/08" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="Dsl 15926" name="newDiagram" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.2/@link /0/@children.1/@link /0/@children.1/@children.1/@link /0/@children.1/@children.2/@link /0/@children.2/@link /0/@children.3/@children.0/@link /0/@connections.1/@link /0/@connections.2/@link /0/@children.4/@link /0/@children.4/@children.1/@link /0/@children.4/@children.2/@link /0/@connections.3/@link /0/@connections.4/@link" version="0.9.1">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="2" transparency="0.0" width="100" height="40" x="610" y="220" cornerHeight="2" cornerWidth="2"/>
+      <link businessObjects="/1"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.3" incomingConnections="/0/@connections.2"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0">
+          <points y="20"/>
+          <points x="100" y="20"/>
+        </graphicsAlgorithm>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="sdfff"/>
+        <link businessObjects="/1"/>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" y="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Class"/>
+        <link businessObjects="/1"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="2" transparency="0.0" width="100" height="40" x="230" y="181" cornerHeight="2" cornerWidth="2"/>
+      <link businessObjects="/2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.4" incomingConnections="/0/@connections.1"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0">
+          <points y="20"/>
+          <points x="100" y="20"/>
+        </graphicsAlgorithm>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="gfdgfdgfdgfd"/>
+        <link businessObjects="/2"/>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" y="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Class"/>
+        <link businessObjects="/2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Polygon" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="4" filled="true" transparency="0.0" width="40" height="40" x="490" y="30">
+        <points y="20"/>
+        <points x="20"/>
+        <points x="40" y="20"/>
+        <points x="20" y="40"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/3"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.0 /0/@connections.1 /0/@connections.2"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="2" filled="true" transparency="0.0" width="22" height="22" x="9" y="9">
+          <points y="11"/>
+          <points x="11"/>
+          <points x="22" y="11"/>
+          <points x="11" y="22"/>
+        </graphicsAlgorithm>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="2" transparency="0.0" width="100" height="20" x="460" cornerHeight="2" cornerWidth="2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.0"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Relationship"/>
+        <link businessObjects="/3"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="/0/@colors.1" foreground="/0/@colors.2" lineWidth="2" transparency="0.0" width="100" height="40" x="391" y="270" cornerHeight="2" cornerWidth="2"/>
+      <link businessObjects="/4"/>
+      <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.3 /0/@connections.4"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0">
+          <points y="20"/>
+          <points x="100" y="20"/>
+        </graphicsAlgorithm>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="f32"/>
+        <link businessObjects="/4"/>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" width="100" height="20" y="20" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Class"/>
+        <link businessObjects="/4"/>
+      </children>
+    </children>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.3/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.1/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+      <link businessObjects="/3/@roles.0"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" font="/0/@fonts.1" value="gfdgfd"/>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+      <link businessObjects="/3/@roles.1"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0" font="/0/@fonts.1" value="gfdgfd"/>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.4/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+      <link businessObjects="/5"/>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Ellipse" background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" transparency="0.0" width="12" height="12"/>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.1/@anchors.0" end="/0/@children.4/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+      <link businessObjects="/6"/>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" background="/0/@colors.2" foreground="/0/@colors.2" lineStyle="UNSPECIFIED">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+    <colors/>
+    <fonts name="Arial" size="8" bold="true"/>
+    <fonts name="Arial" size="8"/>
+  </pi:Diagram>
+  <iso15926:Class label="sdfff"/>
+  <iso15926:Class label="gfdgfdgfdgfd"/>
+  <iso15926:Template label="gfd">
+    <roles label="gfdgfd" entityType="/2"/>
+    <roles label="gfdgfd" entityType="/1"/>
+  </iso15926:Template>
+  <iso15926:Class label="f32"/>
+  <iso15926:Specialization superClass="/4" subClass="/1"/>
+  <iso15926:Classification classifier="/2" classified="/4"/>
+</xmi:XMI>
